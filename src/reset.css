@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./assets/fonts/Montserrat/Montserrat-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Frutiger-lt-pro-normal";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./assets/fonts/Frutiger-lt-pro/FrutigerLTProBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Frutiger-lt-pro-600";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/Frutiger-lt-pro/FrutigerLTProBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Frutiger-lt-pro-700";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/Frutiger-lt-pro/FrutigerLTProBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Noto_Sans_KR-400";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/Noto_Sans_KR/NotoSansKR-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Noto_Sans_KR-600";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/Noto_Sans_KR/NotoSansKR-SemiBold.woff") format("woff");
+}
+
+@font-face{
+    font-family: "Pretendard-normal";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./assets/fonts/Pretendard/Pretendard-SemiBold.woff") format("woff"); 
+}
+
+@font-face{
+    font-family: "Pretendard-600";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/Pretendard/Pretendard-Bold.woff") format("woff"); 
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+button {
+    border: none;
+}
+
+button:focus,
+input:focus {
+    outline: none;
+}
