@@ -196,8 +196,9 @@ export default function HomeBody() {
     )
 }
 const HomeDiv= styled.div`
-    background-image: url(${block});
-    background-repeat: repeat;
+    /* background-image: url(${block});
+    background-repeat: repeat; */
+    background-color: #f1f2f3;
     padding: 50px 0;
 `
 const Home= styled.div`
@@ -241,7 +242,9 @@ const CommonSection= styled.section`
     padding: 30px 30px;
     max-width: 1400px;
     border-radius: 20px;
-    background: #fff;
+    background-color: #f1f2f3;
+
+    /* background: #fff; */
     /* margin-bottom: -88px; */
 `
 const Title= styled.p`
