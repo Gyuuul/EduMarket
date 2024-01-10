@@ -8,7 +8,6 @@ import Common from '../../components/common/Common'
 import PostItemLi from './PostItemLi';
 import { getPostList } from '../../components/post/getPostList';
 import post from '../../assets/icons/illustration/Post.gif'
-import board from '../../assets/icons/illustration/board.jpg'
 
 export default function PostList() {
     const myProfile= useSelector((state)=> state.user.myInfo.image);
@@ -100,7 +99,7 @@ export default function PostList() {
     )
 }
 const PostDiv= styled.div`
-    background-color: #dae1e6;
+    background-color: #f1f2f3;
     padding: 30px 0;
 `
 const Post= styled.div`
@@ -156,7 +155,7 @@ const WriteDiv= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    background-color: #f1f2f3;
+    background-color: #ffff;
 
     & img {
         width: 60px;
@@ -172,6 +171,7 @@ const BoxDiv= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background-color: #f1f2f3;
 
     & p {
         font-family: "Noto_Sans_KR-400";

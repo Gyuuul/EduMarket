@@ -98,7 +98,7 @@ export default function StudyModify() {
     );
 }
 const UploadWrap= styled.div`
-    background-color: #dae1e6;
+    background-color: #f1f2f3;
     padding: 200px 0;
 `
 const UploadDiv= styled.div`
@@ -113,7 +113,7 @@ const Wrap= styled.div`
     background-color: #ffff;
 `
 const Title= styled.div`
-    padding: 50px 0 40px;
+    padding: 50px 0 20px;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;

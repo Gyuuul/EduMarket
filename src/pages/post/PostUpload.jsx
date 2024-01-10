@@ -117,74 +117,78 @@ export default function PostUpload() {
     }
 
     const page= (
-        <UploadDiv>
-            <Title><h2>POST</h2></Title>
-            <Description> 글과 사진을 자유롭게 공유할 수 있습니다. </Description>
-            
-            <Div>
-                <Label htmlFor='post'/>
-                <TextArea
-                    name='post'
-                    id= 'post'
-                    placeholder='내용을 입력해주세요.'
-                    value={content}
-                    onChange={(e) => {
-                        setContent(e.target.value);
-                        if(e.target.value.length > 0){
-                            setUploadMessage('');
-                        }
-                    }}
-                />
-
-                {/* 이미지 미리보기 */}
-                <Ul>
-                    {showImage.map((image, id)=> {
-                        return(
-                            <Li key={id}>
-                                <img key={id} src={image} />
-                                <DeleteButton
-                                    onClick= {()=> {
-                                        return DeleteImage(id);
-                                    }}
-                                >
-                                    <img src={deleteBtn} alt="" />
-                                </DeleteButton>
-                            </Li>
-                        )
-                    })}
-                </Ul>
-
-                <>
-                    {uploadMessage === '' 
-                    ? 
-                    (<Alert>{imageMessage}</Alert>)
-                    :
-                    (<Alert>{uploadMessage}</Alert>)    
-                    }
-                </>
-
-                <ImageDiv>
-                    <Button onClick={Upload}>게시글 등록하기</Button>
+        <UploadWrap>
+            <UploadDiv>
+                <Wrap>
+                    <Title><h2>POST</h2></Title>
+                    <Description> 글과 사진을 자유롭게 공유할 수 있습니다. </Description>
                     
-                    {/* 이미지 등록 버튼 */}
-                    <Label htmlFor="input-file">
-                        <img src={album} alt="" />
-                    </Label>
-                    <Input
-                        id="input-file"
-                        name="PostImg"
-                        type="file"
-                        accept=".png, .jpg, .jpeg"
-                        onChange={(e) => {
-                            ViewImage(e);
-                            setUploadMessage('');
-                        }}
-                        value={data.post.image}
-                        ref={inputRef}
-                    />
-                </ImageDiv>
-            </Div>
-        </UploadDiv>
+                    <Div>
+                        <Label htmlFor='post'/>
+                        <TextArea
+                            name='post'
+                            id= 'post'
+                            placeholder='내용을 입력해주세요.'
+                            value={content}
+                            onChange={(e) => {
+                                setContent(e.target.value);
+                                if(e.target.value.length > 0){
+                                    setUploadMessage('');
+                                }
+                            }}
+                        />
+
+                        {/* 이미지 미리보기 */}
+                        <Ul>
+                            {showImage.map((image, id)=> {
+                                return(
+                                    <Li key={id}>
+                                        <img key={id} src={image} />
+                                        <DeleteButton
+                                            onClick= {()=> {
+                                                return DeleteImage(id);
+                                            }}
+                                        >
+                                            <img src={deleteBtn} alt="" />
+                                        </DeleteButton>
+                                    </Li>
+                                )
+                            })}
+                        </Ul>
+
+                        <>
+                            {uploadMessage === '' 
+                            ? 
+                            (<Alert>{imageMessage}</Alert>)
+                            :
+                            (<Alert>{uploadMessage}</Alert>)    
+                            }
+                        </>
+
+                        <ImageDiv>
+                            <Button onClick={Upload}>게시글 등록하기</Button>
+                            
+                            {/* 이미지 등록 버튼 */}
+                            <Label htmlFor="input-file">
+                                <img src={album} alt="" />
+                            </Label>
+                            <Input
+                                id="input-file"
+                                name="PostImg"
+                                type="file"
+                                accept=".png, .jpg, .jpeg"
+                                onChange={(e) => {
+                                    ViewImage(e);
+                                    setUploadMessage('');
+                                }}
+                                value={data.post.image}
+                                ref={inputRef}
+                            />
+                        </ImageDiv>
+                    </Div>
+                </Wrap>
+            </UploadDiv>
+        </UploadWrap>
     )
     return (
         <>
@@ -192,12 +196,23 @@ export default function PostUpload() {
         </>
     )
 }
+const UploadWrap= styled.div`
+    background-color: #dae1e6;
+    padding: 200px 0;
+`
 const UploadDiv= styled.div`
     max-width: 1400px;
     margin: 0 auto;
 `
+const Wrap= styled.div`
+    padding: 40px 80px 90px;
+    border: 1px solid rgba(0,0,0,0.09);
+    border-radius: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background-color: #ffff;
+`
 const Title= styled.div`
-    margin: 200px 0 30px 0;
+    padding: 50px 0 40px;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;
@@ -207,7 +222,8 @@ const Title= styled.div`
     &h2{
         display: inline-block;
         color: #2b2b2b;
-    }`
+    }
+`
 const Description= styled.h3`
     font-size: 20px;
     text-align: center;

@@ -180,7 +180,7 @@ export default function StudyList() {
     );
 }
 const StudyDiv= styled.div`
-    background-color: #dae1e6;
+    background-color: #f1f2f3;
     padding: 40px 0 50px;
 `
 const Study = styled.div`
@@ -237,7 +237,7 @@ const WriteDiv= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    background-color: #f1f2f3;
+    background-color: #ffff;
 
     & img {
         width: 60px;
@@ -253,6 +253,7 @@ const BoxDiv= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background-color: #f1f2f3;
 
     & p {
         font-family: "Noto_Sans_KR-400";
@@ -272,7 +273,7 @@ const MapBox= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    background-color: #f1f2f3;
+    background-color: #ffff;
 `
 const StudyLists= styled.div`
     margin-right: 80px;

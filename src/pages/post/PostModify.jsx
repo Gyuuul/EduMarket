@@ -236,7 +236,7 @@ export default function PostModify() {
     );
 }
 const UploadWrap= styled.div`
-    background-color: #dae1e6;
+    background-color: #f1f2f3;
     padding: 200px 0;
 `
 const UploadDiv= styled.div`

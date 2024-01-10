@@ -53,7 +53,7 @@ const ItemDiv= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    background-color: #f1f2f3;
+    background-color: #ffff;
 `
 const ContentDiv = styled.div`
     width: 350px;

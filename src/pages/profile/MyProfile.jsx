@@ -194,7 +194,7 @@ return (
 );
 }
 const ProfileWrap= styled.div`
-    background-color: #dae1e6;
+    background-color: #f1f2f3;
     padding: 30px 0;
 `
 const MyProfileDiv= styled.div`

@@ -52,22 +52,26 @@ export const StudyUpload=() => {
         };
 
     const page= (
+        <UploadWrap>
             <UploadDiv>
-                <Title><h2>STUDY</h2></Title>
-                <Description>만들고 싶은 스터디를 소개해주세요.</Description>
-                <form method='POST' encType='multipart/form-data' onSubmit={handleSubmit}>
-                    <Study
-                        itemName={itemName}
-                        setItemName={setItemName}
-                        link={link}
-                        setLink={setLink}
-                    />
-                </form>
-                <Div>
-                    <StudyImage itemImage={itemImage} setItemImage={setItemImage}/>
-                    <Button onClick={handleSubmit} >스터디 등록하기</Button>
-                </Div>    
+                <Wrap>
+                    <Title><h2>STUDY</h2></Title>
+                    <Description>만들고 싶은 스터디를 소개해주세요.</Description>
+                    <form method='POST' encType='multipart/form-data' onSubmit={handleSubmit}>
+                        <Study
+                            itemName={itemName}
+                            setItemName={setItemName}
+                            link={link}
+                            setLink={setLink}
+                        />
+                    </form>
+                    <Div>
+                        <StudyImage itemImage={itemImage} setItemImage={setItemImage}/>
+                        <Button onClick={handleSubmit} >스터디 등록하기</Button>
+                    </Div>    
+                </Wrap>
             </UploadDiv>
+        </UploadWrap>
     )
     return (
         <>
@@ -75,17 +79,27 @@ export const StudyUpload=() => {
         </>
     );
 }
+const UploadWrap= styled.div`
+    background-color: #dae1e6;
+    padding: 200px 0;
+`
 const UploadDiv= styled.div`
     max-width: 1400px;
     margin: 0 auto;
 `
+const Wrap= styled.div`
+    padding: 40px 80px 90px;
+    border: 1px solid rgba(0,0,0,0.09);
+    border-radius: 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background-color: #ffff;
+`
 const Title= styled.div`
-    margin: 200px 0 30px 0;
+    padding: 50px 0 20px;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;
     border: none;
-    padding-bottom: 0;
 
     &h2{
         display: inline-block;
