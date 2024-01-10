@@ -74,39 +74,43 @@ export default function Search() {
     return (
         <>
             <HomeHeader/>
-            <SearchDiv>
-                {isLoading && (
-                        <Loading>
-                            {/* <img src={logo} alt="logo" /> */}
-                        </Loading>
-                    )}
-                <Div>
-                    <Input 
-                        type="text" 
-                        placeholder='이름, 아이디 검색'
-                        value={search}
-                        onChange={handle}
-                    />
-                </Div>
-
-                <List>
-                    {search && userList && (
-                        <UserList
-                            search= {search}
-                            userList= {userList}
-                            searchQuery={search}
+            <SearchWrap>
+                <SearchDiv>
+                    {isLoading && (
+                            <Loading>
+                            </Loading>
+                        )}
+                    <Div>
+                        <Input 
+                            type="text" 
+                            placeholder='이름, 아이디 검색'
+                            value={search}
+                            onChange={handle}
                         />
-                    )}
-                    <div ref={ref}></div>
+                    </Div>
 
-                    <SearchIcon>
-                        <img src=""/>
-                    </SearchIcon>
-                </List>
-            </SearchDiv>
+                    <List>
+                        {search && userList && (
+                            <UserList
+                                search= {search}
+                                userList= {userList}
+                                searchQuery={search}
+                            />
+                        )}
+                        <div ref={ref}></div>
+
+                        <SearchIcon>
+                            <img src=""/>
+                        </SearchIcon>
+                    </List>
+                </SearchDiv>
+            </SearchWrap>
         </>
     )
 }
+const SearchWrap= styled.div`
+    background-color: #f1f2f3;
+`
 const SearchDiv= styled.div`
     position: relative;
     width: 820px;
@@ -128,6 +132,7 @@ const Input= styled.input`
     font-size: 20px;
     border: none;
     transform: translateX(-50%);
+    background-color: #f1f2f3;
 `
 
 const Loading = styled.div``

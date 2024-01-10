@@ -26,8 +26,6 @@ export default function Common(props) {
         }
     }
 
-
-
     return (
         <>
             <Header /> 
