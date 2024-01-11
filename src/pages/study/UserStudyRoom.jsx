@@ -120,4 +120,10 @@ const Div= styled.div`
         object-fit: cover;
     }
 `
-const Alert= styled.p``
+const Alert= styled.p`
+    font-family: "Noto_Sans_KR-600";
+    font-size: 35px;
+    text-align: center;
+    color: #C63D2F;
+    padding: 50px 0 30px;
+`
