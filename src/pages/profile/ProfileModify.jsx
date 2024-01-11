@@ -55,7 +55,7 @@ export default function ProfileModify() {
             <ModifyDiv>
                     <Wrap>
                         <ImageDiv>
-                            <img src={image} alt="프로필 사진"/>
+                            <img src={image} alt="나의 프로필 이미지"/>
                             <ProfileImgLabel htmlFor='ProfileImg'>사진 변경</ProfileImgLabel>
                                 <ProfileImgInput 
                                     onChange={async (e) => {

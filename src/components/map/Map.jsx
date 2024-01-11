@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { positions } from './MarkPosition';
 import EventMarkerContainer from './EventMarker';
 
-
 const {kakao}= window;
 
 export default function MapTogether() {

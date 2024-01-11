@@ -65,14 +65,14 @@ export default function StudyDetail() {
                                     navigate(`/profile/${detail?.author?.accountname}`);
                                 }
                             }}>  
-                                <ProfileImg src={detail?.author?.image} />
+                                <ProfileImg src={detail?.author?.image} alt='유저 프로필 이미지'/>
                                 <Author>{detail?.author?.accountname}</Author>
                             </AuthorDiv>
 
                             <ToggleDiv>
                                     { myAccountName=== userAccountName && (
                                         <>
-                                            <ToggleImg src={MoreButton} onClick={() => setVisible(!visible)} alt="" />
+                                            <ToggleImg src={MoreButton} onClick={() => setVisible(!visible)} alt="게시글 삭제 및 수정 토글 이미지" />
                                             { visible && (
                                                 <>
                                                     <ToggleWrapper>
@@ -92,7 +92,7 @@ export default function StudyDetail() {
                         <Title>{detail?.itemName}</Title>
                         <Content>{detail?.link}</Content>
                         <Div>
-                            <img src={detail?.itemImage}/>
+                            <img src={detail?.itemImage} alt='스터디 대표 이미지'/>
                         </Div>
                     </StudyDiv>
                 )}

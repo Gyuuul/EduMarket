@@ -82,7 +82,7 @@ export default function InsideEduket() {
                         {character.map((item)=> (
                             <Li>
                                 <ItemDiv>
-                                    <Img src={item.image} />
+                                    <Img src={item.image} alt='EDUKET 소개 페이지 대표 이미지'/>
                                     <Name>{item.name}</Name>
                                     <Tag><p>{item.tag}</p></Tag>
                                     <Intro>{item.introduce}</Intro>

@@ -29,7 +29,7 @@ export default function CommentDelete({commentId, postId}) {
                     </DeleteTitle>
                 </ToggleWrapper>
             )}
-            <Img onClick={() => setVisible(!visible)} src={MoreButton} />
+            <Img onClick={() => setVisible(!visible)} src={MoreButton} alt="댓글 삭제 토글 이미지" />
         </>
     )
 }

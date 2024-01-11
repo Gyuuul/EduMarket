@@ -39,7 +39,7 @@ export default function Heart({ postId, data }) {
                     e.preventDefault();
                     handle();
                 }}>
-                    {isLike ? <Img src={fillHeart}/>: <Img src={heart}/>}
+                    {isLike ? <Img src={fillHeart} alt="색이 채워진 하트"/>: <Img src={heart} alt="색이 안 채워진 하트"/>}
                 </Button>
 
                 <LikeMent>

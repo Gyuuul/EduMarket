@@ -81,7 +81,7 @@ export default function PostDetail() {
                                     navigate(`/profile/${detail?.author?.accountname}`);
                                 }
                             }}>  
-                                <ProfileImg src={detail?.author?.image} alt="" />
+                                <ProfileImg src={detail?.author?.image} alt="유저 프로필 이미지" />
                                 <Author>{detail?.author?.accountname}</Author>
                             </AuthorDiv>
 
@@ -99,7 +99,6 @@ export default function PostDetail() {
                                                 </ToggleWrapper>
                                             </>
                                         )}
-                                        
                                     </>
                                 )}
                             </ToggleDiv>
@@ -120,7 +119,7 @@ export default function PostDetail() {
                             </HeartDiv>
 
                             <CommentDiv>
-                                <Img src={comment} alt="" />
+                                <Img src={comment} alt="댓글 말풍선 이미지" />
                                 <CommentMent>{comments.length}</CommentMent>
                             </CommentDiv>
                         </SideDiv>

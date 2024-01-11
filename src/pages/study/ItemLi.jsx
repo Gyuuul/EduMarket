@@ -31,7 +31,7 @@ export default function ItemLi({ data }) {
                             navigate(`/together/detail/${data.id}`);
                         }}
                     >
-                        <img src={data?.itemImage}></img>
+                        <img src={data?.itemImage} alt='스터디 대표 이미지'/>
 
                         <Div>
                             <ItemName>{data.itemName}</ItemName>

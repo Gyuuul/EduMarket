@@ -27,7 +27,7 @@ export default function FollowList({ accountname, isfollow, image }) {
                             await setUser();
                             navigate(`../profile/${accountname}`);
                         }}>
-                            <ProfileImage src={image} alt="" />
+                            <ProfileImage src={image} alt="유저 프로필 이미지" />
                         </div>
                         <ProfileId>@{accountname}</ProfileId>
                     </Wrap>

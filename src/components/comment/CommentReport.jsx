@@ -28,7 +28,7 @@ export default function CommentReport({commentId, postId}) {
                     </ReportTitle>
                 </ToggleWrapper>
             )}
-            <Img onClick={() => setVisible(!visible)} src={MoreButton} />
+            <Img onClick={() => setVisible(!visible)} src={MoreButton} alt="댓글 신고 토글 이미지" />
         </div>
     )
 }

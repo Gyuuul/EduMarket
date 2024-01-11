@@ -95,7 +95,7 @@ const page= (
                 
                 <Wrap>
                     <ProfileDiv>
-                        <Img src={user?.image} alt="" />
+                        <Img src={user?.image} alt="나의 프로필 이미지" />
 
                         <Profiles>
                             <NameDiv>
@@ -161,7 +161,7 @@ const page= (
                                         navigate(`/together/detail/${item.id}`);
                                     }}
                                     >
-                                        <img src={item.itemImage}></img>
+                                        <img src={item.itemImage} alt='스터디 대표 이미지'></img>
                                         <StudyName>{item.itemName}</StudyName>
                                         <StudyIntro>{item.link}</StudyIntro>
                                     </Div>

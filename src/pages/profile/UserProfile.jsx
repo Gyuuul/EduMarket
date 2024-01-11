@@ -35,7 +35,7 @@ const page=(
                 
                 <Wrap>
                     <ProfileDiv>
-                        <Img src={profile?.image} />
+                        <Img src={profile?.image} alt='유저 프로필 이미지' />
                         
                         <Profiles>
                             <NameDiv>

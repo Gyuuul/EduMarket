@@ -60,7 +60,7 @@ export default function CommentList({postId, comments, setComments}) {
                                 await setUser(data.author?.accountname);
                                 navigate(`/profile/${data.author?.accountname}`);
                             }}>  
-                                <ProfileImg src={data.author?.image} alt="" /> 
+                                <ProfileImg src={data.author?.image} alt="유저 프로필 이미지" /> 
                             </ProfileDiv>
                             <Wrap> 
                                 <Div>

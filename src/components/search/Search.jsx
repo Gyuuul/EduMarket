@@ -97,11 +97,7 @@ export default function Search() {
                                 searchQuery={search}
                             />
                         )}
-                        <div ref={ref}></div>
-
-                        <SearchIcon>
-                            <img src=""/>
-                        </SearchIcon>
+                        <div ref={ref} />
                     </List>
                 </SearchDiv>
             </SearchWrap>
@@ -141,4 +137,3 @@ const List = styled.div`
     overflow-y: visible;
 `
 const Button = styled.button``
-const SearchIcon= styled.label``

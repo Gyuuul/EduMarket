@@ -13,7 +13,7 @@ export const MapModal = ({ modalClose, isClicked, title, location, img, page }) 
                 </div>
                 <div className='body'>
                 <div className='img'>
-                    <img src={img} width='110' height='75' alt='스터디이미지' className='preview' />
+                    <img src={img} width='110' height='75' alt='스터디 대표 이미지' className='preview' />
                 </div>
                 <div className='desc'>
                     <div className='ellipsis'>{title}</div>

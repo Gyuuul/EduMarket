@@ -58,16 +58,16 @@ export default function Following() {
                 </Title>
                 { followingList.length 
                 ? (
-                    <Ul>
+                    <ul>
                         {showList.map((item)=> (
-                            <Li>
-                                <Div>
+                            <li>
+                                <div>
                                     <FollowList key={item} {...item}></FollowList>
-                                </Div>
-                            </Li>
+                                </div>
+                            </li>
                         ))}
                         <div ref={ref}></div>
-                    </Ul>
+                    </ul>
                 )
                 : 
                 (
@@ -102,9 +102,13 @@ const Title= styled.div`
         color: #2b2b2b;
     }
 `
-const Ul = styled.ul``
-const Li = styled.li``
-const Div= styled.div``
-const Alert= styled.p``
+const Alert= styled.p`
+    font-family: "Noto_Sans_KR-400";
+    font-size: 35px;
+    text-align: center;
+    color: #C63D2F;
+    padding: 30px;
+    margin-bottom: 30px;
+`
 
 

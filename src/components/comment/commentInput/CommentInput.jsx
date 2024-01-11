@@ -61,7 +61,7 @@ export const CommentInput=({getComment, postId})=> {
 
     return (
         <Div>
-            <ProfileImg src={authorImage} alt="" />
+            <ProfileImg src={authorImage} alt="유저 프로필 이미지" />
             <Wrap>    
                 <TextArea
                     type='text'

@@ -39,7 +39,7 @@ export default function UserStudyRoom() {
                                     e.stopPropagation();
                                     navigate(`/together/detail/${item.id}`);
                                     }}>
-                                    <img src={item.itemImage}></img>
+                                    <img src={item.itemImage} alt='스터디 대표 이미지'></img>
                                     <StudyName>{item.itemName}</StudyName>
                                     <StudyIntro>{item.link}</StudyIntro>
                                     </Div>

@@ -93,9 +93,9 @@ export default function HomeBody() {
         <Home>
             <SwiperDiv>
                 <FullImage>
-                    <img src={swiper} alt="" />
+                    <img src={swiper} alt="홈 페이지의 대표 이미지" />
                     <MainSwiper>
-                        <img src={frame} alt="" />
+                        <img src={frame} alt="홈 페이지의 대표 이미지" />
                     </MainSwiper>
                 </FullImage>
             </SwiperDiv>
@@ -132,9 +132,9 @@ export default function HomeBody() {
 
             <SwiperDiv>
                 <FullImage>
-                    <img src={study} alt="" />
+                    <img src={study} alt="스터디 페이지 대표 이미지" />
                     <MainSideImage>
-                        <img src={frame} alt="" />
+                        <img src={frame} alt="스터디 페이지 대표 이미지" />
                     </MainSideImage>
                 </FullImage>
             </SwiperDiv>
@@ -170,9 +170,9 @@ export default function HomeBody() {
 
             <SwiperDiv>
                 <FullImage>
-                    <img src={mentoring} alt="" />
+                    <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
                     <MainSideImage>
-                        <img src={frame} alt="" />
+                        <img src={frame} alt="멘토링 페이지 대표 이미지" />
                     </MainSideImage>
                 </FullImage>
             </SwiperDiv>

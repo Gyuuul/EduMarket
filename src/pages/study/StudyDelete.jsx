@@ -9,7 +9,6 @@ import { URL } from '../../lib/apis/constant/path';
 export default function StudyDelete() {
     const {productId}= useParams();
     const navigate= useNavigate();
-    const myAccountName= useSelector((state)=> state.user.myInfo.accountname);
     const userToken= localStorage.getItem('Access Token');
 
     async function Delete(){

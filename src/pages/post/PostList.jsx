@@ -51,14 +51,14 @@ export default function PostList() {
         <PostDiv>
             <Post>
                 <PostPicture>
-                    <img src={post} alt="" />
+                    <img src={post} alt="포스트 페이지 대표 이미지" />
                 </PostPicture>
                 <PostTitle>EDUKET POST</PostTitle>
 
                 <Div>
                     <PostDescription>각 분야에서 반응이 좋았던 게시물을 만나보세요.</PostDescription>
                     <WriteDiv>
-                        <img src={myProfile} alt="" />
+                        <img src={myProfile} alt="나의 프로필 이미지" />
                         <BoxDiv onClick={goPostUpload}>
                             <p> 직무에 대해서 나누고 싶은 이야기가 있으신가요?</p>
                         </BoxDiv>

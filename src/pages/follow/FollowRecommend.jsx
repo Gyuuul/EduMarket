@@ -34,7 +34,7 @@ export default function FollowRecommend() {
                     style={{...style,
                         width: "40px",
                         height: "40px",
-                    }}/>
+                    }} alt='다음 버튼'/>
             </div>
         );
     };
@@ -59,7 +59,7 @@ export default function FollowRecommend() {
                     style={{...style,
                         width: "40px",
                         height: "40px",
-                    }}/>
+                    }} alt='이전 버튼'/>
             </div>
         );
     };

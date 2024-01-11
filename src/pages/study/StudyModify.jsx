@@ -83,7 +83,7 @@ export default function StudyModify() {
                         />
                     </form>
                     <Div>
-                        <StudyImage itemImage={itemImage} setItemImage={setItemImage}/>
+                        <StudyImage itemImage={itemImage} setItemImage={setItemImage} />
                         <Button onClick={Modify} >수정하기</Button>
                     </Div> 
                 </Wrap>

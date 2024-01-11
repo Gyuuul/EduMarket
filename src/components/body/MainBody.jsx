@@ -16,15 +16,15 @@ export default function MainBody() {
                 <Main>            
                     <SwiperDiv>
                         <FullImage>
-                            <img src={swiper} alt="" />
+                            <img src={swiper} alt="메인 페이지 대표 이미지" />
                             <MainSwiper>
-                                <img src={frame} alt="" />
+                                <img src={frame} alt="메인 페이지 대표 이미지" />
                             </MainSwiper>
                         </FullImage>
                     </SwiperDiv>
 
                     <CommonSection>
-                        <img src={post} alt="" />
+                        <img src={post} alt="게시글 페이지 대표 이미지" />
                         <Div>
                             <Title>EDUKET POST</Title>
                             <Description>
@@ -36,7 +36,7 @@ export default function MainBody() {
                     </CommonSection>
 
                     <CommonSection>
-                        <img src={study} alt="" />
+                        <img src={study} alt="스터디 페이지 대표 이미지" />
                         <Div>
                             <Title>EDUKET STUDY</Title>
                             <Description>
@@ -48,7 +48,7 @@ export default function MainBody() {
                     </CommonSection>
 
                     <CommonSection>
-                        <img src={mentoring} alt="" />
+                        <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
                         <Div>
                             <Title>EDUKET MENTORING</Title>
                             <Description>

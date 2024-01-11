@@ -113,7 +113,7 @@ export const ProfileName= ()=> {
 
                 <Wrap>
                     <ImgDiv>
-                        <img src={profileImg} alt="프로필 사진" />
+                        <img src={profileImg} alt="기본 프로필 이미지" />
                         <ProfileImgLabel htmlFor='ProfileImg'>사진 변경</ProfileImgLabel>
                         <ProfileImgInput 
                             onChange={async (e) => {

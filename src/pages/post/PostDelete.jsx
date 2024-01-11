@@ -10,7 +10,6 @@ export default function PostDelete() {
     const {postId}= useParams();
     const navigate= useNavigate();
     const userToken= localStorage.getItem('Access Token');
-    const accountname= useSelector((state)=> state.user.myInfo.accountname);
 
     async function Delete(){
         const res= await axios.delete(`${URL}/post/${postId}`, {

@@ -118,7 +118,7 @@ export default function StudyList() {
         <StudyDiv>
             <Study>
                 <StudyPicture>
-                    <img src={study} />
+                    <img src={study} alt='스터디 페이지 대표 이미지'/>
                 </StudyPicture>
                 <StudyTitle>EDUKET STUDY</StudyTitle>
 
@@ -137,38 +137,40 @@ export default function StudyList() {
                             ))}
                         </StudyLists>
                     </MapBox>
+                    
                     <WriteDiv>
-                        <img src={myProfile} alt="" />
+                        <img src={myProfile} alt="나의 프로필 이미지" />
                         <BoxDiv onClick={goStudyUpload}>
                             <p> 만들고 싶은 스터디 및 모임이 있으신가요?</p>
                         </BoxDiv>
                     </WriteDiv>
-                { togetherLists.length ? (
-                        <div>
-                            <Ul>
-                                {!togetherLists 
-                                ? []
-                                : showList.map((data)=> (
-                                    <Li>
-                                        <ItemLi
-                                            data={data}
-                                        ></ItemLi>
-                                    </Li>
-                                ))}
-                                <div ref={ref}></div>
 
-                            </Ul>
+                    { togetherLists.length ? (
+                            <div>
+                                <Ul>
+                                    {!togetherLists 
+                                    ? []
+                                    : showList.map((data)=> (
+                                        <Li>
+                                            <ItemLi
+                                                data={data}
+                                            ></ItemLi>
+                                        </Li>
+                                    ))}
+                                    <div ref={ref}></div>
 
-                            <button onClick={goTogetherUpload}></button>
-                        </div>
-                    ) : (
-                        <>
-                            <span> 등록된 상품이 없습니다.</span>
-                            <button onClick={goTogetherUpload}></button>
-                        </>
-                    )
-                    
-                    }
+                                </Ul>
+
+                                <button onClick={goTogetherUpload}></button>
+                            </div>
+                        ) : (
+                            <>
+                                <span> 등록된 상품이 없습니다.</span>
+                                <button onClick={goTogetherUpload}></button>
+                            </>
+                        )
+                        
+                        }
                 </Div>
         </Study>
     </StudyDiv>

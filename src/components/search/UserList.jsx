@@ -38,7 +38,7 @@ return search && userList?.map((item) => {
                 }}
             >
                 <Div>
-                    <Img src={imgSrc}></Img>
+                    <Img src={imgSrc} alt="유저 프로필 이미지" />
                     <Right>
                         <Name>
                             {item.username.includes(searchQuery) ? (
