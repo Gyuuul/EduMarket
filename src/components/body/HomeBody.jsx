@@ -9,8 +9,9 @@ import ItemLi from '../../pages/study/ItemLi';
 import { URL } from '../../lib/apis/constant/path';
 import FollowRecommend from '../../pages/follow/FollowRecommend';
 import swiper from '../../assets/icons/illustration/Swiper.gif'
-import frame from '../../assets/icons/illustration/Frame.png'
+import frame from '../../assets/icons/illustration/frame.png'
 import block from '../../assets/icons/illustration/block.jpg'
+import post from '../../assets/icons/illustration/Post.gif'
 import study from '../../assets/icons/illustration/Study.gif'
 import mentoring from '../../assets/icons/illustration/Mentoring.gif'
 
@@ -101,6 +102,11 @@ export default function HomeBody() {
             </SwiperDiv>
 
             <CommonSection>
+                <SwiperDiv>
+                    <SideFullImage>
+                        <img src={post} alt="포스트 페이지 대표 이미지" />
+                    </SideFullImage>
+                </SwiperDiv>
                 <Title>EDUKET POST</Title>
                 <Description>직무별 최신 트렌드에 맞는 정보를 공유해요.</Description>
                 <Tag>
@@ -130,16 +136,12 @@ export default function HomeBody() {
                 }
             </CommonSection>
 
-            <SwiperDiv>
-                <FullImage>
-                    <img src={study} alt="스터디 페이지 대표 이미지" />
-                    <MainSideImage>
-                        <img src={frame} alt="스터디 페이지 대표 이미지" />
-                    </MainSideImage>
-                </FullImage>
-            </SwiperDiv>
-
             <CommonSection>
+                <SwiperDiv>
+                    <SideFullImage>
+                        <img src={study} alt="스터디 페이지 대표 이미지" />
+                    </SideFullImage>
+                </SwiperDiv>
                 <Title>EDUKET STUDY</Title>
                 <Description>나에게 맞는 스터디와 모임에 참여해요!</Description>
                 <Tag>
@@ -168,16 +170,12 @@ export default function HomeBody() {
                     }
             </CommonSection>
 
-            <SwiperDiv>
-                <FullImage>
-                    <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
-                    <MainSideImage>
-                        <img src={frame} alt="멘토링 페이지 대표 이미지" />
-                    </MainSideImage>
-                </FullImage>
-            </SwiperDiv>
-
             <CommonSection>
+                <SwiperDiv>
+                    <SideFullImage>
+                        <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
+                    </SideFullImage>
+                </SwiperDiv>
                 <Title>EDUKET MENTORING</Title>
                 <Description> 장소의 제약 없이 다양한 분야의 멘토와 멘토링 학습을 할 수 있어요.</Description>
                 <Tag>
@@ -196,8 +194,8 @@ export default function HomeBody() {
     )
 }
 const HomeDiv= styled.div`
-    /* background-image: url(${block});
-    background-repeat: repeat; */
+    background-image: url(${block});
+    background-repeat: repeat;
     background-color: #f1f2f3;
     padding: 50px 0;
 `
@@ -210,32 +208,29 @@ const SwiperDiv= styled.div`
 `
 const FullImage= styled.div`
     position: relative;
-    
+
     & img {
         display: block;
-        width: 51%;
+        width: 82%;
         margin: 0 auto;
-        padding: 100px 0 50px 0;
+        padding: 80px 0 0 0;
     }
 `
 const MainSwiper= styled.div`
     position: absolute;
     width: 100%;
     left: 0;
-    top: -3.5%;
+    top: -5%;
 
     & img {
-        width: 67%;
+        width: 90%;
     }
 `
-const MainSideImage= styled.div`
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: -7%;
-
+const SideFullImage= styled.div`
     & img {
-        width: 62%;
+        width: 100%;
+        padding: 20px 0 30px 0;
+        border-radius: 20px;
     }
 `
 const CommonSection= styled.section`
@@ -243,9 +238,7 @@ const CommonSection= styled.section`
     max-width: 1400px;
     border-radius: 20px;
     background-color: #f1f2f3;
-
-    /* background: #fff; */
-    /* margin-bottom: -88px; */
+    margin: 40px 0;
 `
 const Title= styled.p`
     font-family: "Pretendard-600";
@@ -270,7 +263,7 @@ const Tag= styled.div`
     gap: 10px;
     
     font-family: "Noto_Sans_KR-400";
-    margin-top: 20px;
+    margin-top: 10px;
 
     & li {
         list-style: none;

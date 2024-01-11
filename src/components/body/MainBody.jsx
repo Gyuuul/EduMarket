@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 
 import swiper from '../../assets/icons/illustration/Swiper.gif'
-import frame from '../../assets/icons/illustration/Frame.png'
+import frame from '../../assets/icons/illustration/frame.png'
 import block from '../../assets/icons/illustration/block.jpg'
 import post from '../../assets/icons/illustration/Post.gif'
 import study from '../../assets/icons/illustration/Study.gif'
@@ -79,22 +79,22 @@ const SwiperDiv= styled.div`
 `
 const FullImage= styled.div`
     position: relative;
-    
+
     & img {
         display: block;
-        width: 51.5%;
+        width: 82%;
         margin: 0 auto;
-        padding: 160px 0 50px 0;
-    }
+        padding: 120px 0 0 0;
+}
 `
 const MainSwiper= styled.div`
     position: absolute;
     width: 100%;
     left: 0;
-    top: -3.5%;
+    top: -5%;
 
     & img {
-        width: 67%;
+        width: 90%;
     }
 `
 const Div= styled.div`
@@ -122,11 +122,11 @@ const Description= styled.p`
     color: #3a3a3a;
 `
 const CommonSection= styled.section`
-padding: 30px;
+    padding: 30px 30px;
     max-width: 1400px;
     border-radius: 20px;
-    background: #fff;
-    margin-bottom: 50px;
+    background-color: #f1f2f3;
+    margin: 40px 0;
 
     & img {
         width: 100%;
