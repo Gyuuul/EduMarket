@@ -262,7 +262,7 @@ const Tag= styled.div`
     justify-content: center;
     gap: 10px;
     
-    font-family: "Noto_Sans_KR-400";
+    font-family: "Noto_Sans_KR-600";
     margin-top: 10px;
 
     & li {
