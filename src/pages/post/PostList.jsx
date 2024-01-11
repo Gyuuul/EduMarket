@@ -83,7 +83,7 @@ export default function PostList() {
                         </div>
                     ) : (
                         <>
-                        <span> 등록된 글이 없습니다.</span>
+                        <Alert> 등록된 글이 없습니다.</Alert>
                         <button onClick={goPostUpload}></button>
                     </>
                     )} 
@@ -192,4 +192,11 @@ const Li= styled.li`
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
+`
+const Alert= styled.p`
+    font-family: "Noto_Sans_KR-600";
+    font-size: 35px;
+    text-align: center;
+    color: #C63D2F;
+    padding: 50px 0 30px;
 `

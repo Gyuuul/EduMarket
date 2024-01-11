@@ -317,7 +317,13 @@ const SubTitle= styled.p`
     text-align: center;
     margin: 0 0 50px 0;
 `
-const Alert= styled.p``
+const Alert= styled.p`
+    font-family: "Noto_Sans_KR-600";
+    font-size: 30px;
+    text-align: center;
+    color: #C63D2F;
+    padding: 50px 0 30px;
+`
 
 const StudyDiv= styled.div`
     padding: 30px 0;
