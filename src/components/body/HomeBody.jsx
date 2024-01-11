@@ -25,7 +25,7 @@ export default function HomeBody() {
     const followTag= ['지식공유 💭', '멘토링 학습 👩🏻‍🏫'];
 
 
-    let num = 12;
+    let num = 9;
     
     /** Post 불러오기 */
     async function fetchMyPostList(){
@@ -58,7 +58,7 @@ export default function HomeBody() {
 
         togetherList()
             .then((res) => {
-                setStudyList(res.flat(1).sort(postSort).slice(0,12));
+                setStudyList(res.flat(1).sort(postSort).slice(0,9));
         })
         .catch((error)=>{
             console.log(error);
