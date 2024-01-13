@@ -30,6 +30,7 @@ export default function PostList() {
             let list= await getPostList();
             setPostList(list);
             setShowList(list.slice(pages * 10, pages * 10 + 10));
+                console.log(list)
             setPages(pages + 1);
         }
         fetchMyPostList();
@@ -47,6 +48,10 @@ export default function PostList() {
             addShowPost();
         }
     },[inView]);
+
+    const pageTitle = 'POST PAGE';
+    const pageDesc = `EDUKET은 다양한 분야의 이야기를 공유함으로써 취업준비생, 신입부터 경력자까지 현업에서의 이야기를 듣고 학습할 수 있습니다.`;
+
     const page= (
         <PostDiv>
             <Post>
@@ -57,13 +62,17 @@ export default function PostList() {
 
                 <Div>
                     <PostDescription>각 분야에서 반응이 좋았던 게시물을 만나보세요.</PostDescription>
-                    <WriteDiv>
-                        <img src={myProfile} alt="나의 프로필 이미지" />
-                        <BoxDiv onClick={goPostUpload}>
-                            <p> 직무에 대해서 나누고 싶은 이야기가 있으신가요?</p>
-                        </BoxDiv>
-                    </WriteDiv>
                     
+                    <WriteSection>  
+                        <WriteDiv>
+                            <img src={myProfile} alt="나의 프로필 이미지" />
+                            <BoxDiv onClick={goPostUpload}>
+                                <p> 직무에 대해서 나누고 싶은 이야기가 있으신가요?</p>
+                            </BoxDiv>
+                        </WriteDiv>
+                        <button onClick={goPostUpload}> 작성하기 </button>
+                    </WriteSection>  
+
                     {postList.length ? (
                         <div>
                             <Ul>
@@ -94,7 +103,7 @@ export default function PostList() {
 
     return (
         <>
-            <Common page={page} />
+            <Common page={page} title={pageTitle} desc={pageDesc} />
         </>
     )
 }
@@ -130,7 +139,6 @@ const PostTitle= styled.p`
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
     
-    /* top: 50%; */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px 20px;
@@ -142,6 +150,23 @@ const PostDescription= styled.p`
     text-align: center;
     color: #777;
     margin: 10px 15px 0 15px;
+`
+const WriteSection= styled.div`
+    display: flex;
+
+    & button {
+        width: 280px;
+        margin: 0 15px; 
+
+        font-family: "Noto_Sans_KR-400";
+        font-size: 20px;
+        color: #3a3a3a;
+
+        border: 1px solid rgba(0,0,0,0.09);
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        background-color: #ffff;
+    }
 `
 const WriteDiv= styled.div`
     display: flex;
@@ -172,6 +197,8 @@ const BoxDiv= styled.div`
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
+
+    cursor: pointer;
 
     & p {
         font-family: "Noto_Sans_KR-400";

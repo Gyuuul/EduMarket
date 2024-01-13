@@ -10,7 +10,6 @@ import { URL } from '../../lib/apis/constant/path';
 import ItemLi from './ItemLi';
 import { getStudyFollowingList } from '../../components/follow/getFollowingList';
 import study from '../../assets/icons/illustration/Study.gif'
-import board from '../../assets/icons/illustration/board.jpg'
 import MapTogether from '../../components/map/Map'
 
 export default function StudyList() {
@@ -49,7 +48,6 @@ export default function StudyList() {
         fetchMyStudyList();
     },[]);
 
-    // 최신 게시물이 위로 가도록
     useEffect(() => {
         function postSort(a, b) {
         if (a.createdAt < b.createdAt) {
@@ -61,13 +59,16 @@ export default function StudyList() {
         return 0;
         }
 
-        // togetherList에서 받아온 res를 빈배열에 평평하게 시간순으로 저장 
         togetherList()
             .then((res) => {
                 const list= res.flat(1).sort(postSort);
                 setTogetherLists(list);
                 setShowList(list.slice(pages * 10, pages * 10 + 10));
+                // setShowList(list);
                 setPages(pages + 1);
+                console.log(list)
+                console.log(pages)
+
         })
         .catch((error)=>{
             console.log(error);
@@ -114,7 +115,10 @@ export default function StudyList() {
             navigate(`/together/upload`);
         }
 
-    const page= (
+        const pageTitle = 'STUDY PAGE';
+        const pageDesc = `멘토링수업을 통하여 학습효과를 낼 수 있으며, 원하는 스터디 그룹을 형성함으로써 함께 성장할 수 있습니다`;
+
+        const page= (
         <StudyDiv>
             <Study>
                 <StudyPicture>
@@ -138,13 +142,16 @@ export default function StudyList() {
                         </StudyLists>
                     </MapBox>
 
-                    <WriteDiv>
-                        <img src={myProfile} alt="나의 프로필 이미지" />
-                        <BoxDiv onClick={goStudyUpload}>
-                            <p> 만들고 싶은 스터디 및 모임이 있으신가요?</p>
-                        </BoxDiv>
-                    </WriteDiv>
-
+                    <WriteSection>
+                        <WriteDiv>
+                            <img src={myProfile} alt="나의 프로필 이미지" />
+                            <BoxDiv onClick={goStudyUpload}>
+                                <p> 만들고 싶은 스터디 및 모임이 있으신가요?</p>
+                            </BoxDiv>
+                        </WriteDiv>
+                        <button onClick={goStudyUpload}> 작성하기 </button>
+                    </WriteSection>
+                    
                     { togetherLists.length ? (
                             <div>
                                 <Ul>
@@ -158,7 +165,6 @@ export default function StudyList() {
                                         </Li>
                                     ))}
                                     <div ref={ref}></div>
-
                                 </Ul>
 
                                 <button onClick={goTogetherUpload}></button>
@@ -177,7 +183,7 @@ export default function StudyList() {
     )
     return (
         <>
-            <Common page={page} />
+            <Common page={page} title={pageTitle} desc={pageDesc} />
         </>
     );
 }
@@ -195,7 +201,6 @@ const Div= styled.div`
     margin-top: -10px;
 `
 const StudyPicture= styled.div`
-
     & img {
         display: block;
         width: 100%;
@@ -214,7 +219,6 @@ const StudyTitle= styled.strong`
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
     
-    /* top: 50%; */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px 20px;
@@ -226,6 +230,23 @@ const StudyDescription= styled.p`
     text-align: center;
     color: #777;
     margin: 10px 15px 0 15px;
+`
+const WriteSection= styled.div`
+    display: flex;
+
+    & button {
+        width: 280px;
+        margin: 0 15px; 
+
+        font-family: "Noto_Sans_KR-400";
+        font-size: 20px;
+        color: #3a3a3a;
+
+        border: 1px solid rgba(0,0,0,0.09);
+        border-radius: 10px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        background-color: #ffff;
+    }
 `
 const WriteDiv= styled.div`
     display: flex;
@@ -256,6 +277,8 @@ const BoxDiv= styled.div`
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
+
+    cursor: pointer;
 
     & p {
         font-family: "Noto_Sans_KR-400";

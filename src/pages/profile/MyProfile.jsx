@@ -54,144 +54,133 @@ export default function MyProfile() {
         MyPostList();
     }, [pages]);
 
-    function logout(){
-        (function resetUser() {
-            dispatch(
-                setMyInfo({
-                    _id: '',
-                    username: '',
-                    isfollow: false,
-                    intro: '',
-                    image: '',
-                    followingCount: '',
-                    following: [],
-                    followerCount: 0,
-                    follower: [],
-                    accountname: '',
-                })
-            )
-        })();
-        localStorage.clear();
-    }
+    const pageTitle = 'MY PROFILE';
+    const pageDesc = `나의 정보와 게시글, 스터디를 확인합니다.`;
 
-const page= (
-    <>
-        <ProfileWrap>
-            <MyProfileDiv>
-                <Title>
-                    <h2>MY PAGE</h2>
-                </Title>
+    const page= (
+        <>
+            <ProfileWrap>
+                <MyProfileDiv>
+                    <Title>
+                        <h2>MY PAGE</h2>
+                    </Title>
 
-                <MypageMenu>
-                    <ul>
-                        <li>
-                            <a href="http://localhost:3000/#/myprofile">Content</a>
-                        </li>
-                        <li>
-                            <a href="http://localhost:3000/#/myprofile/update">Profile</a>
-                        </li>
-                    </ul>
-                </MypageMenu>
-                
-                <Wrap>
-                    <ProfileDiv>
-                        <Img src={user?.image} alt="나의 프로필 이미지" />
+                    <MypageMenu>
+                        <ul>
+                            <li>
+                                <a href="http://localhost:3000/#/myprofile">Content</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:3000/#/myprofile/update">Profile</a>
+                            </li>
+                        </ul>
+                    </MypageMenu>
+                    
+                    <Wrap>
+                        <ProfileDiv>
+                            <Img src={user?.image} alt="나의 프로필 이미지" />
 
-                        <Profiles>
-                            <NameDiv>
-                                <Name>{user?.username}</Name>
-                                <Id>@ {user?.accountname}</Id>
-                            </NameDiv>
+                            <Profiles>
+                                <NameDiv>
+                                    <Name>{user?.username}</Name>
+                                    <Id>@ {user?.accountname}</Id>
+                                </NameDiv>
 
-                            <FollowDiv>
-                                <FollowLink to={`/profile/${user?.accountname}/follower`}>
-                                    <Follow>Follower <strong>{user?.followerCount}</strong></Follow>
-                                </FollowLink>
+                                <FollowDiv>
+                                    <FollowLink to={`/profile/${user?.accountname}/follower`}>
+                                        <Follow>Follower <strong>{user?.followerCount}</strong></Follow>
+                                    </FollowLink>
 
-                                <FollowLink to={`/profile/${user?.accountname}/following`}>
-                                    <Follow>Following <strong>{user?.followingCount}</strong></Follow>
-                                </FollowLink>
-                            </FollowDiv>
-                        </Profiles>
+                                    <FollowLink to={`/profile/${user?.accountname}/following`}>
+                                        <Follow>Following <strong>{user?.followingCount}</strong></Follow>
+                                    </FollowLink>
+                                </FollowDiv>
+                            </Profiles>
 
-                        <Intro>{user?.intro}</Intro> 
-                </ProfileDiv>
-                
+                            <Intro>{user?.intro}</Intro> 
+                    </ProfileDiv>
+                    
 
-                    { postList.length ? (
-                    <PostDiv>
-                        <SubTitle>My Post</SubTitle>
-                        <Ul>
-                            {postList.map((item)=>(
-                                <Li>
-                                    <Div onClick={async(e) => {
-                                        e.stopPropagation();
-                                        navigate(`/post/detail/${item.id}`);
-                                    }}>
-                                        {item?.image ? <Slick images={item?.image} /> : null}
-                                        <p>{item?.content}</p>
-                                    </Div>
-                                </Li>
-                            ))}
-                        </Ul>
+                        { postList.length ? (
+                        <PostDiv>
+                            <SubTitle>My Post</SubTitle>
+                            <Ul>
+                                {postList.map((item)=>(
+                                    <Li>
+                                        <Div onClick={async(e) => {
+                                            e.stopPropagation();
+                                            navigate(`/post/detail/${item.id}`);
+                                        }}>
+                                            {item?.image ? <Slick images={item?.image} /> : null}
+                                            <p>{item?.content}</p>
+                                        </Div>
+                                    </Li>
+                                ))}
+                            </Ul>
 
-                        {count % 12 !== 0 ? null : (
-                            <button
-                                onClick={() => setPages((pages)=> pages + 12)}
-                            > 더보기 </button>
-                        )}
-                    </PostDiv>
-                )
-            :
-            (
-                <Alert>
-                    등록된 게시글이 없습니다.
-                </Alert>
-            )}  
+                            {count % 12 !== 0 ? null : (
+                                <ButtonDiv>
+                                    <Button
+                                        onClick={() => setPages((pages)=> pages + 12)}
+                                    > 더보기 
+                                    </Button>
+                            </ButtonDiv>
+                            )}
+                        </PostDiv>
+                    )
+                :
+                (
+                    <Alert>
+                        등록된 게시글이 없습니다.
+                    </Alert>
+                )}  
 
-                { productList.length ? (
-                    <StudyDiv>
-                        <SubTitle>My Study</SubTitle>
-                        <Ul>
-                            {productList.map((item)=>(
-                                <Li>
-                                    <Div 
-                                    onClick={async(e) => {
-                                        e.stopPropagation();
-                                        navigate(`/together/detail/${item.id}`);
-                                    }}
-                                    >
-                                        <img src={item.itemImage} alt='스터디 대표 이미지'></img>
-                                        <StudyName>{item.itemName}</StudyName>
-                                        <StudyIntro>{item.link}</StudyIntro>
-                                    </Div>
-                                </Li>
-                            ))}
-                        </Ul>
+                    { productList.length ? (
+                        <StudyDiv>
+                            <SubTitle>My Study</SubTitle>
+                            <Ul>
+                                {productList.map((item)=>(
+                                    <Li>
+                                        <Div 
+                                        onClick={async(e) => {
+                                            e.stopPropagation();
+                                            navigate(`/together/detail/${item.id}`);
+                                        }}
+                                        >
+                                            <img src={item.itemImage} alt='스터디 대표 이미지'></img>
+                                            <StudyName>{item.itemName}</StudyName>
+                                            <StudyIntro>{item.link}</StudyIntro>
+                                        </Div>
+                                    </Li>
+                                ))}
+                            </Ul>
 
-                        {count % 12 !== 0 ? null : (
-                            <button
-                                onClick={() => setPages((pages)=> pages + 12)}
-                            > 더보기 </button>
-                        )}
-                    </StudyDiv>
-                )
-            :
-            (
-                <Alert>
-                    등록된 상품이 없습니다.
-                </Alert>
-            )}
-                </Wrap>
-            </MyProfileDiv>
-        </ProfileWrap>
-    </>
-)
-return (
-    <>
-        <Common page={page} />
-    </>
-);
+                            {count % 12 !== 0 ? null : (
+                                <ButtonDiv>
+                                    <Button
+                                        onClick={() => setPages((pages)=> pages + 12)}
+                                    > 더보기 
+                                    </Button>
+                                </ButtonDiv>
+                            )}
+                        </StudyDiv>
+                    )
+                :
+                (
+                    <Alert>
+                        등록된 상품이 없습니다.
+                    </Alert>
+                )}
+                    </Wrap>
+                </MyProfileDiv>
+            </ProfileWrap>
+        </>
+    )
+    return (
+        <>
+            <Common page={page} title={pageTitle} desc={pageDesc} />
+        </>
+    );
 }
 const ProfileWrap= styled.div`
     background-color: #f1f2f3;
@@ -324,7 +313,6 @@ const Alert= styled.p`
     color: #C63D2F;
     padding: 50px 0 30px;
 `
-
 const StudyDiv= styled.div`
     padding: 30px 0;
 `
@@ -378,9 +366,19 @@ const Div= styled.div`
         margin: 30px 0 0 0px;
     }
 `
-
-const ModifyDiv= styled.div``
-const Button= styled.button`` 
-
-const LogoutDiv= styled.div``
-const LogoutLink = styled(Link)``
+const ButtonDiv= styled.div`
+    text-align: center;
+`
+const Button= styled.button`
+    font-family: "Noto_Sans_KR-400";
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    background: #C63D2F;
+    border: 1px solid #C63D2F;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+`

@@ -24,6 +24,7 @@ export default function UserPostRoom() {
             })
             const data= res?.data?.post;
             setPostList([...data]);
+            setCount(data.length);
         }
         axiosPostList();
     }, [pages]);
@@ -47,9 +48,12 @@ export default function UserPostRoom() {
                     </Ul>
 
                     {count % 12 !== 0 ? null : (
-                        <button
-                            onClick={() => setPages((pages)=> pages + 12)}
-                        > 더보기 </button>
+                        <ButtonDiv>
+                            <Button
+                                onClick={() => setPages((pages)=> pages + 12)}
+                            > 더보기 
+                            </Button>
+                        </ButtonDiv>
                     )}
                 </PostDiv>
             )
@@ -123,4 +127,20 @@ const Div= styled.div`
         color: #777;
         line-height: 25px;
     }
+`
+const ButtonDiv= styled.div`
+    text-align: center;
+`
+const Button= styled.button`
+    font-family: "Noto_Sans_KR-400";
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    background: #C63D2F;
+    border: 1px solid #C63D2F;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
 `
