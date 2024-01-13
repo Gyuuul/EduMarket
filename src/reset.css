@@ -64,15 +64,21 @@ ul {
 }
 
 a {
+    cursor: pointer;
     text-decoration: none;
     color: var(--color-black);
 }
 
 button {
     border: none;
+    cursor: pointer;
 }
 
 button:focus,
 input:focus {
     outline: none;
+}
+
+input {
+    cursor: pointer;
 }
