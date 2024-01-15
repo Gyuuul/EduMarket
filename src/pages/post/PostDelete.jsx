@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 import { URL } from '../../lib/apis/constant/path';
@@ -12,7 +11,7 @@ export default function PostDelete() {
     const userToken= localStorage.getItem('Access Token');
 
     async function Delete(){
-        const res= await axios.delete(`${URL}/post/${postId}`, {
+        await axios.delete(`${URL}/post/${postId}`, {
             headers: {
                 "Authorization" : `Bearer ${userToken}`,
                 "Content-type" : "application/json"

@@ -7,7 +7,6 @@ import FollowButton from './FollowButton';
 import getUserProfile from '../../pages/profile/getUserProfile';
 import { setUserInfo } from '../../store/slice/userSlice';
 
-/** 리스트에는 내가 있는게 아님. 다른 유저들이 있어야함 */
 export default function FollowList({ accountname, isfollow, image }) {
     const navigate= useNavigate();
     const dispatch= useDispatch();

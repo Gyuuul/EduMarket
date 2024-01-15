@@ -33,7 +33,7 @@ export default function Heart({ postId, data }) {
         }
     }
     return (
-        <HeartDiv>
+        <>
             <Div>
                 <Button onClick={(e)=>{
                     e.preventDefault();
@@ -46,11 +46,9 @@ export default function Heart({ postId, data }) {
                     {likeCount}
                 </LikeMent>
             </Div>
-        </HeartDiv>
+        </>
     );
 }
-const HeartDiv= styled.div`
-`
 const Div= styled.div`
     display: flex;
 `

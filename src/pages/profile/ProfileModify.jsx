@@ -53,64 +53,64 @@ export default function ProfileModify() {
     const page=  (
         <ModifyWrap>
             <ModifyDiv>
-                    <Wrap>
-                        <ImageDiv>
-                            <img src={image} alt="나의 프로필 이미지"/>
-                            <ProfileImgLabel htmlFor='ProfileImg'>사진 변경</ProfileImgLabel>
-                                <ProfileImgInput 
-                                    onChange={async (e) => {
-                                        setImage(await handleFileUpload(e, image));
-                                    }}
-                                    ref={fileInput} 
-                                    type='file' 
-                                    id='ProfileImg' 
-                                />
-                        </ImageDiv>  
+                <Wrap>
+                    <ImageDiv>
+                        <img src={image} alt="나의 프로필 이미지"/>
+                        <ProfileImgLabel htmlFor='ProfileImg'>사진 변경</ProfileImgLabel>
+                            <ProfileImgInput 
+                                onChange={async (e) => {
+                                    setImage(await handleFileUpload(e, image));
+                                }}
+                                ref={fileInput} 
+                                type='file' 
+                                id='ProfileImg' 
+                            />
+                    </ImageDiv>  
 
-                        <Div>
-                            <ProfileLabel htmlFor="id">아이디</ProfileLabel>
-                            <br/>
-                            <ProfileInput
-                                value={user.accountname}
-                                type= 'text'
-                                id="id"
-                                placeholder='아이디'
-                                maxLength={11}
-                            /> 
-                        </Div>
-                        
-                        <Div>
-                            <ProfileLabel htmlFor="name">이름</ProfileLabel>
-                            <br/>
-                            <ProfileInput
-                                onChange={onEdit}
-                                defaultValue={user.username}
-                                type= 'text'
-                                id="name"
-                                name='userName'
-                                placeholder='닉네임'
-                                required
-                                maxLength={11}
-                            /> 
-                        </Div>
+                    <Div>
+                        <ProfileLabel htmlFor="id">아이디</ProfileLabel>
+                        <br/>
+                        <ProfileInput
+                            value={user.accountname}
+                            type= 'text'
+                            id="id"
+                            placeholder='아이디'
+                            maxLength={11}
+                        /> 
+                    </Div>
+                    
+                    <Div>
+                        <ProfileLabel htmlFor="name">이름</ProfileLabel>
+                        <br/>
+                        <ProfileInput
+                            onChange={onEdit}
+                            defaultValue={user.username}
+                            type= 'text'
+                            id="name"
+                            name='userName'
+                            placeholder='닉네임'
+                            required
+                            maxLength={11}
+                        /> 
+                    </Div>
 
-                        <Div>
-                            <ProfileLabel htmlFor="intro">자기소개</ProfileLabel>
-                            <br/>
-                            <IntroArea
-                                onChange={onEdit} 
-                                defaultValue={user.intro} 
-                                id="intro"
-                                name='userInfo'
-                                style={{resize: 'none'}}
-                                />
-                        </Div>
+                    <Div>
+                        <ProfileLabel htmlFor="intro">자기소개</ProfileLabel>
+                        <br/>
+                        <IntroArea
+                            onChange={onEdit} 
+                            defaultValue={user.intro} 
+                            id="intro"
+                            name='userInfo'
+                            style={{resize: 'none'}}
+                            />
+                    </Div>
 
-                        <ButtonDiv>
-                            <Button onClick={putProfile}>완료</Button>
-                            <Button onClick={back}>취소</Button>
-                        </ButtonDiv>
-                    </Wrap>
+                    <ButtonDiv>
+                        <Button onClick={putProfile}>완료</Button>
+                        <Button onClick={back}>취소</Button>
+                    </ButtonDiv>
+                </Wrap>
             </ModifyDiv>
         </ModifyWrap>
     )

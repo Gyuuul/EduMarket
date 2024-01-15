@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const MapModalWrap = styled.div`
     position: absolute;
-    `;
+`;
 
-    export const MapSection = styled.div`
+export const MapSection = styled.div`
     position: fixed;
     top: 0;
     left: 0;

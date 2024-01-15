@@ -76,10 +76,6 @@ export default function Search() {
             <HomeHeader/>
             <SearchWrap>
                 <SearchDiv>
-                    {isLoading && (
-                            <Loading>
-                            </Loading>
-                        )}
                     <Div>
                         <Input 
                             type="text" 
@@ -95,7 +91,7 @@ export default function Search() {
                                 search= {search}
                                 userList= {userList}
                                 searchQuery={search}
-                            />
+                            /> 
                         )}
                         <div ref={ref} />
                     </List>
@@ -106,11 +102,13 @@ export default function Search() {
 }
 const SearchWrap= styled.div`
     background-color: #f1f2f3;
+    height: 100%;
+    width: 100%;
+    display: block;
 `
 const SearchDiv= styled.div`
     position: relative;
     width: 820px;
-    height: calc(100vh - 350px);
     margin: 0 auto;
     padding: 190px 0 20px;
 `
@@ -130,10 +128,7 @@ const Input= styled.input`
     transform: translateX(-50%);
     background-color: #f1f2f3;
 `
-
-const Loading = styled.div``
 const List = styled.div`
     margin-top: 10px;
     overflow-y: visible;
 `
-const Button = styled.button``

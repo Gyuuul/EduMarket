@@ -6,12 +6,9 @@ export default function LoginHeader() {
     return (
         <>
             <LoginDiv>
-                <Back></Back>
-                <Logo>
-                    <LogoLink to={`/`}>
-                        <h1>EDUKET</h1>
-                    </LogoLink>
-                </Logo>
+                <LogoLink to={`/`}>
+                    <h1>EDUKET</h1>
+                </LogoLink>
             </LoginDiv>
         </>
     )
@@ -20,8 +17,6 @@ const LoginDiv= styled.div`
     width: 600px;
     margin: 0 auto;
 `
-const Back= styled.button``
-const Logo= styled.div``
 const LogoLink= styled(Link)`
 
     & h1 {

@@ -36,18 +36,21 @@ export default function Follower() {
         FollowerList();
     },[]);
 
-        // 무한스크롤 함수
-        const addShowFollower= ()=> {
-            const addFollowerList= followerList.slice(pages * 10, pages * 10 + 10);
-            setShowList([...showList, ...addFollowerList]);
-            setPages(pages + 1);
-        };
-    
-        useEffect(()=> {
-            if(inView){
-                addShowFollower();
-            }
-        },[inView]);
+    // 무한스크롤 함수
+    const addShowFollower= ()=> {
+        const addFollowerList= followerList.slice(pages * 10, pages * 10 + 10);
+        setShowList([...showList, ...addFollowerList]);
+        setPages(pages + 1);
+    };
+
+    useEffect(()=> {
+        if(inView){
+            addShowFollower();
+        }
+    },[inView]);
+
+    const pageTitle = 'FOLLOWER PAGE';
+    const pageDesc = `유저의 팔로워 목록을 확인합니다.`;
 
     const page= (
         <>
@@ -80,7 +83,7 @@ export default function Follower() {
 
     return (
         <>
-            <Common page={page} />
+            <Common page={page} title={pageTitle} desc={pageDesc} />
         </>
     );
 }

@@ -40,12 +40,10 @@ export default function PostItemLi(data) {
                     </Div>
 
                     <SideDiv>
-                        <HeartDiv>
-                            <Heart
-                                data={data}
-                                postId={data.id}
-                            />
-                        </HeartDiv>
+                        <Heart
+                            data={data}
+                            postId={data.id}
+                        />
 
                         <CommentDiv>
                             <Img src={comment} alt="댓글 말풍선 이미지" />
@@ -68,7 +66,6 @@ const ItemDiv= styled.div`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    /* background-color: #f1f2f3; */
     background-color: #ffff;
 `
 const AuthorDiv= styled.div`
@@ -105,8 +102,6 @@ const ItemContent= styled.p`
     color: #3a3a3a;
     line-height: 25px;
     font-family: "Noto_Sans_KR-400";
-`
-const HeartDiv= styled.div`
 `
 const SideDiv= styled.div`
     display: flex;

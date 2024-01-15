@@ -71,7 +71,6 @@ const MainDiv= styled.div`
 `
 const Main= styled.div`
     max-width: 1400px;
-    /* min-width: 1200px; */
     margin: 0 auto;
 `
 const SwiperDiv= styled.div`

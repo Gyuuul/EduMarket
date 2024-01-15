@@ -10,7 +10,7 @@ export default function CommentDelete({commentId, postId}) {
     const userToken= localStorage.getItem('Access Token');
 
     const Delete= async ()=> {
-        const res=  await axios.delete(`${URL}/post/${postId}/comments/${commentId}`,{
+        await axios.delete(`${URL}/post/${postId}/comments/${commentId}`,{
                 headers: {
                     "Authorization" : `Bearer ${userToken}`,
                     "Content-type" : "application/json"

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
-//import Map from '../../components/map/Map'
 
 export const Study=({ itemName, link, setItemName, setLink})=> {
     const inputRef= useRef();

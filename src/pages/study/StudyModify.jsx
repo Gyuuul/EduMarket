@@ -23,7 +23,6 @@ export default function StudyModify() {
         getTogether(productId);
     }, [productId]);
 
-    // 이전에 작성한 상품 제목, 사진, 설명 불러오기
     async function getTogether(){
         try{
             const res= await axios.get(`${URL}/product/detail/${productId}`, {

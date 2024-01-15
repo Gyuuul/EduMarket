@@ -70,23 +70,23 @@ export default function StudyDetail() {
                             </AuthorDiv>
 
                             <ToggleDiv>
-                                    { myAccountName=== userAccountName && (
-                                        <>
-                                            <ToggleImg src={MoreButton} onClick={() => setVisible(!visible)} alt="게시글 삭제 및 수정 토글 이미지" />
-                                            { visible && (
-                                                <>
-                                                    <ToggleWrapper>
-                                                        <div onClick={() => handleStudyModify()}>
-                                                            <P>수정</P>
-                                                        </div>
-                                                        <StudyDelete />
-                                                    </ToggleWrapper>
-                                                </>
-                                            )}
-                                            
-                                        </>
-                                    )}
-                                </ToggleDiv>
+                                { myAccountName=== userAccountName && (
+                                    <>
+                                        <ToggleImg src={MoreButton} onClick={() => setVisible(!visible)} alt="게시글 삭제 및 수정 토글 이미지" />
+                                        { visible && (
+                                            <>
+                                                <ToggleWrapper>
+                                                    <div onClick={() => handleStudyModify()}>
+                                                        <P>수정</P>
+                                                    </div>
+                                                    <StudyDelete />
+                                                </ToggleWrapper>
+                                            </>
+                                        )}
+                                        
+                                    </>
+                                )}
+                            </ToggleDiv>
                         </DetailTop>
                         
                         <Title>{detail?.itemName}</Title>
@@ -167,8 +167,6 @@ const Div= styled.div`
         object-fit: cover;
     }
 `
-const ModifyDiv= styled.div``
-const Button= styled.button``
 const P= styled.p`
     font-family: "Noto_Sans_KR-400";
     font-size: 14px;
@@ -176,7 +174,6 @@ const P= styled.p`
 `
 const ToggleDiv= styled.div`
     position: relative;
-    
 `
 const ToggleWrapper = styled.section`
     position: absolute;

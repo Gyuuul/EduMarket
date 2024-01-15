@@ -45,7 +45,7 @@ export const CommentInput=({getComment, postId})=> {
         e.target.value.length > 0 ? setValid(true) : setValid(false);
     };
 
-    /** 댓글 다는 함수 */
+    /** 댓글 작성 함수 */
     const hadleSubmit= async (e)=> {
         e.preventDefault();
 
@@ -108,7 +108,6 @@ const TextArea= styled.textarea`
     &::placeholder{
         font-size: 20px;
     }
-
 `
 const Button= styled.button`
     font-family: "Noto_Sans_KR-400";

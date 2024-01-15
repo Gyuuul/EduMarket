@@ -30,9 +30,15 @@ export default function Common(props) {
         <>
             <Header /> 
             <StyledMain>
-                <FixedLayout>
+                <div>
+                {props.title ? (
+                        <section>
+                            <h2>{props.title}</h2>
+                            <span>{props.desc}</span>
+                        </section>
+                    ) : null}
                     {props.page}
-                </FixedLayout>
+                </div>
             </StyledMain>
             <Footer /> 
         </>
@@ -42,6 +48,3 @@ export default function Common(props) {
 const StyledMain = styled.main`
     width: 100%;
 `
-
-const FixedLayout = styled.div`
-`;

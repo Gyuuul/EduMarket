@@ -212,8 +212,6 @@ const Author= styled.strong`
     padding: 8px 0px;
     color: #3a3a3a; 
 `
-const Button= styled.button`
-`
 const P= styled.p`
     font-family: "Noto_Sans_KR-400";
     font-size: 14px;

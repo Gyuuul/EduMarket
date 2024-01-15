@@ -50,6 +50,9 @@ export default function Following() {
         }
     },[inView]);
 
+    const pageTitle = 'FOLLOWING PAGE';
+    const pageDesc = `유저의 팔로잉 목록을 확인합니다.`;
+
     const page= (
         <>
             <FollowingDiv>
@@ -81,7 +84,7 @@ export default function Following() {
 
     return (
         <>
-            <Common page={page} />
+            <Common page={page} title={pageTitle} desc={pageDesc} />
         </>
     );
 }

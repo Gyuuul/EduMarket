@@ -9,7 +9,6 @@ import coco from '../../assets/icons/character/coco.jpg'
 import toby from '../../assets/icons/character/toby.jpg'
 import runa from '../../assets/icons/character/runa.jpg'
 
-
 export default function InsideEduket() {
     const character=[
         {
@@ -43,6 +42,10 @@ export default function InsideEduket() {
             introduce: '루나는 어떤 상황에서도 차분하게 대처하는 부드러움의 대명사다. 다른 이들에게 도움을 주는 것을 즐기며, 항상 포근한 미소를 지니고 있어 주변을 화사하게 만든다.'
         },
     ]
+
+    const pageTitle = 'EDUKET의 소개';
+    const pageDesc = `진로 개발과 취업, 자기계발에 필요한 핵심 정보와 지식을 제공하는 플랫폼 EDUKET `;
+    
     const page=  (
         <>
         <Inside>
@@ -68,7 +71,7 @@ export default function InsideEduket() {
                     <SubDescription>
                         <strong>2. 스터디 그룹과 멘토링 수업을 통해 학습능률이 증가합니다.</strong><br/>
                         EDUKET은 멘토링수업을 통하여 직접적인 지도와 피드백을 제공하여 <br/>
-                        학습효과를 낼 수 있으며, 자신이 원하는 스터디 그룹을 형성함으로써 함께 성정할 수 있습니다.<br/>
+                        학습효과를 낼 수 있으며, 자신이 원하는 스터디 그룹을 형성함으로써 함께 성장할 수 있습니다.<br/>
                     </SubDescription>
 
                     <SubDescription>
@@ -97,7 +100,7 @@ export default function InsideEduket() {
     )
     return(
         <>
-            <Common page={page} />
+            <Common page={page} title={pageTitle} desc={pageDesc} />
         </>
     )
 }
@@ -125,8 +128,7 @@ const Title= styled.p`
     font-weight: 600;
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
-    
-    /* top: 50%; */
+
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px 20px;

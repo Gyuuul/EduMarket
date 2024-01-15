@@ -31,14 +31,14 @@ export default function RecFollowList({ accountname, isfollow, image }) {
                     <ProfileId>@{accountname}</ProfileId>
 
                     {myAccountname === accountname ? null : (
-                        <FollowButtonDiv onClick={async()=> {
+                        <div onClick={async()=> {
                             setIsFollow(!isFollow);
                         }}>
                             <FollowButton
                                 accountname={accountname}
                                 isfollow={isFollow}
                             />
-                        </FollowButtonDiv>
+                        </div>
                     )}
             </FollowSection>
         </>
@@ -59,9 +59,7 @@ const FollowSection = styled.section`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-`
-
-const FollowButtonDiv = styled.div`
+    background-color: #ffff;
 `
 const ProfileImage = styled.img`
     width: 150px;

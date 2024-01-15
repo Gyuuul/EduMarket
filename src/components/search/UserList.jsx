@@ -29,14 +29,15 @@ return search && userList?.map((item) => {
         imgSrc = DEFAULT_IMAGE;
     }
     return (
-        <Li key={item._id}>
-            <UserWrap
-                key={item._id}
-                onClick={async () => {
-                    await setUser(item?.accountname);
-                    navigate(`../profile/${item?.accountname}`);
-                }}
-            >
+        <ListSection>
+            <Li key={item._id}>
+                <UserWrap
+                    key={item._id}
+                    onClick={async () => {
+                        await setUser(item?.accountname);
+                        navigate(`../profile/${item?.accountname}`);
+                    }}
+                >
                 <Div>
                     <Img src={imgSrc} alt="유저 프로필 이미지" />
                     <Right>
@@ -80,11 +81,15 @@ return search && userList?.map((item) => {
                             />
                         </FollowButtonDiv>
                 )}
-            </UserWrap>
-        </Li>
+                </UserWrap>
+            </Li>
+        </ListSection>
     );
 });
 }
+const ListSection= styled.div`
+    background-color: #f1f2f3;
+`
 const Div= styled.div`
     display: flex;
     justify-content: space-between;

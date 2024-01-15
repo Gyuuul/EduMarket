@@ -25,7 +25,6 @@ export default function HomeBody() {
     const studyTag= ['스터디/ 모임 개설 ✏️', '온라인 학습 🖥️'];
     const followTag= ['지식공유 💭', '멘토링 학습 👩🏻‍🏫'];
 
-
     let num = 9;
     
     /** Post 불러오기 */
@@ -57,7 +56,7 @@ export default function HomeBody() {
         return 0;
         }
 
-        togetherList()
+        studyFollowList()
             .then((res) => {
                 setStudyList(res.flat(1).sort(postSort).slice(0,9));
         })
@@ -67,9 +66,9 @@ export default function HomeBody() {
     }, [myFollowingList]);
     
         // 팔로잉 사람들의 스터디 리스트 불러오기
-        const togetherList = async () => {
+        const studyFollowList = async () => {
             try {
-                const togetherFollowList = await Promise.all(
+                const studyFollowList = await Promise.all(
                     myFollowingList.map(async (list) => {
                         const res = await axios.get(
                             `${URL}/product/${list.accountname}/?limit=10`,
@@ -83,7 +82,7 @@ export default function HomeBody() {
                         return res.data?.product;
                     })
                 );
-                return togetherFollowList;
+                return studyFollowList;
             } catch (error) {
                 console.log(error);
             }
@@ -92,21 +91,17 @@ export default function HomeBody() {
     return (
     <HomeDiv>
         <Home>
-            <SwiperDiv>
-                <FullImage>
-                    <img src={swiper} alt="홈 페이지의 대표 이미지" />
-                    <MainSwiper>
-                        <img src={frame} alt="홈 페이지의 대표 이미지" />
-                    </MainSwiper>
-                </FullImage>
-            </SwiperDiv>
+            <FullImage>
+                <img src={swiper} alt="홈 페이지의 대표 이미지" />
+                <MainSwiper>
+                    <img src={frame} alt="홈 페이지의 대표 이미지" />
+                </MainSwiper>
+            </FullImage>
 
             <CommonSection>
-                <SwiperDiv>
-                    <SideFullImage>
-                        <img src={post} alt="포스트 페이지 대표 이미지" />
-                    </SideFullImage>
-                </SwiperDiv>
+                <SideFullImage>
+                    <img src={post} alt="포스트 페이지 대표 이미지" />
+                </SideFullImage>
                 <Title>EDUKET POST</Title>
                 <Description>직무별 최신 트렌드에 맞는 정보를 공유해요.</Description>
                 <Tag>
@@ -137,11 +132,9 @@ export default function HomeBody() {
             </CommonSection>
 
             <CommonSection>
-                <SwiperDiv>
-                    <SideFullImage>
-                        <img src={study} alt="스터디 페이지 대표 이미지" />
-                    </SideFullImage>
-                </SwiperDiv>
+                <SideFullImage>
+                    <img src={study} alt="스터디 페이지 대표 이미지" />
+                </SideFullImage>
                 <Title>EDUKET STUDY</Title>
                 <Description>나에게 맞는 스터디와 모임에 참여해요!</Description>
                 <Tag>
@@ -171,11 +164,9 @@ export default function HomeBody() {
             </CommonSection>
 
             <CommonSection>
-                <SwiperDiv>
-                    <SideFullImage>
-                        <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
-                    </SideFullImage>
-                </SwiperDiv>
+                <SideFullImage>
+                    <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
+                </SideFullImage>
                 <Title>EDUKET MENTORING</Title>
                 <Description> 장소의 제약 없이 다양한 분야의 멘토와 멘토링 학습을 할 수 있어요.</Description>
                 <Tag>
@@ -204,8 +195,6 @@ const Home= styled.div`
     margin: 0 auto;
     padding-top: 30px;
 `
-const SwiperDiv= styled.div`
-`
 const FullImage= styled.div`
     position: relative;
 
@@ -220,7 +209,7 @@ const MainSwiper= styled.div`
     position: absolute;
     width: 100%;
     left: 0;
-    top: -5%;
+    top: -5.2%;
 
     & img {
         width: 90%;
@@ -268,8 +257,8 @@ const Tag= styled.div`
     & li {
         list-style: none;
         display: inline-block;
-        line-height: 40px;
-        padding: 0 20px;
+        line-height: 35px;
+        padding: 0 15px;
         font-size: 17px;
         margin: 0 4px 4px 0;
         border-radius: 10px;

@@ -10,7 +10,7 @@ export default function CommentReport({commentId, postId}) {
     const userToken= localStorage.getItem('Access Token');
 
     const Report= async()=> {
-        const res= await axios.post(`${URL}/post/${postId}/comments/${commentId}/report`, [],{
+        await axios.post(`${URL}/post/${postId}/comments/${commentId}/report`, [],{
             headers: {
                 "Authorization" : `Bearer ${userToken}`,
                 "Content-type" : "application/json"

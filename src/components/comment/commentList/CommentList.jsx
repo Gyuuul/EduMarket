@@ -56,12 +56,12 @@ export default function CommentList({postId, comments, setComments}) {
                 comments.map((data)=> {
                     return(
                         <Li key={data.id}>
-                            <ProfileDiv onClick={async()=>{
+                            <div onClick={async()=>{
                                 await setUser(data.author?.accountname);
                                 navigate(`/profile/${data.author?.accountname}`);
                             }}>  
                                 <ProfileImg src={data.author?.image} alt="유저 프로필 이미지" /> 
-                            </ProfileDiv>
+                            </div>
                             <Wrap> 
                                 <Div>
                                     <AuthorDiv>
@@ -94,8 +94,6 @@ const Li= styled.li`
 const Wrap= styled.div`
     flex-grow: 1;
     margin: 30px 0 0 0;
-`
-const ProfileDiv= styled.div`
 `
 const ProfileImg= styled.img`
     width: 32px;

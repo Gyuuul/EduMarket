@@ -40,7 +40,12 @@ export default function FollowButton({accountname, isfollow}) {
 }
 const Button = styled.button`
     font-family: "Noto_Sans_KR-400";
-    width: 205px;
+    width: 170px;
     padding: 12px 16px;
     border-radius: 0.25rem;
+
+    border: 1px solid rgba(0,0,0,0.09);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background-color: #ffff;
 `;

@@ -81,4 +81,4 @@ export const positions = [
         img: 빅데이터,
         page: 'https://place.map.kakao.com/1759724595'
     },
-    ];
+];
