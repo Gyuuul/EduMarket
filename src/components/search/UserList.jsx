@@ -88,7 +88,8 @@ return search && userList?.map((item) => {
 });
 }
 const ListSection= styled.div`
-    background-color: #f1f2f3;
+    height: 100%;
+    width: 100%;
 `
 const Div= styled.div`
     display: flex;

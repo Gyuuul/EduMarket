@@ -101,7 +101,6 @@ export default function Search() {
     )
 }
 const SearchWrap= styled.div`
-    background-color: #f1f2f3;
     height: 100%;
     width: 100%;
     display: block;
@@ -126,7 +125,6 @@ const Input= styled.input`
     font-size: 20px;
     border: none;
     transform: translateX(-50%);
-    background-color: #f1f2f3;
 `
 const List = styled.div`
     margin-top: 10px;
