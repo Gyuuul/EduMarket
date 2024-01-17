@@ -103,7 +103,7 @@ export default function Search() {
 const SearchDiv= styled.div`
     width: 100%;
     max-width: 1400px;
-    margin: 100px auto 50px;
+    margin: 100px auto 0;
     box-sizing: border-box;
     background-color: #f1f2f3;
 `
