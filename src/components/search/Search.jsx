@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import HomeHeader from '../header/HomeHeader';
 import { URL } from '../../lib/apis/constant/path'
 import UserList from './UserList';
+import searchImage from '../../assets/icons/illustration/Search.png'
 
 export default function Search() {
     const [ref, inView]= useInView();
@@ -74,18 +75,16 @@ export default function Search() {
     return (
         <>
             <HomeHeader/>
-            <SearchWrap>
-                <SearchDiv>
-                    <Div>
+            <SearchDiv>
+                <SearchSection>
+                    <List>
                         <Input 
                             type="text" 
                             placeholder='이름, 아이디 검색'
                             value={search}
                             onChange={handle}
                         />
-                    </Div>
-
-                    <List>
+                    
                         {search && userList && (
                             <UserList
                                 search= {search}
@@ -94,25 +93,30 @@ export default function Search() {
                             /> 
                         )}
                         <div ref={ref} />
+                        <Div></Div>
                     </List>
-                </SearchDiv>
-            </SearchWrap>
+                </SearchSection>
+            </SearchDiv>
         </>
     )
 }
-const SearchWrap= styled.div`
-    height: 100%;
-    width: 100%;
-    display: block;
-`
 const SearchDiv= styled.div`
+    width: 100%;
+    max-width: 1400px;
+    margin: 100px auto 50px;
+    box-sizing: border-box;
+    background-color: #f1f2f3;
+`
+const SearchSection= styled.section`
     position: relative;
-    width: 820px;
+    width: 900px;
     margin: 0 auto;
     padding: 190px 0 20px;
 `
 const Div= styled.div`
-    border-bottom: 2px solid #A73121;
+    width: 900px;
+    height: calc(100vh - 100px);
+    background: url(${searchImage}) 50% 100% no-repeat ;
 `
 const Input= styled.input`
     position: absolute;
@@ -122,11 +126,15 @@ const Input= styled.input`
     width: calc(100% - 60px);
     height: 60px;
     margin: 130px auto;
+    padding: 10px;
     font-size: 20px;
     border: none;
     transform: translateX(-50%);
+
+    border-bottom: 2px solid #A73121;
+    background-color: #f1f2f3;
 `
 const List = styled.div`
-    margin-top: 10px;
+    padding: 50px 0 20px;
     overflow-y: visible;
 `
