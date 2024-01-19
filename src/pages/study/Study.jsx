@@ -86,6 +86,7 @@ const Label= styled.label`
 `
 const Input= styled.input`
     font-family: "Noto_Sans_KR-400";
+    font-size: 20px;
     height: 38px;
     line-height: 38px;
     background-color: transparent;

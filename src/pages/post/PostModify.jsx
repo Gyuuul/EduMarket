@@ -300,6 +300,7 @@ const Input= styled.input`
 `
 const TextArea= styled.textarea`
     font-family: "Noto_Sans_KR-400";
+    font-size: 20px;
     resize: none;
     width: 70%;
     height: 500px;
