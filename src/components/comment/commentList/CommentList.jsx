@@ -133,4 +133,5 @@ const CommentDiv= styled.div`
 const Content= styled.p`
     font-family: "Noto_Sans_KR-400";
     font-size: 20px;
+    line-height: 30px;
 `

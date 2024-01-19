@@ -72,6 +72,7 @@ const Div= styled.div`
 const ItemName= styled.p`
     font-family: "Noto_Sans_KR-600";
     font-size: 20px;
+    margin-bottom: 30px;
     color: #3a3a3a;
 `
 const ItemDetail= styled.p`

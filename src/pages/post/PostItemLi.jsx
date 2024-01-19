@@ -61,7 +61,7 @@ const ItemList= styled.li`
     transform: translateY(8%);
 `
 const ItemDiv= styled.div`
-    height: 450px;
+    height: 520px;
     margin: 0 15px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
@@ -106,7 +106,7 @@ const ItemContent= styled.p`
 const SideDiv= styled.div`
     display: flex;
     padding: 0 20px;
-    margin-left: 10px;
+    border-top: 1px solid rgba(0,0,0,0.09);
 `
 const CommentDiv= styled.div`
     display: flex;

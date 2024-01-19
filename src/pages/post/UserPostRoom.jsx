@@ -103,7 +103,7 @@ const Li= styled.li`
 `
 const Div= styled.div`
     width: 300px;
-    height: 350px;
+    height: 400px;
     margin: 0 auto;
     padding: 12px 20px;
 
@@ -115,7 +115,7 @@ const Div= styled.div`
     & img {
         width: 100%;
         height: 200px;
-        margin: 30px 0;
+        margin-bottom: 30px;
         object-fit: cover;
     }
 
@@ -125,7 +125,7 @@ const Div= styled.div`
         font-weight: 500;
         margin-top: 20px;
         color: #777;
-        line-height: 25px;
+        line-height: 28px;
     }
 `
 const ButtonDiv= styled.div`

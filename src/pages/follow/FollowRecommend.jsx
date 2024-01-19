@@ -51,7 +51,8 @@ export default function FollowRecommend() {
                     top: "35%",
                     left: "0",
                     marginLeft: "-10px",
-                    cursor: "pointer"
+                    cursor: "pointer",
+                    zIndex: "10",
                 }}
                 onClick={onClick}
             >

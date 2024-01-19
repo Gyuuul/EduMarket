@@ -173,7 +173,7 @@ const ContentDiv= styled.div`
     font-size: 20px;
     color: #3a3a3a; 
     line-height: 30px;
-    margin: 24px 0 24px 100px;
+    margin: 24px 100px 24px 100px;
     font-family: "Noto_Sans_KR-400";
 `
 const SideDiv= styled.div`

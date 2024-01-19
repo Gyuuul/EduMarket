@@ -45,7 +45,7 @@ export const StudyUpload=() => {
                             'Content-type': 'application/json',
                         },
                     })
-            navigate(`/together/${accountname}`);
+            navigate(`/together`);
             }catch(error){
                 console.log(error);
             }

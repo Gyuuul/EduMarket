@@ -345,7 +345,7 @@ const Li= styled.li`
 `
 const Div= styled.div`
     width: 300px;
-    height: 350px;
+    height: 400px;
     margin: 0 auto;
     padding: 12px 20px;
 
@@ -357,12 +357,12 @@ const Div= styled.div`
     & img {
         width: 100%;
         height: 200px;
-        margin: 30px 0;
         object-fit: cover;
     }
 
     & p {
         font-family: "Noto_Sans_KR-400";
+        line-height: 28px;
         margin: 30px 0 0 0px;
     }
 `

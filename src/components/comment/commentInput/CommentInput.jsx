@@ -99,6 +99,7 @@ const ProfileImg= styled.img`
 `
 const TextArea= styled.textarea`
     font-family: "Noto_Sans_KR-400";
+    font-size: 18px;
     width: 100%;
     height: 26px;
     resize: none;
