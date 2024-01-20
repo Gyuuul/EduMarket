@@ -15,10 +15,6 @@ export default function CommentList({postId, comments, setComments}) {
         const today= new Date();
         const timeValue= new Date(createTime);
 
-        console.log(createTime)
-        console.log(today) //현재 날짜 및 시간
-        console.log(timeValue) //
-
         /** (몇)분 계산 함수 */
         const minuteTime= Math.floor(
             (today.getTime()- timeValue.getTime()) /1000 /60,
