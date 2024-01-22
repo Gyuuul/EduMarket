@@ -11,6 +11,5 @@ export default async function getUserProfile(accountname) {
             "Content-type" : "application/json"
         }
     })
-
     return res.data.profile;
 }
