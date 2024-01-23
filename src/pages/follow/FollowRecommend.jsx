@@ -6,8 +6,8 @@ import { getFollowingList } from '../../components/follow/getFollowingList';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import prev from '../../assets/icons/icon/prev.png'
-import next from '../../assets/icons/icon/next.png'
+import prev from '../../assets/icons/icon/prev.webp'
+import next from '../../assets/icons/icon/next.webp'
 
 export default function FollowRecommend() {
     const [myFollowList, setMyFollowList]= useState([]);

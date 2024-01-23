@@ -3,7 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 import { URL } from '../../lib/apis/constant/path'
-import album from '../../assets/icons/icon/Image-button.png'
+import album from '../../assets/icons/icon/Image-button.webp'
 
 export const StudyImage= ({itemImage, setItemImage})=> {
     const imgStyle= {

@@ -9,7 +9,7 @@ import Common from '../../components/common/Common'
 import { URL } from '../../lib/apis/constant/path';
 import ItemLi from './ItemLi';
 import { getStudyFollowingList } from '../../components/follow/getFollowingList';
-import study from '../../assets/icons/illustration/Study.gif'
+import study from '../../assets/icons/illustration/Study.webp'
 import MapTogether from '../../components/map/Map'
 
 export default function StudyList() {

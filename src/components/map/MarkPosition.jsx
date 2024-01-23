@@ -1,12 +1,12 @@
-import 모각코 from '../../assets/icons/map/모각코.jpg'
-import 회계 from '../../assets/icons/map/회계.jpg'
-import 바이오 from '../../assets/icons/map/바이오.jpg'
-import 디자인 from '../../assets/icons/map/디자인.jpg'
-import 영업 from '../../assets/icons/map/영업.jpg'
-import 면접 from '../../assets/icons/map/면접.jpg'
-import 금융권 from '../../assets/icons/map/금융권.jpg'
-import 패션 from '../../assets/icons/map/패션.jpg'
-import 빅데이터 from '../../assets/icons/map/빅데이터.jpg'
+import 모각코 from '../../assets/icons/map/모각코.webp'
+import 회계 from '../../assets/icons/map/회계.webp'
+import 바이오 from '../../assets/icons/map/바이오.webp'
+import 디자인 from '../../assets/icons/map/디자인.webp'
+import 영업 from '../../assets/icons/map/영업.webp'
+import 면접 from '../../assets/icons/map/면접.webp'
+import 금융권 from '../../assets/icons/map/금융권.webp'
+import 패션 from '../../assets/icons/map/패션.webp'
+import 빅데이터 from '../../assets/icons/map/빅데이터.webp'
 
 export const positions = [
     {

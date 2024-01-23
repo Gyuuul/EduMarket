@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Common from '../../components/common/Common'
-import inside from '../../assets/icons/illustration/Inside.jpg'
-import chalse from '../../assets/icons/character/chalse.jpg'
-import miya from '../../assets/icons/character/miya.jpg'
-import coco from '../../assets/icons/character/coco.jpg'
-import toby from '../../assets/icons/character/toby.jpg'
-import runa from '../../assets/icons/character/runa.jpg'
+import inside from '../../assets/icons/illustration/Inside.webp'
+import chalse from '../../assets/icons/character/chalse.webp'
+import miya from '../../assets/icons/character/miya.webp'
+import coco from '../../assets/icons/character/coco.webp'
+import toby from '../../assets/icons/character/toby.webp'
+import runa from '../../assets/icons/character/runa.webp'
 
 export default function InsideEduket() {
     const character=[

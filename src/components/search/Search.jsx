@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import HomeHeader from '../header/HomeHeader';
 import { URL } from '../../lib/apis/constant/path'
 import UserList from './UserList';
-import searchImage from '../../assets/icons/illustration/Search.png'
+import searchImage from '../../assets/icons/illustration/Search.webp'
 
 export default function Search() {
     const [ref, inView]= useInView();

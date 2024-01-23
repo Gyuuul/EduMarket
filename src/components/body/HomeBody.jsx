@@ -8,12 +8,12 @@ import PostItemLi from '../../pages/post/PostItemLi';
 import ItemLi from '../../pages/study/ItemLi';
 import { URL } from '../../lib/apis/constant/path';
 import FollowRecommend from '../../pages/follow/FollowRecommend';
-import swiper from '../../assets/icons/illustration/Swiper.gif'
-import frame from '../../assets/icons/illustration/frame.png'
-import block from '../../assets/icons/illustration/block.jpg'
-import post from '../../assets/icons/illustration/Post.gif'
-import study from '../../assets/icons/illustration/Study.gif'
-import mentoring from '../../assets/icons/illustration/Mentoring.gif'
+import swiper from '../../assets/icons/illustration/Swiper.webp'
+import frame from '../../assets/icons/illustration/frame.webp'
+import block from '../../assets/icons/illustration/block.webp'
+import post from '../../assets/icons/illustration/Post.webp'
+import study from '../../assets/icons/illustration/Study.webp'
+import mentoring from '../../assets/icons/illustration/Mentoring.webp'
 
 export default function HomeBody() {
     const [postList, setPostList]= useState([]);

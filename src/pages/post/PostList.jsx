@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import Common from '../../components/common/Common'
 import PostItemLi from './PostItemLi';
 import { getPostList } from '../../components/post/getPostList';
-import post from '../../assets/icons/illustration/Post.gif'
+import post from '../../assets/icons/illustration/Post.webp'
 
 export default function PostList() {
     const myProfile= useSelector((state)=> state.user.myInfo.image);

@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 import Common from '../../components/common/Common'
 import { URL as url } from '../../lib/apis/constant/path';
-import album from '../../assets/icons/icon/Image-button.png'
-import deleteBtn from '../../assets/icons/icon/delete-button.png'
+import album from '../../assets/icons/icon/Image-button.webp'
+import deleteBtn from '../../assets/icons/icon/delete-button.webp'
 
 export default function PostModify() {
     const { postId }= useParams();

@@ -1,7 +1,7 @@
 import { MapMarker, CustomOverlayMap } from 'react-kakao-maps-sdk';
 import { MapModal } from './MapModal';
 
-import marker from '../../assets/icons/icon/map-marker.png'
+import marker from '../../assets/icons/icon/map-marker.webp'
 
 const EventMarkerContainer = ({ modalClose, position, onClick, isClicked, title, location, img, page }) => {
     return (

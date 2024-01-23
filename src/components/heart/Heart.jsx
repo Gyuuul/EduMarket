@@ -3,8 +3,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import { URL } from '../../lib/apis/constant/path';
-import heart from '../../assets/icons/icon/Heart.png'
-import fillHeart from '../../assets/icons/icon/FillHeart.png'
+import heart from '../../assets/icons/icon/Heart.webp'
+import fillHeart from '../../assets/icons/icon/FillHeart.webp'
 
 export default function Heart({ postId, data }) {
     const userToken= localStorage.getItem('Access Token');

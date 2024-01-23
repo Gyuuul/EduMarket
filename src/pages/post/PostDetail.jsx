@@ -12,8 +12,8 @@ import Comment from '../../components/comment/Comment';
 import getUserProfile from '../profile/getUserProfile';
 import { setUserInfo } from '../../store/slice/userSlice';
 import Heart from '../../components/heart/Heart';
-import comment from '../../assets/icons/icon/Comment.png'
-import MoreButton from '../../assets/icons/icon/icon-more.png'
+import comment from '../../assets/icons/icon/Comment.webp'
+import MoreButton from '../../assets/icons/icon/icon-more.webp'
 
 export default function PostDetail() {
     const [comments, setComments]= useState([]);

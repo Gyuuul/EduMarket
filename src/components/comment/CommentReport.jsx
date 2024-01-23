@@ -3,7 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import { URL } from '../../lib/apis/constant/path'
-import MoreButton from '../../assets/icons/icon/icon-more.png'
+import MoreButton from '../../assets/icons/icon/icon-more.webp'
 
 export default function CommentReport({commentId, postId}) {
     const [visible, setVisible]= useState(false);

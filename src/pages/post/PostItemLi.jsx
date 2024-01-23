@@ -7,7 +7,7 @@ import Slick from '../../components/slick/Slick';
 import getUserProfile from '../profile/getUserProfile'
 import { setUserInfo } from '../../store/slice/userSlice'
 import Heart from '../../components/heart/Heart';
-import comment from '../../assets/icons/icon/Comment.png'
+import comment from '../../assets/icons/icon/Comment.webp'
 
 export default function PostItemLi(data) {
     const navigate= useNavigate();
@@ -26,7 +26,7 @@ export default function PostItemLi(data) {
                         await setUser(data.author?.accountname);
                         navigate(`/profile/${data.author?.accountname}`);
                     }}> 
-                        <ProfileImg src={data.author?.image} alt='유저 프로필 이미지'/>
+                        <ProfileImg src={data.author?.image} loading="lazy" alt='유저 프로필 이미지'/>
                         <Author>{data.author?.accountname}</Author>
                     </AuthorDiv>
 

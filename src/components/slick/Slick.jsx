@@ -22,7 +22,7 @@ export default function Slick({ images }) {
                     else {
                         return (
                             <ImageWrapper key={idx}>
-                                <Img src={imgSrc} />
+                                <Img src={imgSrc} loading="lazy"/>
                             </ImageWrapper>
                         );
                     }

@@ -10,7 +10,7 @@ import { inputTogether } from '../../store/slice/togetherSlice';
 import StudyDelete from './StudyDelete';
 import getUserProfile from '../profile/getUserProfile';
 import { setUserInfo } from '../../store/slice/userSlice';
-import MoreButton from '../../assets/icons/icon/icon-more.png'
+import MoreButton from '../../assets/icons/icon/icon-more.webp'
 
 export default function StudyDetail() {
     const {productId}= useParams();
