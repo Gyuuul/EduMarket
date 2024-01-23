@@ -30,7 +30,6 @@ export default function PostList() {
             let list= await getPostList();
             setPostList(list);
             setShowList(list.slice(pages * 10, pages * 10 + 10));
-                console.log(list)
             setPages(pages + 1);
         }
         fetchMyPostList();

@@ -89,12 +89,6 @@ const Div= styled.div`
     width: 300px;
     margin: 0 auto;
     padding: 12px 20px;
-
-    & img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
 `
 const ItemContent= styled.p`
     font-size: 14px;

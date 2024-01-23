@@ -22,7 +22,7 @@ export default function Slick({ images }) {
                     else {
                         return (
                             <ImageWrapper key={idx}>
-                                <Img src={imgSrc} loading="lazy"/>
+                                <Img src={imgSrc} />
                             </ImageWrapper>
                         );
                     }
@@ -37,5 +37,7 @@ const ImageWrapper = styled.div`
 `;
 
 const Img = styled.img`
-    width: 200px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 `;

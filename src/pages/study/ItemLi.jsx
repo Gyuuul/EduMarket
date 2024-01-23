@@ -14,6 +14,7 @@ export default function ItemLi({ data }) {
         const user= await getUserProfile(accountname);
         dispatch(setUserInfo(user));
     }
+    console.log(data);
 
     return (
         <>
@@ -31,7 +32,11 @@ export default function ItemLi({ data }) {
                             navigate(`/together/detail/${data.id}`);
                         }}
                     >
-                        <img src={data?.itemImage} alt='스터디 대표 이미지'/>
+                        <picture>
+                            <source srcset={data?.itemImage} type="image/webp" />
+                            {/* <img src="other-image.jpg" /> */}
+                            <img src={data?.itemImage} alt='스터디 대표 이미지'/>
+                        </picture>
 
                         <Div>
                             <ItemName>{data.itemName}</ItemName>
