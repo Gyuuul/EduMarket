@@ -34,7 +34,6 @@ export default function ItemLi({ data }) {
                     >
                         <picture>
                             <source srcset={data?.itemImage} type="image/webp" />
-                            {/* <img src="other-image.jpg" /> */}
                             <img src={data?.itemImage} alt='스터디 대표 이미지'/>
                         </picture>
 

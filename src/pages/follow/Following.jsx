@@ -64,9 +64,7 @@ export default function Following() {
                     <ul>
                         {showList.map((item)=> (
                             <li>
-                                <div>
-                                    <FollowList key={item} {...item}></FollowList>
-                                </div>
+                                <FollowList key={item} {...item}></FollowList>
                             </li>
                         ))}
                         <div ref={ref}></div>

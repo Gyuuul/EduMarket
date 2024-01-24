@@ -47,15 +47,6 @@ export default function UserStudyRoom() {
                                 </Li>
                             ))}
                         </Ul>
-
-                        {count % 12 !== 0 ? null : (
-                            <ButtonDiv>
-                                <Button
-                                    onClick={() => setPages((pages)=> pages + 12)}
-                                > 더보기 
-                                </Button>
-                            </ButtonDiv>
-                        )}
                     </StudyDiv>
                 )
             :
@@ -131,20 +122,4 @@ const Alert= styled.p`
     text-align: center;
     color: #C63D2F;
     padding: 50px 0 30px;
-`
-const ButtonDiv= styled.div`
-    text-align: center;
-`
-const Button= styled.button`
-    font-family: "Noto_Sans_KR-400";
-    width: 300px;
-    height: 60px;
-    line-height: 60px;
-    background: #C63D2F;
-    border: 1px solid #C63D2F;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 400;
-    cursor: pointer;
 `

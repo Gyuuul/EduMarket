@@ -64,7 +64,6 @@ export default function StudyList() {
                 const list= res.flat(1).sort(postSort);
                 setTogetherLists(list);
                 setShowList(list.slice(pages * 10, pages * 10 + 10));
-                // setShowList(list);
                 setPages(pages + 1);
                 console.log(list)
                 console.log(pages)
@@ -149,7 +148,7 @@ export default function StudyList() {
                                 <p> 만들고 싶은 스터디 및 모임이 있으신가요?</p>
                             </BoxDiv>
                         </WriteDiv>
-                        <button onClick={goStudyUpload}> 작성하기 </button>
+                        <button onClick={goStudyUpload} aria-label="스터디 작성 버튼"> 작성하기 </button>
                     </WriteSection>
                     
                     { togetherLists.length ? (
@@ -171,8 +170,8 @@ export default function StudyList() {
                             </div>
                         ) : (
                             <>
-                                <Alert> 등록된 상품이 없습니다.</Alert>
-                                <button onClick={goTogetherUpload}></button>
+                                <Alert> Loading . .</Alert>
+                                <button onClick={goTogetherUpload} aria-label="스터디 작성 버튼"></button>
                             </>
                         )
                         
