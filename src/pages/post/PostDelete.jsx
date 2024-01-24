@@ -23,7 +23,7 @@ export default function PostDelete() {
             <Button onClick={async ()=> {
                 await Delete();
                 navigate(`/myprofile`);
-            }}>
+            }} aria-label="게시글 삭제 버튼">
                 <P>삭제</P>
             </Button>
         </div>

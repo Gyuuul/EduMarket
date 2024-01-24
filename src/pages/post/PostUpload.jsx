@@ -148,8 +148,8 @@ export default function PostUpload() {
                                             onClick= {()=> {
                                                 return DeleteImage(id);
                                             }}
-                                        >
-                                            <img src={deleteBtn} alt="" />
+                                            aria-label="삭제 버튼">
+                                            <img src={deleteBtn} alt="삭제 버튼" />
                                         </DeleteButton>
                                     </Li>
                                 )
@@ -166,7 +166,7 @@ export default function PostUpload() {
                         </>
 
                         <ImageDiv>
-                            <Button onClick={Upload}>게시글 등록하기</Button>
+                            <Button onClick={Upload} aria-label="게시글 등록 버튼">게시글 등록하기</Button>
                             
                             {/* 이미지 등록 버튼 */}
                             <Label htmlFor="input-file">

@@ -107,8 +107,8 @@ export default function ProfileModify() {
                     </Div>
 
                     <ButtonDiv>
-                        <Button onClick={putProfile}>완료</Button>
-                        <Button onClick={back}>취소</Button>
+                        <Button onClick={putProfile} aria-label="완료 버튼">완료</Button>
+                        <Button onClick={back} aria-label="취소 버튼">취소</Button>
                     </ButtonDiv>
                 </Wrap>
             </ModifyDiv>

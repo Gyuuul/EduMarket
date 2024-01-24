@@ -32,7 +32,7 @@ export default function FollowButton({accountname, isfollow}) {
 
     return (
         <>
-            <Button onClick={handle}>
+            <Button onClick={handle} aria-label="팔로우 버튼" >
                 {isfollow ? ' 팔로우' : '팔로잉'}
             </Button>
         </>

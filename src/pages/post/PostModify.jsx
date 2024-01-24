@@ -143,7 +143,9 @@ export default function PostModify() {
         <UploadWrap>
             <UploadDiv>
                 <Wrap>
-                    <Title><H2>POST</H2></Title>
+                    <Title>
+                        <H2>POST</H2>
+                    </Title>
                     <Description> 글과 사진을 자유롭게 공유할 수 있습니다. </Description>
 
                     <Div>
@@ -187,8 +189,8 @@ export default function PostModify() {
                                             onClick= {()=> {
                                                 return DeleteImage(id);
                                             }}
-                                        >
-                                            <img src={deleteBtn} alt="" />
+                                            aria-label="삭제 버튼">
+                                            <img src={deleteBtn} alt="삭제 버튼" />
                                         </DeleteButton>
                                     </Li>
                                 );

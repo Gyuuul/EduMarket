@@ -38,7 +38,7 @@ export default function Heart({ postId, data }) {
                 <Button onClick={(e)=>{
                     e.preventDefault();
                     handle();
-                }}>
+                }} aria-label="좋아요 기능">
                     {isLike ? <Img src={fillHeart} alt="색이 채워진 하트"/>: <Img src={heart} alt="색이 안 채워진 하트"/>}
                 </Button>
 

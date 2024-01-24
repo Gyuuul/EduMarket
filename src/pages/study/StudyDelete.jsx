@@ -24,7 +24,7 @@ export default function StudyDelete() {
             <Button onClick={async ()=> {
                 await Delete();
                 navigate(`/myprofile`)
-            }}>
+            }} aria-label="삭제 버튼">
                 <P>삭제</P>
             </Button>
         </div>

@@ -125,7 +125,7 @@ export default function Login() {
                 </InputDiv>
 
                 <Div>
-                    <Button onClick={handleSubmit}>로그인</Button>
+                    <Button onClick={handleSubmit} aria-label="로그인 버튼">로그인</Button>
                     <SignupDiv>
                         <span>에듀켓의 회원이 아니신가요?</span>
                         <SignupLink to={'/signup'}>회원가입</SignupLink>

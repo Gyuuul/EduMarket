@@ -70,7 +70,7 @@ export const CommentInput=({getComment, postId})=> {
                     onChange= {hadle}
                     onKeyUp={changeButton}
                 />
-                <Button onClick={hadleSubmit}> 게시 </Button>
+                <Button onClick={hadleSubmit} aria-label="댓글 등록"> 게시 </Button>
             </Wrap>
         </Div>
     )

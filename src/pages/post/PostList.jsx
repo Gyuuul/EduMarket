@@ -91,8 +91,8 @@ export default function PostList() {
                         </div>
                     ) : (
                         <>
-                        <Alert> 등록된 글이 없습니다.</Alert>
-                        <button onClick={goPostUpload}></button>
+                        <Alert> Loading . . </Alert>
+                        <button onClick={goPostUpload} aria-label="게시글 작성 버튼"></button>
                     </>
                     )} 
                 </Div>

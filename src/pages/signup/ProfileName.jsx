@@ -167,7 +167,7 @@ export const ProfileName= ()=> {
                 </InputDiv>
 
                 <Div>
-                    <StartButton disabled={start ? null : 'disabled'} onClick={join}>
+                    <StartButton disabled={start ? null : 'disabled'} onClick={join} aria-label="회원가입 버튼">
                             회원가입
                     </StartButton>
                 </Div>

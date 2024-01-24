@@ -67,7 +67,7 @@ export const StudyUpload=() => {
                     </form>
                     <Div>
                         <StudyImage itemImage={itemImage} setItemImage={setItemImage}/>
-                        <Button onClick={handleSubmit} >스터디 등록하기</Button>
+                        <Button onClick={handleSubmit} aria-label="스터디 등록 버튼">스터디 등록하기</Button>
                     </Div>    
                 </Wrap>
             </UploadDiv>

@@ -83,7 +83,7 @@ export default function StudyModify() {
                     </form>
                     <Div>
                         <StudyImage itemImage={itemImage} setItemImage={setItemImage} />
-                        <Button onClick={Modify} >수정하기</Button>
+                        <Button onClick={Modify} aria-label="수정 버튼" >수정하기</Button>
                     </Div> 
                 </Wrap>
             </UploadDiv>
