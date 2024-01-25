@@ -102,10 +102,10 @@ export default function Search() {
 }
 const SearchDiv= styled.div`
     width: 100%;
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: 100px auto 0;
     box-sizing: border-box;
-    background-color: #f1f2f3;
+    background: #f1f2f3;
 `
 const SearchSection= styled.section`
     position: relative;
