@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import styled from 'styled-components';
-
 import { getPostList } from '../post/getPostList';
 import { getStudyFollowingList } from '../follow/getFollowingList';
 import PostItemLi from '../../pages/post/PostItemLi';
@@ -20,31 +19,23 @@ export default function HomeBody() {
     const [myFollowingList, setMyFollowingList]= useState([]);
     const [studyList, setStudyList]= useState([]);
     const userToken = localStorage.getItem('Access Token');
-    
     const postTag= ['BEST POST 🔥', '직무별 꿀팁 공유 🍯'];
     const studyTag= ['스터디/ 모임 개설 ✏️', '온라인 학습 🖥️'];
     const followTag= ['지식공유 💭', '멘토링 학습 👩🏻‍🏫'];
-
     let num = 9;
     
-    /** Post 불러오기 */
     async function fetchMyPostList(){
         const list= await getPostList(num);
         setPostList([ ...list]);
     }
-
-    /** Study 불러오기 */
     async function fetchMyStudyList(){
         const list = await getStudyFollowingList(num);
         setMyFollowingList([ ...list]);
     }
-
     useEffect(()=>{
         fetchMyPostList();
         fetchMyStudyList();
     },[]);
-
-    // 최신 게시물이 위로 가도록
     useEffect(() => {
         function postSort(a, b) {
         if (a.createdAt < b.createdAt) {
@@ -65,7 +56,6 @@ export default function HomeBody() {
         });
     }, [myFollowingList]);
     
-        // 팔로잉 사람들의 스터디 리스트 불러오기
         const studyFollowList = async () => {
             try {
                 const studyFollowList = await Promise.all(
@@ -113,8 +103,7 @@ export default function HomeBody() {
                     </li>
                 ))}
                 </Tag>
-                <MoreButton href='http://localhost:3000/#/post/feed'>+ 게시글 더보기</MoreButton>
-
+                <MoreButton href='http://localhost:3000/#/post/feed' aria-label="+ 게시글 더보기">+ 게시글 더보기</MoreButton>
                 {postList.length && 
                     <Ul>
                         {!postList 
@@ -130,7 +119,6 @@ export default function HomeBody() {
                     </Ul>
                 }
             </CommonSection>
-
             <CommonSection>
                 <SideFullImage>
                     <img src={study} alt="스터디 페이지 대표 이미지" />
@@ -146,8 +134,7 @@ export default function HomeBody() {
                         </li>
                     ))}
                 </Tag>
-                <MoreButton href='http://localhost:3000/#/together'>+ 스터디 더보기</MoreButton>
-                
+                <MoreButton href='http://localhost:3000/#/together' aria-label="+ 스터디 더보기">+ 스터디 더보기</MoreButton>
                 {studyList.length && 
                         <Ul>
                             {!studyList 
@@ -162,7 +149,6 @@ export default function HomeBody() {
                         </Ul>
                     }
             </CommonSection>
-
             <CommonSection>
                 <SideFullImage>
                     <img src={mentoring} alt="멘토링 페이지 대표 이미지" />
@@ -197,7 +183,6 @@ const Home= styled.div`
 `
 const FullImage= styled.div`
     position: relative;
-
     & img {
         display: block;
         width: 82%;
@@ -210,7 +195,6 @@ const MainSwiper= styled.div`
     width: 100%;
     left: 0;
     top: -5.2%;
-
     & img {
         width: 90%;
     }
@@ -250,10 +234,8 @@ const Tag= styled.div`
     display: flex;
     justify-content: center;
     gap: 10px;
-    
     font-family: "Noto_Sans_KR-600";
     margin-top: 10px;
-
     & li {
         list-style: none;
         display: inline-block;
