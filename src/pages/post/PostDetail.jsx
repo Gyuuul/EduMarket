@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import { URL } from '../../lib/apis/constant/path'
 import PostDelete from './PostDelete';
@@ -21,14 +20,12 @@ export default function PostDetail() {
     const [pages, setPages] = useState(0);
     const [userAccountName, setUserAccountName]= useState();
     const [visible, setVisible]= useState(false);
-
     const { postId }= useParams();
     const navigate= useNavigate();
     const dispatch= useDispatch();
     const userToken= localStorage.getItem('Access Token');
     const myAccountname= useSelector((state)=> state.user.myInfo.accountname);
 
-    /* 게시글 상세 함수 */
     const Detail= async ()=> {
         const res= await axios.get(`${URL}/post/${postId}`, {
             headers: {
@@ -40,8 +37,6 @@ export default function PostDetail() {
         setDetail(data);
         setUserAccountName(res.data?.post?.author?.accountname);
     }
-
-    /** 댓글 리스트 불러오기 */
     const getComment= async ()=> {
         const res= await axios.get(`${URL}/post/${postId}/comments/?limit=10&skip=${pages * 10}`, {
             headers: {
@@ -52,21 +47,17 @@ export default function PostDetail() {
         const data= res.data?.comments;
         setComments(data);
     }
-
     useEffect(()=> {
         Detail();
         getComment();
     },[]);
-
     const handlePostModify= ()=> {
         navigate(`/post/modify/${postId}`);
     };
-
     async function setUser(accountname) {
         const user = await getUserProfile(accountname);
         dispatch(setUserInfo(user));
     }
-
     const page= (
         <PostWrap>
             <PostsDetail>
@@ -125,7 +116,6 @@ export default function PostDetail() {
                         </SideDiv>
 
                         <Comment postId={postId} comments={comments} setComments={setComments} getComment={getComment}/>
-                        
                     </PostDiv>
                 )}
                 </PostsDetail>
@@ -162,7 +152,6 @@ const Div= styled.div`
     width: 1000px;
     height: 600px;
     margin: 0 auto;
-
     & img {
         width: 100%;
         height: 600px;

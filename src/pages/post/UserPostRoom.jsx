@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import styled from 'styled-components';
-
 import { URL } from '../../lib/apis/constant/path';
 import Slick from '../../components/slick/Slick';
 
@@ -97,19 +96,16 @@ const Div= styled.div`
     height: 400px;
     margin: 0 auto;
     padding: 12px 20px;
-
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
-
     & img {
         width: 100%;
         height: 200px;
         margin-bottom: 30px;
         object-fit: cover;
     }
-
     & p {
         font-family: "Noto_Sans_KR-400";
         font-size: 17px;

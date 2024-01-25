@@ -22,7 +22,7 @@ export default function Slick({ images }) {
                     else {
                         return (
                             <ImageWrapper key={idx}>
-                                <Img src={imgSrc} />
+                                <Img src={imgSrc} alt="게시글 이미지"/>
                             </ImageWrapper>
                         );
                     }

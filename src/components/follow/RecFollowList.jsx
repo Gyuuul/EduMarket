@@ -2,12 +2,10 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-
 import FollowButton from './FollowButton';
 import getUserProfile from '../../pages/profile/getUserProfile';
 import { setUserInfo } from '../../store/slice/userSlice';
 
-/** 리스트에는 내가 있는게 아님. 다른 유저들이 있어야함 */
 export default function RecFollowList({ accountname, isfollow, image }) {
     const navigate= useNavigate();
     const dispatch= useDispatch();
@@ -51,7 +49,6 @@ const FollowSection = styled.section`
     justify-content: center;
     align-items: center;
     gap: 25px;
-
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px 30px;
