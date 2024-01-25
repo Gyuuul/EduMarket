@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-
 import Slick from '../../components/slick/Slick';
 import getUserProfile from '../profile/getUserProfile'
 import { setUserInfo } from '../../store/slice/userSlice'
@@ -17,42 +16,43 @@ export default function PostItemLi(data) {
         const user = await getUserProfile(accountname);
         dispatch(setUserInfo(user));
     }
-
     return (
         <>
-            <ItemList>
-                <ItemDiv>
-                    <AuthorDiv onClick={async()=>{
-                        await setUser(data.author?.accountname);
-                        navigate(`/profile/${data.author?.accountname}`);
-                    }}> 
-                        <ProfileImg src={data.author?.image} loading="lazy" alt='유저 프로필 이미지'/>
-                        <Author>{data.author?.accountname}</Author>
-                    </AuthorDiv>
+            <ul>
+                <ItemList>
+                    <ItemDiv>
+                        <AuthorDiv onClick={async()=>{
+                            await setUser(data.author?.accountname);
+                            navigate(`/profile/${data.author?.accountname}`);
+                        }}> 
+                            <ProfileImg src={data.author?.image} loading="lazy" alt='유저 프로필 이미지'/>
+                            <Author>{data.author?.accountname}</Author>
+                        </AuthorDiv>
 
-                    <Div onClick={async(e) => {
-                        e.stopPropagation();
-                        navigate(`/post/detail/${data.id}`);
-                    }}> 
-                        {data?.image ? <Slick images={data?.image} /> : null}
+                        <Div onClick={async(e) => {
+                            e.stopPropagation();
+                            navigate(`/post/detail/${data.id}`);
+                        }}> 
+                            {data?.image ? <Slick images={data?.image} /> : null}
 
-                        <ItemContent >{data?.content}</ItemContent>
-                    </Div>
+                            <ItemContent >{data?.content}</ItemContent>
+                        </Div>
 
-                    <SideDiv>
-                        <Heart
-                            data={data}
-                            postId={data.id}
-                        />
+                        <SideDiv>
+                            <Heart
+                                data={data}
+                                postId={data.id}
+                            />
 
-                        <CommentDiv>
-                            <Img src={comment} alt="댓글 말풍선 이미지" />
-                            <CommentMent>{data.comments.length}</CommentMent>
-                        </CommentDiv>
-                    </SideDiv>
+                            <CommentDiv>
+                                <Img src={comment} alt="댓글 말풍선 이미지" />
+                                <CommentMent>{data.comments.length}</CommentMent>
+                            </CommentDiv>
+                        </SideDiv>
 
-                </ItemDiv>
-            </ItemList>
+                    </ItemDiv>
+                </ItemList>
+            </ul>
         </>
     )
 }

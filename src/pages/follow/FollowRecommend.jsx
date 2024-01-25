@@ -75,56 +75,39 @@ export default function FollowRecommend() {
         nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
     };
-
     useEffect(()=>{
-        // 나의 팔로잉 목록 불러오기 
         async function fetchMyFollowList(){
             let list= await getFollowingList(myAccountName);
             setMyFollowList((prevValue)=> [...prevValue, ...list]);
         }
         fetchMyFollowList();
     }, [])
-
-    
     const Rec= async()=> {
         const duplicatedFollowSet= [];
-        
         for(const item of myFollowList) {
-
         let list= await getFollowingList(item.accountname);
-
         list.forEach((item)=> {
-        
             let flag= true;
-            
-            // 내 팔로잉 리스트에 포함 되어있으면 제외
             for(let i = 0; i < [...myFollowList].length; i++){
                 if ([...myFollowList][i]._id === item._id) {
                     flag= false;
                     break;
                 }
             }
-
-            // 나인 경우 제외
             if(myAccountName === item.accountname){
                 flag= false;
             }
-
-
-            // 이미 추천 리스트에 포함된 경우 제외
             for(let i = 0; i < [...duplicatedFollowSet].length; i++){
                 if([...duplicatedFollowSet][i]._id === item._id){
                     flag= false;
                     break;
                 }
             }
-            
             flag && duplicatedFollowSet.push(item)
         })
         setAllDerivedRecFollowingList([...duplicatedFollowSet]);
         }
     }
-
     useEffect(()=>{
         Rec();
     }, [myFollowList])
@@ -132,20 +115,20 @@ export default function FollowRecommend() {
     return (
             <FollowSection>
                 { allDerivedRecFollowingList.length ? (
-                        <Ul>
+                        
                             <Sliders {...settings}>
                             {! allDerivedRecFollowingList 
                             ? []
                             : allDerivedRecFollowingList.map((myFollowingItem)=> (
-                                <Li>
+                                <Ul><Li>
                                     <RecFollowList
                                         key={myFollowingItem}
                                         {...myFollowingItem}
                                     ></RecFollowList>
-                                </Li>
+                                </Li></Ul>
                             )).slice(0,31)}
                             </Sliders>
-                        </Ul>
+                        
                 ) : (
                     <p>추천할 사람 없음</p>
                 )}

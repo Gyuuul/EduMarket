@@ -30,59 +30,61 @@ return search && userList?.map((item) => {
     }
     return (
         <ListSection>
-            <Li key={item._id}>
-                <UserWrap
-                    key={item._id}
-                    onClick={async () => {
-                        await setUser(item?.accountname);
-                        navigate(`../profile/${item?.accountname}`);
-                    }}
-                >
-                <Div>
-                    <Img src={imgSrc} alt="유저 프로필 이미지" />
-                    <Right>
-                        <Name>
-                            {item.username.includes(searchQuery) ? (
-                                <>
-                                    {item.username.split(searchQuery)[0]}
-                                    <span style={{ color: '#C63D2F' }}>
-                                        {searchQuery}
-                                    </span>
-                                    {item.username.split(searchQuery)[1]}
-                                </>
-                            ) : (
-                                item.username
-                            )}
-                        </Name>
-                        <Accountname>
-                            @
-                            {item.accountname.includes(searchQuery) ? (
-                                <>
-                                    {item.accountname.split(searchQuery)[0]}
-                                    <span style={{ color: '#C63D2F' }}>
-                                        {searchQuery}
-                                    </span>
-                                    {item.accountname.split(searchQuery)[1]}
-                                </>
-                            ) : (
-                                item.accountname
-                            )}
-                        </Accountname>
-                    </Right>
-                </Div>
-            
-                {myAccountname === item?.accountname ? null : (
-                        <FollowButtonDiv onClick={async()=> {
-                            setIsFollow(!isFollow);
-                        }}>
-                            <FollowButton
-                                accountname={item.accountname}
-                                isfollow={isFollow}
-                            />
-                        </FollowButtonDiv>
-                )}
-                </UserWrap>
-            </Li>
+            <ul>
+                <Li key={item._id}>
+                    <UserWrap
+                        key={item._id}
+                        onClick={async () => {
+                            await setUser(item?.accountname);
+                            navigate(`../profile/${item?.accountname}`);
+                        }}
+                    >
+                    <Div>
+                        <Img src={imgSrc} alt="유저 프로필 이미지" />
+                        <Right>
+                            <Name>
+                                {item.username.includes(searchQuery) ? (
+                                    <>
+                                        {item.username.split(searchQuery)[0]}
+                                        <span style={{ color: '#C63D2F' }}>
+                                            {searchQuery}
+                                        </span>
+                                        {item.username.split(searchQuery)[1]}
+                                    </>
+                                ) : (
+                                    item.username
+                                )}
+                            </Name>
+                            <Accountname>
+                                @
+                                {item.accountname.includes(searchQuery) ? (
+                                    <>
+                                        {item.accountname.split(searchQuery)[0]}
+                                        <span style={{ color: '#C63D2F' }}>
+                                            {searchQuery}
+                                        </span>
+                                        {item.accountname.split(searchQuery)[1]}
+                                    </>
+                                ) : (
+                                    item.accountname
+                                )}
+                            </Accountname>
+                        </Right>
+                    </Div>
+                
+                    {myAccountname === item?.accountname ? null : (
+                            <FollowButtonDiv onClick={async()=> {
+                                setIsFollow(!isFollow);
+                            }}>
+                                <FollowButton
+                                    accountname={item.accountname}
+                                    isfollow={isFollow}
+                                />
+                            </FollowButtonDiv>
+                    )}
+                    </UserWrap>
+                </Li>
+            </ul>
         </ListSection>
     );
 });

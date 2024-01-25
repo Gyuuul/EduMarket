@@ -18,32 +18,34 @@ export default function ItemLi({ data }) {
 
     return (
         <>
-        <ItemList>
-            <ItemDiv>
-                    <AuthorDiv onClick={async ()=>{
-                        await setUser(data?.author?.accountname);
-                        navigate(`/profile/${data?.author?.accountname}`);
-                    }}>
-                        <Author>@ {data?.author?.accountname}</Author>
-                    </AuthorDiv>
+        <ul>
+            <ItemList>
+                <ItemDiv>
+                        <AuthorDiv onClick={async ()=>{
+                            await setUser(data?.author?.accountname);
+                            navigate(`/profile/${data?.author?.accountname}`);
+                        }}>
+                            <Author>@ {data?.author?.accountname}</Author>
+                        </AuthorDiv>
 
-                    <ContentDiv
-                        onClick={() => {
-                            navigate(`/together/detail/${data.id}`);
-                        }}
-                    >
-                        <picture>
-                            <source srcset={data?.itemImage} type="image/webp" />
-                            <img src={data?.itemImage} alt='스터디 대표 이미지'/>
-                        </picture>
+                        <ContentDiv
+                            onClick={() => {
+                                navigate(`/together/detail/${data.id}`);
+                            }}
+                        >
+                            <picture>
+                                <source srcset={data?.itemImage} type="image/webp" />
+                                <img src={data?.itemImage} alt='스터디 대표 이미지'/>
+                            </picture>
 
-                        <Div>
-                            <ItemName>{data.itemName}</ItemName>
-                            <ItemDetail>{data.link}</ItemDetail>
-                        </Div>    
-                    </ContentDiv>
-                </ItemDiv>
-            </ItemList>
+                            <Div>
+                                <ItemName>{data.itemName}</ItemName>
+                                <ItemDetail>{data.link}</ItemDetail>
+                            </Div>    
+                        </ContentDiv>
+                    </ItemDiv>
+                </ItemList>
+            </ul>
         </>
     );
 }
