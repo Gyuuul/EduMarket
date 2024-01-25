@@ -7,18 +7,18 @@ export default function MainHeader() {
         <HeaderStyle>
             <Nav1>
                 <LogHaeder>
-                    <Logo to={`/`}>
+                    <Logo to={`/`} aria-label="홈">
                         EDUKET
                     </Logo>
                     <Ul1>
                         <Li1>
-                            <Link1 to={`/login`}>
+                            <Link1 to={`/login`} aria-label="로그인 페이지">
                                 login
                             </Link1>
                         </Li1>
 
                         <Li1>
-                            <Link1 to={`/signup`}>
+                            <Link1 to={`/signup`} aria-label="회원가입 페이지">
                                 join
                             </Link1>
                         </Li1>    

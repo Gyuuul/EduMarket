@@ -3,28 +3,24 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import PostItemLi from './PostItemLi';
 import { getPostList } from '../../components/post/getPostList';
-import post from '../../assets/icons/illustration/Post.webp'
+import post from '../../assets/icons/illustration/Post.webp';
+import postResize from '../../assets/icons/illustration/Post_resized.webp'
 
 export default function PostList() {
     const myProfile= useSelector((state)=> state.user.myInfo.image);
     const navigate= useNavigate();
     const [ref, inView]= useInView();
-
     // 전체 게시글
     const [postList, setPostList]= useState([]);
     // 사용자에게 보여지는 게시글
     const [showList, setShowList]= useState([]);
-
     const [pages, setPages]= useState(0);
-
     const goPostUpload= ()=> {
         navigate('/post/upload');
     }
-
     useEffect(()=>{
         async function fetchMyPostList(){
             let list= await getPostList();
@@ -34,34 +30,25 @@ export default function PostList() {
         }
         fetchMyPostList();
     },[]);
-
-    // 무한스크롤 함수
     const addShowPost= ()=> {
         const addPostList= postList.slice(pages * 10, pages * 10 + 10);
         setShowList([...showList, ...addPostList]);
         setPages(pages + 1);
     };
-
     useEffect(()=> {
         if(inView){
             addShowPost();
         }
     },[inView]);
-
     const pageTitle = 'POST PAGE';
     const pageDesc = `EDUKET은 다양한 분야의 이야기를 공유함으로써 취업준비생, 신입부터 경력자까지 현업에서의 이야기를 듣고 학습할 수 있습니다.`;
-
     const page= (
         <PostDiv>
             <Post>
-                <PostPicture>
-                    <img src={post} alt="포스트 페이지 대표 이미지" />
-                </PostPicture>
+                <PostPicture><img src={post} srcSet={postResize}  alt="포스트 페이지 대표 이미지" /></PostPicture>
                 <PostTitle>EDUKET POST</PostTitle>
-
                 <Div>
                     <PostDescription>각 분야에서 반응이 좋았던 게시물을 만나보세요.</PostDescription>
-                    
                     <WriteSection>  
                         <WriteDiv>
                             <img src={myProfile} alt="나의 프로필 이미지" />
@@ -69,37 +56,36 @@ export default function PostList() {
                                 <p> 직무에 대해서 나누고 싶은 이야기가 있으신가요?</p>
                             </BoxDiv>
                         </WriteDiv>
-                        <button onClick={goPostUpload}> 작성하기 </button>
+                        <button onClick={goPostUpload} aria-label="작성하기"> 작성하기 </button>
                     </WriteSection>  
-
                     {postList.length ? (
-                        <div>
-                            <Ul>
+                        <>
+                            <ListDiv>
                                 {postList &&
                                     showList.map((item)=> (
-                                        <Li>
-                                            <PostItemLi
-                                                key={item.id}
-                                                {...item}
-                                            ></PostItemLi>
-                                        </Li>
+                                        <Ul>
+                                            <li>
+                                                <PostItemLi
+                                                    key={item.id}
+                                                    {...item}
+                                                ></PostItemLi>
+                                            </li>
+                                        </Ul>
                                     ))}
                                 <div ref={ref}></div>
-                            </Ul>
-
-                            <button onClick={goPostUpload}></button>
-                        </div>
+                            </ListDiv>
+                            <button onClick={goPostUpload} aria-label=" 게시글 작성"></button>
+                        </>
                     ) : (
                         <>
                         <Alert> Loading . . </Alert>
-                        <button onClick={goPostUpload} aria-label="게시글 작성 버튼"></button>
+                        <button onClick={goPostUpload} aria-label="게시글 작성"></button>
                     </>
                     )} 
                 </Div>
             </Post>
         </PostDiv>
     )
-
     return (
         <>
             <Common page={page} title={pageTitle} desc={pageDesc} />
@@ -109,6 +95,8 @@ export default function PostList() {
 const PostDiv= styled.div`
     background-color: #f1f2f3;
     padding: 30px 0;
+    width: 100%;
+    height: 100%;
 `
 const Post= styled.div`
     position: relative;
@@ -131,13 +119,11 @@ const PostPicture= styled.div`
 const PostTitle= styled.p`
     position: absolute;
     width: fit-content;
-
     font-family: "Frutiger-lt-pro-600";
     font-size: 35px;
     font-weight: 600;
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
-    
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px 20px;
@@ -152,15 +138,12 @@ const PostDescription= styled.p`
 `
 const WriteSection= styled.div`
     display: flex;
-
     & button {
         width: 280px;
         margin: 0 15px; 
-
         font-family: "Noto_Sans_KR-400";
         font-size: 20px;
         color: #3a3a3a;
-
         border: 1px solid rgba(0,0,0,0.09);
         border-radius: 10px;
         box-shadow: 0 1px 4px rgba(0,0,0,0.04);
@@ -171,16 +154,13 @@ const WriteDiv= styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-
     width: 96%;
     padding: 10px;
     margin: 0 15px;
-
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
-
     & img {
         width: 60px;
         height: 60px;
@@ -191,21 +171,18 @@ const WriteDiv= styled.div`
 const BoxDiv= styled.div`
     width: 90%;
     padding: 15px;
-
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
-
     cursor: pointer;
-
     & p {
         font-family: "Noto_Sans_KR-400";
         font-size: 20px;
         color: #94A3B8;
     }
 `
-const Ul= styled.ul`
+const ListDiv= styled.div`
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -213,7 +190,7 @@ const Ul= styled.ul`
     margin: 0 0;
     line-height: 0;
 `
-const Li= styled.li`
+const Ul= styled.ul`
     flex: 0 0 33.33333%;
     margin: 0 0 50px 0;
     padding: 0 0 0;

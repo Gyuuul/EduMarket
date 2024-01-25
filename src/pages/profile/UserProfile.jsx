@@ -47,11 +47,11 @@ export default function UserProfile() {
                                 </NameDiv>
 
                                 <FollowDiv>
-                                        <FollowLink to={`/profile/${accountname}/follower`}>
+                                        <FollowLink to={`/profile/${accountname}/follower`} aria-label="팔로우 페이지">
                                             <Follow>Follower <strong>{profile?.followerCount}</strong></Follow>
                                         </FollowLink>
 
-                                        <FollowLink to={`/profile/${accountname}/following`}>
+                                        <FollowLink to={`/profile/${accountname}/following`} aria-label="팔로잉 페이지">
                                             <Follow>Following <strong>{profile?.followingCount}</strong></Follow>
                                         </FollowLink>
                                 </FollowDiv>

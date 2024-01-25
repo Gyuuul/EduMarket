@@ -5,7 +5,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import Common from '../../components/common/Common';
-import { setMyInfo } from '../../store/slice/userSlice'
 import { URL } from '../../lib/apis/constant/path';
 import Slick from '../../components/slick/Slick';
 
@@ -87,11 +86,11 @@ export default function MyProfile() {
                                 </NameDiv>
 
                                 <FollowDiv>
-                                    <FollowLink to={`/profile/${user?.accountname}/follower`}>
+                                    <FollowLink to={`/profile/${user?.accountname}/follower`} aria-label="팔로우 페이지">
                                         <Follow>Follower <strong>{user?.followerCount}</strong></Follow>
                                     </FollowLink>
 
-                                    <FollowLink to={`/profile/${user?.accountname}/following`}>
+                                    <FollowLink to={`/profile/${user?.accountname}/following`} aria-label="팔로잉 페이지">
                                         <Follow>Following <strong>{user?.followingCount}</strong></Follow>
                                     </FollowLink>
                                 </FollowDiv>

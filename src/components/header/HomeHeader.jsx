@@ -60,19 +60,19 @@ export default function HomeHeader() {
                     <NavBody>
                         <Ul2>
                             <Li2>
-                                <Link2 to={`/eduketinfo`}>
+                                <Link2 to={`/eduketinfo`} aria-label="INSIDE EDUKET">
                                     INSIDE EDUKET
                                 </Link2>
                             </Li2>
 
                             <Li2>
-                                <Link2 to={`/post/feed`}>
+                                <Link2 to={`/post/feed`} aria-label="POST">
                                     POST
                                 </Link2>
                             </Li2>
 
                             <Li2>
-                                <Link2 to={`/together`}>
+                                <Link2 to={`/together`} aria-label="STUDY">
                                     STUDY
                                 </Link2>
                             </Li2>    

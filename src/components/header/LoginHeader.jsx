@@ -6,7 +6,7 @@ export default function LoginHeader() {
     return (
         <>
             <LoginDiv>
-                <LogoLink to={`/`}>
+                <LogoLink to={`/`} aria-label="로그인 페이지">
                     <h1>EDUKET</h1>
                 </LogoLink>
             </LoginDiv>

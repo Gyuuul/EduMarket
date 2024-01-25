@@ -102,7 +102,7 @@ export const EmailPassword= ()=> {
                 </InputDiv>
                 
                 <Div>
-                    <NextButton disabled={next? null: 'disabled'} onClick={toProfilename} aria-label="다음 버튼"> 
+                    <NextButton disabled={next? null: 'disabled'} onClick={toProfilename} aria-label="다음"> 
                         다음
                     </NextButton>
                 </Div>

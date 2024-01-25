@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
@@ -107,8 +107,8 @@ export default function ProfileModify() {
                     </Div>
 
                     <ButtonDiv>
-                        <Button onClick={putProfile} aria-label="완료 버튼">완료</Button>
-                        <Button onClick={back} aria-label="취소 버튼">취소</Button>
+                        <Button onClick={putProfile} aria-label="완료">완료</Button>
+                        <Button onClick={back} aria-label="취소">취소</Button>
                     </ButtonDiv>
                 </Wrap>
             </ModifyDiv>

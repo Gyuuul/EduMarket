@@ -55,7 +55,9 @@ export const StudyUpload=() => {
         <UploadWrap>
             <UploadDiv>
                 <Wrap>
-                    <Title><h2>STUDY</h2></Title>
+                    <Title>
+                        <h2>STUDY</h2>
+                    </Title>
                     <Description>만들고 싶은 스터디를 소개해주세요.</Description>
                     <form method='POST' encType='multipart/form-data' onSubmit={handleSubmit}>
                         <Study
@@ -67,7 +69,7 @@ export const StudyUpload=() => {
                     </form>
                     <Div>
                         <StudyImage itemImage={itemImage} setItemImage={setItemImage}/>
-                        <Button onClick={handleSubmit} aria-label="스터디 등록 버튼">스터디 등록하기</Button>
+                        <Button onClick={handleSubmit} aria-label="스터디 등록 ">스터디 등록하기</Button>
                     </Div>    
                 </Wrap>
             </UploadDiv>

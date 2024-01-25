@@ -2,7 +2,6 @@ import React, { useState,useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import { URL } from '../../lib/apis/constant/path';
 import album from '../../assets/icons/icon/Image-button.webp'
@@ -17,15 +16,12 @@ export default function PostUpload() {
     const [uploadMessage, setUploadMessage]= useState('');
     const inputRef= useRef(null);
     const navigate= useNavigate();
-
     const data = {
         post: {
             content: '',
             image: '',
         },
     };
-
-    /* 이미지 업로드 함수 */
     async function UploadImage(file){
         const formData= new FormData();
         formData.append('image', file);
@@ -35,14 +31,10 @@ export default function PostUpload() {
 
         return imageName;
     }
-
-    /* 이미지 띄워주는 함수 */
         const ViewImage= (e)=>{
         let fileUrl= [...showImage];
         let files= [...postImage]
         const fileArray= e.target.files;
-
-        // 이미지 사이즈 10MB 제한
         const maxSize= 10 * 1024 * 1024;
         let TotalSize= 0;
 
@@ -120,7 +112,9 @@ export default function PostUpload() {
         <UploadWrap>
             <UploadDiv>
                 <Wrap>
-                    <Title><h2>POST</h2></Title>
+                    <Title>
+                        <h2>POST</h2>
+                    </Title>
                     <Description> 글과 사진을 자유롭게 공유할 수 있습니다. </Description>
                     
                     <Div>
@@ -137,25 +131,22 @@ export default function PostUpload() {
                                 }
                             }}
                         />
-
-                        {/* 이미지 미리보기 */}
                         <Ul>
                             {showImage.map((image, id)=> {
                                 return(
                                     <Li key={id}>
-                                        <img key={id} src={image} />
+                                        <img key={id} src={image} alt="게시글 이미지"/>
                                         <DeleteButton
                                             onClick= {()=> {
                                                 return DeleteImage(id);
                                             }}
                                             aria-label="삭제 버튼">
-                                            <img src={deleteBtn} alt="삭제 버튼" />
+                                            <img src={deleteBtn} alt="삭제" />
                                         </DeleteButton>
                                     </Li>
                                 )
                             })}
                         </Ul>
-
                         <>
                             {uploadMessage === '' 
                             ? 
@@ -164,13 +155,10 @@ export default function PostUpload() {
                             (<Alert>{uploadMessage}</Alert>)    
                             }
                         </>
-
                         <ImageDiv>
-                            <Button onClick={Upload} aria-label="게시글 등록 버튼">게시글 등록하기</Button>
-                            
-                            {/* 이미지 등록 버튼 */}
+                            <Button onClick={Upload} aria-label="게시글 등록">게시글 등록하기</Button>
                             <Label htmlFor="input-file">
-                                <img src={album} alt="" />
+                                <img src={album} alt="앨범 이미지" />
                             </Label>
                             <Input
                                 id="input-file"
@@ -218,7 +206,6 @@ const Title= styled.div`
     color: #2b2b2b;
     border: none;
     padding-bottom: 0;
-
     &h2{
         display: inline-block;
         color: #2b2b2b;
@@ -261,7 +248,6 @@ const Input= styled.input`
 const TextArea= styled.textarea`
     font-family: "Noto_Sans_KR-400";
     font-size: 20px;
-
     resize: none;
     width: 70%;
     height: 500px;
@@ -277,7 +263,6 @@ const Li= styled.li`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    
     & img {
         width: 280px;
         height: 180px;

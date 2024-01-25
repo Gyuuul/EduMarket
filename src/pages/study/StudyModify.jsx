@@ -71,7 +71,9 @@ export default function StudyModify() {
         <UploadWrap>
             <UploadDiv>
                 <Wrap>
-                    <Title><H2>STUDY</H2></Title>
+                    <Title>
+                        <H2>STUDY</H2>
+                    </Title>
                     <Description>만들고 싶은 스터디를 소개해주세요.</Description>
                     <form method='POST' encType='multipart/form-data' onSubmit={Modify}>
                         <Study
@@ -83,7 +85,7 @@ export default function StudyModify() {
                     </form>
                     <Div>
                         <StudyImage itemImage={itemImage} setItemImage={setItemImage} />
-                        <Button onClick={Modify} aria-label="수정 버튼" >수정하기</Button>
+                        <Button onClick={Modify} aria-label="수정" >수정하기</Button>
                     </Div> 
                 </Wrap>
             </UploadDiv>

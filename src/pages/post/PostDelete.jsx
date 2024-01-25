@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
-
 import { URL } from '../../lib/apis/constant/path';
 import styled from 'styled-components';
 
@@ -19,14 +18,14 @@ export default function PostDelete() {
         })
     }
     return (
-        <div>
+        <>
             <Button onClick={async ()=> {
                 await Delete();
                 navigate(`/myprofile`);
-            }} aria-label="게시글 삭제 버튼">
+            }} aria-label="게시글 삭제">
                 <P>삭제</P>
             </Button>
-        </div>
+        </>
     )
 }
 const Button= styled.button`

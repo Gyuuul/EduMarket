@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import { URL as url } from '../../lib/apis/constant/path';
 import album from '../../assets/icons/icon/Image-button.webp'
@@ -18,32 +17,23 @@ export default function PostModify() {
     const [uploadMessage, setUploadMessage]= useState('');
     const inputRef= useRef(null);
     const navigate= useNavigate();
-    
     const data = {
         post: {
             content: '',
             image: '',
         },
     };
-
-    /* 이미지 업로드 함수 */
     async function UploadImage(file) {
         const formData = new FormData();
         formData.append('image', file);
-
         const response = await axios.post(`${url}/image/uploadfile`, formData);
         const imgName = `${url}/` + response.data.filename;
-
         return imgName;
     }
-
-    /* 이미지 띄워주는 함수 */
     async function ViewImage(e) {
         let fileUrl= [...showImage];
         let files= [...postImage];
         const fileArray= e.target.files;
-
-        // 이미지 사이즈 10MB 제한
         const maxSize = 10 * 1024 * 1024;
         let TotalImgSize = 0;
 
@@ -54,13 +44,11 @@ export default function PostModify() {
                 alert(' 총 이미지의 크기는 10MB입니다.');
             } else {
                 const createImgUrl = URL.createObjectURL(fileArray[i]);
-                // fileImgs.push(await UploadImg(files[i]));
                 fileUrl.push(UploadImage(fileArray[i]));
                 files.push(createImgUrl);
 
             }
         }
-
         if(fileUrl.length> 3){
             setImageMessage('사진은 최대 3장까지 업로드 할 수 있습니다.');
             fileUrl= fileUrl.slice(0,3);
@@ -68,19 +56,15 @@ export default function PostModify() {
         }else if(fileUrl.length <= 3){
             setImageMessage('');
         }
-
         setShowImage(fileUrl);
         setPostImage(files);
     }
-
-    /* 이미지 삭제함수 */
     const DeleteImage = (id) => {
         setShowImage(
             showImage.filter((_, index) => {
                 return index !== id;
             })
         );
-
         setPostImage(
             postImage.filter((_, index) => {
                 return index !== id;
@@ -92,14 +76,12 @@ export default function PostModify() {
     async function Upload() {
         const imgList = [...showImage];
         const snsImgList = await Promise.all(imgList);
-
         data.post.image = snsImgList.join(',');
         data.post.content = content;
 
         if(data.post.content == '' && data.post.image == ''){
             setUploadMessage('글 또는 사진을 입력해주세요.')
         }
-
         try {
             const res = await axios
                 .put(`${url}/post/${postId}`, data, {
@@ -108,15 +90,11 @@ export default function PostModify() {
                         'Content-type': 'application/json',
                     },
                 });
-
                 navigate(`/post/detail/${postId}`);
-
         }catch(error){
             console.log(error);
         }
     }
-    
-    /* 게시글 수정 함수 */
     async function PostModify() {
         const {
             data: {
@@ -128,13 +106,10 @@ export default function PostModify() {
                 'Content-type': 'application/json',
             },
         });
-
-        // 기존 게시물에서 이미지를 받아올 땐 join으로 합쳤던 것을 다시 split로 나눠야함
         setPostImage(post.image.split(','));
         setShowImage(post.image.split(','));
         setContent(post.content);
     }
-
     useEffect(() => {
         PostModify();
     }, []);
@@ -168,13 +143,13 @@ export default function PostModify() {
                                         // 기존에 이미지가 있다면 뒤에 추가
                                         image && (
                                             <Li key={id}>
-                                                <img key={id} src={image} />
+                                                <img key={id} src={image} alt="게시글 이미지" />
                                                 <DeleteButton
                                                     onClick= {()=> {
                                                         return DeleteImage(id);
                                                     }}
-                                                >
-                                                    <img src={deleteBtn} alt="" />
+                                                    aria-label="삭제">
+                                                    <img src={deleteBtn} alt="삭제버튼" />
                                                 </DeleteButton>
                                             </Li>
                                         )
@@ -184,12 +159,12 @@ export default function PostModify() {
                                 return (
                                     // 기존에 이미지가 없다면 새로 이미지 추가
                                     <Li key={id}>
-                                        <img key={id} src={image} />
+                                        <img key={id} src={image} alt="게시글 이미지"/>
                                         <DeleteButton
                                             onClick= {()=> {
                                                 return DeleteImage(id);
                                             }}
-                                            aria-label="삭제 버튼">
+                                            aria-label="삭제">
                                             <img src={deleteBtn} alt="삭제 버튼" />
                                         </DeleteButton>
                                     </Li>
@@ -318,7 +293,6 @@ const Li= styled.li`
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    
     & img {
         width: 280px;
         height: 180px;

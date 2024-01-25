@@ -134,9 +134,11 @@ export default function StudyList() {
                             { !placeArr
                                 ? []
                             : placeArr.map((item)=>(
-                                <li>
-                                    <span>{item}</span>
-                                </li>
+                                <ul>
+                                    <li>
+                                        <span>{item}</span>
+                                    </li>
+                                </ul>
                             ))}
                         </StudyLists>
                     </MapBox>
@@ -148,11 +150,11 @@ export default function StudyList() {
                                 <p> 만들고 싶은 스터디 및 모임이 있으신가요?</p>
                             </BoxDiv>
                         </WriteDiv>
-                        <button onClick={goStudyUpload} aria-label="스터디 작성 버튼"> 작성하기 </button>
+                        <button onClick={goStudyUpload} aria-label="스터디 작성"> 작성하기 </button>
                     </WriteSection>
                     
                     { togetherLists.length ? (
-                            <div>
+                            <>
                                 <Ul>
                                     {!togetherLists 
                                     ? []
@@ -166,12 +168,11 @@ export default function StudyList() {
                                     <div ref={ref}></div>
                                 </Ul>
 
-                                <button onClick={goTogetherUpload}></button>
-                            </div>
+                                <button onClick={goTogetherUpload} aria-label="스터디 작성"></button>
+                            </>
                         ) : (
                             <>
                                 <Alert> Loading . .</Alert>
-                                <button onClick={goTogetherUpload} aria-label="스터디 작성 버튼"></button>
                             </>
                         )
                         

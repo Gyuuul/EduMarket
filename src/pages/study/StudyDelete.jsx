@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
 
@@ -24,7 +23,7 @@ export default function StudyDelete() {
             <Button onClick={async ()=> {
                 await Delete();
                 navigate(`/myprofile`)
-            }} aria-label="삭제 버튼">
+            }} aria-label="삭제">
                 <P>삭제</P>
             </Button>
         </div>
