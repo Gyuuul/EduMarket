@@ -30,16 +30,19 @@ export default function PostList() {
         }
         fetchMyPostList();
     },[]);
+
     const addShowPost= ()=> {
         const addPostList= postList.slice(pages * 10, pages * 10 + 10);
         setShowList([...showList, ...addPostList]);
         setPages(pages + 1);
     };
+    
     useEffect(()=> {
         if(inView){
             addShowPost();
         }
     },[inView]);
+
     const pageTitle = 'POST PAGE';
     const pageDesc = `EDUKET은 다양한 분야의 이야기를 공유함으로써 취업준비생, 신입부터 경력자까지 현업에서의 이야기를 듣고 학습할 수 있습니다.`;
     const page= (
@@ -72,7 +75,7 @@ export default function PostList() {
                                             </li>
                                         </Ul>
                                     ))}
-                                <div ref={ref}></div>
+                                <div ref={ref}/>
                             </ListDiv>
                             <button onClick={goPostUpload} aria-label=" 게시글 작성"></button>
                         </>

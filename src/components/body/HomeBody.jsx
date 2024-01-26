@@ -36,6 +36,7 @@ export default function HomeBody() {
         fetchMyPostList();
         fetchMyStudyList();
     },[]);
+    
     useEffect(() => {
         function postSort(a, b) {
         if (a.createdAt < b.createdAt) {

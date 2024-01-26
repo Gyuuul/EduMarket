@@ -3,7 +3,6 @@ import { useInView } from 'react-intersection-observer';
 import { debounce } from 'lodash';
 import axios from 'axios'
 import styled from 'styled-components'
-
 import HomeHeader from '../header/HomeHeader';
 import { URL } from '../../lib/apis/constant/path'
 import UserList from './UserList';
@@ -11,14 +10,9 @@ import searchImage from '../../assets/icons/illustration/Search.webp'
 
 export default function Search() {
     const [ref, inView]= useInView();
-
-    // 내가 검색한 키워드
     const [search, setSearch]= useState('');
-    // 모든 유저목록
     const [searchData, setSearchData]= useState([]);
-    // 사용자에게 보여지는 유저목록
     const [userList, setUserList]= useState([]);
-
     const [pages, setPages]= useState(0);
     const [isLoading, setIsLoading]= useState(false);
     const token= localStorage.getItem('Access Token');
@@ -38,6 +32,9 @@ export default function Search() {
             }
         })
         const data= res?.data;
+        
+        console.log(data)
+
         setSearchData(data);
         setUserList(data.slice(pages * 20, pages * 20 + 20));
         setPages(pages + 1)
@@ -71,6 +68,9 @@ export default function Search() {
             addShowUser();
         }
     },[inView])
+
+    console.log(search);
+    console.log(searchData);
 
     return (
         <>
