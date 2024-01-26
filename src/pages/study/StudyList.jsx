@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import { URL } from '../../lib/apis/constant/path';
 import ItemLi from './ItemLi';
@@ -16,9 +15,7 @@ export default function StudyList() {
     const myProfile= useSelector((state)=> state.user.myInfo.image);
     const navigate= useNavigate();
     const [ref, inView]= useInView();
-
     const userToken = localStorage.getItem('Access Token');
-
     // 내 이웃의 전체 스터디    
     const [togetherLists, setTogetherLists]= useState([]);
     // 사용자에게 보여지는 스터디
@@ -67,7 +64,6 @@ export default function StudyList() {
                 setPages(pages + 1);
                 console.log(list)
                 console.log(pages)
-
         })
         .catch((error)=>{
             console.log(error);
@@ -116,7 +112,6 @@ export default function StudyList() {
 
         const pageTitle = 'STUDY PAGE';
         const pageDesc = `멘토링수업을 통하여 학습효과를 낼 수 있으며, 원하는 스터디 그룹을 형성함으로써 함께 성장할 수 있습니다`;
-
         const page= (
         <StudyDiv>
             <Study>

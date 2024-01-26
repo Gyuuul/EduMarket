@@ -13,6 +13,7 @@ import { setUserInfo } from '../../store/slice/userSlice';
 import Heart from '../../components/heart/Heart';
 import comment from '../../assets/icons/icon/Comment.webp'
 import MoreButton from '../../assets/icons/icon/icon-more.webp'
+import { getDetail } from './Post';
 
 export default function PostDetail() {
     const [comments, setComments]= useState([]);
@@ -26,17 +27,6 @@ export default function PostDetail() {
     const userToken= localStorage.getItem('Access Token');
     const myAccountname= useSelector((state)=> state.user.myInfo.accountname);
 
-    const Detail= async ()=> {
-        const res= await axios.get(`${URL}/post/${postId}`, {
-            headers: {
-                "Authorization" : `Bearer ${userToken}`,
-                "Content-type" : "application/json"
-            }
-        });
-        const data= res.data?.post;
-        setDetail(data);
-        setUserAccountName(res.data?.post?.author?.accountname);
-    }
     const getComment= async ()=> {
         const res= await axios.get(`${URL}/post/${postId}/comments/?limit=10&skip=${pages * 10}`, {
             headers: {
@@ -48,9 +38,15 @@ export default function PostDetail() {
         setComments(data);
     }
     useEffect(()=> {
+        const Detail= async()=>{
+            const detailData= await getDetail(postId);
+            setDetail(detailData);
+            setUserAccountName(detailData.author?.accountname);
+        }
         Detail();
         getComment();
     },[]);
+
     const handlePostModify= ()=> {
         navigate(`/post/modify/${postId}`);
     };
@@ -79,13 +75,11 @@ export default function PostDetail() {
                             <ToggleDiv>
                                 { myAccountname=== userAccountName && (
                                     <>
-                                        <ToggleImg src={MoreButton} onClick={() => setVisible(!visible)} alt="" />
+                                        <ToggleImg src={MoreButton} onClick={() => setVisible(!visible)} alt="토글 이미지" />
                                         { visible && (
                                             <>
                                                 <ToggleWrapper>
-                                                    <div onClick={() => handlePostModify()}>
-                                                        <P>수정</P>
-                                                    </div>
+                                                    <div onClick={() => handlePostModify()}><P>수정</P></div>
                                                     <PostDelete/>
                                                 </ToggleWrapper>
                                             </>
@@ -95,33 +89,22 @@ export default function PostDetail() {
                             </ToggleDiv>
                         </DetailTop>
 
-                        <Div>
-                        {detail?.image ? <Slick images={detail?.image} /> : null}
-                        </Div>
-
+                        <Div>{detail?.image ? <Slick images={detail?.image} /> : null}</Div>
                         <ContentDiv>{detail?.content}</ContentDiv>
 
                         <SideDiv>
-                            <HeartDiv>
-                                <Heart
-                                    data={detail}
-                                    postId= {postId}
-                                />
-                            </HeartDiv>
-
+                            <HeartDiv><Heart data={detail} postId= {postId}/></HeartDiv>
                             <CommentDiv>
                                 <Img src={comment} alt="댓글 말풍선 이미지" />
                                 <CommentMent>{comments.length}</CommentMent>
                             </CommentDiv>
                         </SideDiv>
-
                         <Comment postId={postId} comments={comments} setComments={setComments} getComment={getComment}/>
                     </PostDiv>
                 )}
                 </PostsDetail>
             </PostWrap>
     )
-
     return (
         <>
             <Common page={page} />

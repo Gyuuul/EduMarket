@@ -1,26 +1,16 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios';
-import { URL } from '../../lib/apis/constant/path';
 import styled from 'styled-components';
+import { getDelete } from './Post';
 
 export default function PostDelete() {
     const {postId}= useParams();
     const navigate= useNavigate();
-    const userToken= localStorage.getItem('Access Token');
 
-    async function Delete(){
-        await axios.delete(`${URL}/post/${postId}`, {
-            headers: {
-                "Authorization" : `Bearer ${userToken}`,
-                "Content-type" : "application/json"
-            }
-        })
-    }
     return (
         <>
             <Button onClick={async ()=> {
-                await Delete();
+                await getDelete(postId);
                 navigate(`/myprofile`);
             }} aria-label="게시글 삭제">
                 <P>삭제</P>

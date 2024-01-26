@@ -48,7 +48,6 @@ export default function MyProfile() {
                             </Profiles>
                             <Intro>{user?.intro}</Intro> 
                     </ProfileDiv>
-                    
                     { postList.length ? (
                     <PostDiv>
                         <SubTitle>My Post</SubTitle>
@@ -69,7 +68,6 @@ export default function MyProfile() {
                     ):(
                         <Alert> 등록된 게시글이 없습니다.</Alert>
                     )}
-
                     { productList.length ? (
                         <StudyDiv>
                             <SubTitle>My Study</SubTitle>

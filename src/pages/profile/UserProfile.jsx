@@ -46,7 +46,7 @@ export default function UserProfile() {
                                 </FollowDiv>
 
                                 <div onClick={()=>{
-                                        SetIsFollow(!isFollow);
+                                    SetIsFollow(!isFollow);
                                 }}>
                                     <FollowButton
                                         accountname={accountname}
