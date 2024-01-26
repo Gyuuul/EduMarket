@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import FollowButton from '../../components/follow/FollowButton'
 import { setUserInfo } from '../../store/slice/userSlice';
@@ -27,48 +26,36 @@ export default function UserProfile() {
 
     const pageTitle = 'USER PROFILE';
     const pageDesc = `유저의 정보와 게시글, 스터디를 확인할 수 있습니다.`;
-
     const page=(
         <>
             <ProfileWrap>
                 <UserProfileDiv>
-                    <Title>
-                        <h2>USER PAGE</h2>
-                    </Title>
+                    <Title><h2>USER PAGE</h2></Title>
                     
                     <Wrap>
                         <ProfileDiv>
                             <Img src={profile?.image} alt='유저 프로필 이미지' />
-                            
                             <Profiles>
                                 <NameDiv>
                                     <Name>{profile?.username}</Name>
                                     <Id>@ {profile?.accountname}</Id>
                                 </NameDiv>
-
                                 <FollowDiv>
-                                        <FollowLink to={`/profile/${accountname}/follower`} aria-label="팔로우 페이지">
-                                            <Follow>Follower <strong>{profile?.followerCount}</strong></Follow>
-                                        </FollowLink>
-
-                                        <FollowLink to={`/profile/${accountname}/following`} aria-label="팔로잉 페이지">
-                                            <Follow>Following <strong>{profile?.followingCount}</strong></Follow>
-                                        </FollowLink>
+                                        <FollowLink to={`/profile/${accountname}/follower`} aria-label="팔로우 페이지"><Follow>Follower <strong>{profile?.followerCount}</strong></Follow></FollowLink>
+                                        <FollowLink to={`/profile/${accountname}/following`} aria-label="팔로잉 페이지"><Follow>Following <strong>{profile?.followingCount}</strong></Follow></FollowLink>
                                 </FollowDiv>
 
                                 <div onClick={()=>{
                                         SetIsFollow(!isFollow);
-                                    }}>
-                                        <FollowButton
-                                            accountname={accountname}
-                                            isfollow={isFollow}
-                                        />
+                                }}>
+                                    <FollowButton
+                                        accountname={accountname}
+                                        isfollow={isFollow}
+                                    />
                                 </div>
                             </Profiles>
-
                             <Intro>{profile?.intro}</Intro>
                         </ProfileDiv>
-
                         <UserPostRoom/>
                         <UserStudyRoom/>
                     </Wrap>
@@ -76,7 +63,6 @@ export default function UserProfile() {
             </ProfileWrap>
         </>
     )
-
     return (
         <>
             <Common page={page} title={pageTitle} desc={pageDesc} />

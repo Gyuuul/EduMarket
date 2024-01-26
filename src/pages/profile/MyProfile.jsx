@@ -1,129 +1,74 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common';
-import { URL } from '../../lib/apis/constant/path';
 import Slick from '../../components/slick/Slick';
+import { getMyPostList, getMyStudyList } from './MyList';
 
 export default function MyProfile() {
     const user= useSelector((state)=> state.user?.myInfo);
-    const accountName = localStorage.getItem('Account Name');
-    const token= localStorage.getItem('Access Token');
-    const dispatch= useDispatch();
     const navigate= useNavigate();
-
-    const [pages, setPages]= useState(12);
-    const [count, setCount]= useState(0);
     const [postList, setPostList]= useState([]);
-    const [postId, setPostId]= useState([]);
     const [productList, setProductList]= useState([]);
 
-
-    // 나의 상품 리스트
-    const MyTogetherList= async() => {
-        const res= await axios.get(`${URL}/product/${accountName}/?limit=${pages}&skip=0`, {
-            headers: {
-                "Authorization" : `Bearer ${token}`,
-                "Content-type" : "application/json"
-            }
-        })
-        const data= res?.data?.product;
-        setProductList([...data]);
-        setCount(data.length);
-    }
-
-    // 나의 게시글 리스트
-    const MyPostList= async() => {
-        const res= await axios.get(`${URL}/post/${accountName}/userpost/?limit=${pages}&skip=0`, {
-                headers:{
-                    "Authorization" : `Bearer ${token}`,
-                    "Content-type" : "application/json"
-                }
-            })
-            const data= res?.data?.post;
-            setPostList([...data]);
-            setCount(data.length);
-        }
-        
     useEffect(()=>{
-        MyTogetherList();
-        MyPostList();
-    }, [pages]);
+        const myList= async()=> {
+            const postData= await getMyPostList();
+            setPostList([...postData]);
+            const studyData= await getMyStudyList();
+            setProductList([...studyData]);
+        }
+        myList();
+    }, [])
 
     const pageTitle = 'MY PROFILE';
     const pageDesc = `나의 정보와 게시글, 스터디를 확인합니다.`;
-
     const page= (
         <>
             <ProfileWrap>
                 <MyProfileDiv>
-                    <Title>
-                        <h2>MY PAGE</h2>
-                    </Title>
-
+                    <Title><h2>MY PAGE</h2></Title>
                     <MypageMenu>
-                        <ul>
-                            <li>
-                                <a href="http://localhost:3000/#/myprofile">Content</a>
-                            </li>
-                            <li>
-                                <a href="http://localhost:3000/#/myprofile/update">Profile</a>
-                            </li>
-                        </ul>
+                        <li><a href="http://localhost:3000/#/myprofile">Content</a></li>
+                        <li><a href="http://localhost:3000/#/myprofile/update">Profile</a></li>
                     </MypageMenu>
-                    
                     <Wrap>
                         <ProfileDiv>
                             <Img src={user?.image} alt="나의 프로필 이미지" />
-
                             <Profiles>
                                 <NameDiv>
                                     <Name>{user?.username}</Name>
                                     <Id>@ {user?.accountname}</Id>
                                 </NameDiv>
-
                                 <FollowDiv>
-                                    <FollowLink to={`/profile/${user?.accountname}/follower`} aria-label="팔로우 페이지">
-                                        <Follow>Follower <strong>{user?.followerCount}</strong></Follow>
-                                    </FollowLink>
-
-                                    <FollowLink to={`/profile/${user?.accountname}/following`} aria-label="팔로잉 페이지">
-                                        <Follow>Following <strong>{user?.followingCount}</strong></Follow>
-                                    </FollowLink>
+                                    <FollowLink to={`/profile/${user?.accountname}/follower`} aria-label="팔로우 페이지"><Follow>Follower <strong>{user?.followerCount}</strong></Follow></FollowLink>
+                                    <FollowLink to={`/profile/${user?.accountname}/following`} aria-label="팔로잉 페이지"><Follow>Following <strong>{user?.followingCount}</strong></Follow></FollowLink>
                                 </FollowDiv>
                             </Profiles>
-
                             <Intro>{user?.intro}</Intro> 
                     </ProfileDiv>
                     
-
-                        { postList.length ? (
-                        <PostDiv>
-                            <SubTitle>My Post</SubTitle>
-                            <Ul>
-                                {postList.map((item)=>(
-                                    <Li>
-                                        <Div onClick={async(e) => {
-                                            e.stopPropagation();
-                                            navigate(`/post/detail/${item.id}`);
-                                        }}>
-                                            {item?.image ? <Slick images={item?.image} /> : null}
-                                            <p>{item?.content}</p>
-                                        </Div>
-                                    </Li>
-                                ))}
-                            </Ul>
-                        </PostDiv>
-                    )
-                :
-                (
-                    <Alert>
-                        등록된 게시글이 없습니다.
-                    </Alert>
-                )}  
+                    { postList.length ? (
+                    <PostDiv>
+                        <SubTitle>My Post</SubTitle>
+                        <Ul>
+                            {postList.map((item)=>(
+                                <Li>
+                                    <Div onClick={async(e) => {
+                                        e.stopPropagation();
+                                        navigate(`/post/detail/${item.id}`);
+                                    }}>
+                                        {item?.image ? <Slick images={item?.image} /> : null}
+                                        <p>{item?.content}</p>
+                                    </Div>
+                                </Li>
+                            ))}
+                        </Ul>
+                    </PostDiv>
+                    ):(
+                        <Alert> 등록된 게시글이 없습니다.</Alert>
+                    )}
 
                     { productList.length ? (
                         <StudyDiv>
@@ -131,12 +76,10 @@ export default function MyProfile() {
                             <Ul>
                                 {productList.map((item)=>(
                                     <Li>
-                                        <Div 
-                                        onClick={async(e) => {
+                                        <Div onClick={async(e) => {
                                             e.stopPropagation();
                                             navigate(`/together/detail/${item.id}`);
-                                        }}
-                                        >
+                                        }}>
                                             <img src={item.itemImage} alt='스터디 대표 이미지'></img>
                                             <StudyName>{item.itemName}</StudyName>
                                             <StudyIntro>{item.link}</StudyIntro>
@@ -145,13 +88,9 @@ export default function MyProfile() {
                                 ))}
                             </Ul>
                         </StudyDiv>
-                    )
-                :
-                (
-                    <Alert>
-                        등록된 상품이 없습니다.
-                    </Alert>
-                )}
+                    ):(
+                        <Alert> 등록된 스터디가 없습니다.</Alert>
+                    )}
                     </Wrap>
                 </MyProfileDiv>
             </ProfileWrap>
@@ -191,7 +130,7 @@ const Wrap= styled.div`
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
 `
-const MypageMenu= styled.div`
+const MypageMenu= styled.ul`
     text-align: center;
     margin: 0 0 60px 0;
 
