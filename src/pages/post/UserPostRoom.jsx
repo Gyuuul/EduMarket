@@ -1,32 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios';
 import styled from 'styled-components';
-import { URL } from '../../lib/apis/constant/path';
 import Slick from '../../components/slick/Slick';
+import { getUserPost } from './Post';
 
 export default function UserPostRoom() {
     const accountname= useParams().accountname;
     const navigate= useNavigate();
-    const [pages, setPages] = useState(12);
-    const [count, setCount]= useState(0);
     const [postList, setPostList]= useState([]);
-    const token= localStorage.getItem('Access Token');
 
     useEffect(()=> {
-        async function axiosPostList(){
-            const res= await axios.get(`${URL}/post/${accountname}/userpost/?limit=${pages}&skip=0`, {
-                headers: {
-                    "Authorization" : `Bearer ${token}`,
-                    "Content-type" : "application/json"
-                }
-            })
-            const data= res?.data?.post;
+        const userPost= async()=> {
+            const data= await getUserPost(accountname)
             setPostList([...data]);
-            setCount(data.length);
         }
-        axiosPostList();
-    }, [pages]);
+        userPost();
+    }, []);
+
     return (
         <>
             { postList.length ? (
@@ -46,12 +36,8 @@ export default function UserPostRoom() {
                         ))}
                     </Ul>
                 </PostDiv>
-            )
-            :
-            (
-                <Alert>
-                    등록된 게시글이 없습니다.
-                </Alert>
+            ):(
+                <Alert>등록된 게시글이 없습니다.</Alert>
             )}  
         </>
     )

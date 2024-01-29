@@ -21,3 +21,13 @@ export const getDetail= async( Id )=> {
     });
     return res.data?.post;
 }
+
+export const getUserPost= async(accountname)=> {
+    const res= await axios.get(`${URL}/post/${accountname}/userpost/?limit=10&skip=0`, {
+        headers: {
+            "Authorization" : `Bearer ${token}`,
+            "Content-type" : "application/json"
+        }
+    })
+    return res?.data?.post;
+}
