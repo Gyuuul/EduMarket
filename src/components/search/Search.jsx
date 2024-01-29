@@ -69,9 +69,6 @@ export default function Search() {
         }
     },[inView])
 
-    console.log(search);
-    console.log(searchData);
-
     return (
         <>
             <HomeHeader/>

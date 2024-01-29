@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
-
 import RecFollowList from '../../components/follow/RecFollowList';
 import { getFollowingList } from '../../components/follow/getFollowingList';
 import "slick-carousel/slick/slick.css";
@@ -110,7 +109,7 @@ export default function FollowRecommend() {
     }
     useEffect(()=>{
         Rec();
-    }, [myFollowList])
+    }, [myFollowList]);
 
     return (
             <FollowSection>
