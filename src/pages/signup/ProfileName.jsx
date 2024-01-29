@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import { DEFAULT_IMAGE } from '../../lib/apis/constant/path';
 import { URL } from '../../lib/apis/constant/path'
 import { REG_EXP_ID } from '../../lib/apis/constant/regexp'
@@ -17,8 +16,6 @@ export const ProfileName= ()=> {
     const password= location.state.password;
     const [intro, setIntro]= useState('');
     const [profileImg, setProfileImg]= useState(DEFAULT_IMAGE);
-
-    // userName 유효성
     const [userName, setUserName]= useState('');
     const [userNameMessage, setUserNameMessage]= useState('');
     const [checkValidatedUserName, setCheckValidatedUserName]= useState(true);
@@ -36,7 +33,6 @@ export const ProfileName= ()=> {
         }
     }, [userName]);
 
-    // userId 유효성
     const [userId, setUserId]= useState('');
     const [userIdMessage, setUserIdMessage]= useState('');
     const [checkValidatedUserId, setCheckValidatedUserId]= useState(true);
@@ -54,7 +50,6 @@ export const ProfileName= ()=> {
         }
     }, [userId]);
 
-    // name, id, info input값 변경 함수
     const onChangeHandler= (event) => {
         if(event.target.name === 'userName'){
             setUserName(event.target.value);
@@ -65,7 +60,6 @@ export const ProfileName= ()=> {
         }
     };
 
-    // 회원가입 시 데이터
     const userData= {
         user:{
             username: userName,
@@ -77,10 +71,8 @@ export const ProfileName= ()=> {
         },
     };
 
-    // 시작하기 버튼 활성화 기능
     const start= checkValidatedUserName && checkValidatedUserId;
 
-    // 회원가입 함수, 아이디 중복 검사
     const join= async ()=> {
         const res= await axios.post(`${URL}/user/accountnamevalid`,{
             user: {
@@ -88,7 +80,6 @@ export const ProfileName= ()=> {
             },
         });
 
-        // 유효성 검사 후 회원가입 API로 POST
         if(res.data.message === '사용 가능한 계정ID 입니다.'){
             await axios.post(`${URL}/user`, userData, {
                 'Content-type': 'application/json',
@@ -100,17 +91,13 @@ export const ProfileName= ()=> {
         }else{
             alert('잘못된 접근입니다.');
         }
-    
     };
 
     return (
         <>
             <LoginHeader/>
             <SignupDiv>
-                <Title>
-                    <H2>회원정보 입력</H2>
-                </Title>
-
+                <Title><H2>회원정보 입력</H2></Title>
                 <Wrap>
                     <ImgDiv>
                         <img src={profileImg} alt="기본 프로필 이미지" />
@@ -167,9 +154,7 @@ export const ProfileName= ()=> {
                 </InputDiv>
 
                 <Div>
-                    <StartButton disabled={start ? null : 'disabled'} onClick={join} aria-label="회원가입">
-                            회원가입
-                    </StartButton>
+                    <StartButton disabled={start ? null : 'disabled'} onClick={join} aria-label="회원가입">회원가입</StartButton>
                 </Div>
             </SignupDiv>
         </>

@@ -30,7 +30,7 @@ export default function ProfileModify() {
     const putProfile= async(e)=> {
         e.preventDefault();
 
-        const res= await axios.put(`${URL}/user`, {
+        await axios.put(`${URL}/user`, {
             user:{
                     username: user.username,
                     accountname: user.accountname,

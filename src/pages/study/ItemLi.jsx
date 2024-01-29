@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components';
-
 import getUserProfile from '../profile/getUserProfile';
 import { setUserInfo } from '../../store/slice/userSlice';
 import { useDispatch } from 'react-redux';
@@ -14,30 +13,25 @@ export default function ItemLi({ data }) {
         const user= await getUserProfile(accountname);
         dispatch(setUserInfo(user));
     }
-    console.log(data);
-
     return (
         <>
-        <ul>
-            <ItemList>
-                <ItemDiv>
+            <ul>
+                <ItemList>
+                    <ItemDiv>
                         <AuthorDiv onClick={async ()=>{
                             await setUser(data?.author?.accountname);
                             navigate(`/profile/${data?.author?.accountname}`);
                         }}>
                             <Author>@ {data?.author?.accountname}</Author>
                         </AuthorDiv>
-
                         <ContentDiv
                             onClick={() => {
                                 navigate(`/together/detail/${data.id}`);
-                            }}
-                        >
+                        }}>
                             <picture>
                                 <source srcset={data?.itemImage} type="image/webp" />
                                 <img src={data?.itemImage} alt='스터디 대표 이미지'/>
                             </picture>
-
                             <Div>
                                 <ItemName>{data.itemName}</ItemName>
                                 <ItemDetail>{data.link}</ItemDetail>

@@ -21,6 +21,5 @@ export const getMyPostList= async()=>{
             "Content-type" : "application/json"
         }
     })
-    return  res?.data?.post;
+    return res?.data?.post;
 }
-

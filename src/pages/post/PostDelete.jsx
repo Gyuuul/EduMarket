@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { getDelete } from './Post';
 
 export default function PostDelete() {
-    const {postId}= useParams();
+    const { postId }= useParams();
     const navigate= useNavigate();
 
     return (
