@@ -1,59 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import axios from 'axios';
 import styled from 'styled-components';
-
-import { URL } from '../../lib/apis/constant/path';
+import { getStudyList } from './StudyAxios';
 
 export default function UserStudyRoom() {
     const accountname= useParams().accountname;
     const navigate= useNavigate();
-    const [pages, setPages] = useState(12);
-    const [count, setCount]= useState(0);
     const [studyList, setStudyList]= useState([]);
-    const token= localStorage.getItem('Access Token');
 
     useEffect(()=> {
-        async function axiosStudyList(){
-            const res= await axios.get(`${URL}/product/${accountname}/?limit=${pages}&skip=0`, {
-                headers: {
-                    "Authorization" : `Bearer ${token}`,
-                    "Content-type" : "application/json"
-                }
-            })
-            const data= res.data?.product;
+        async function StudyList(){
+            const data= await getStudyList(accountname);
             setStudyList([...data]);
-            setCount(data.length);
         }
-        axiosStudyList();
-    }, [pages]);
+        StudyList();
+    }, []);
 
     return (
         <>
-                { studyList.length ? (
-                    <StudyDiv>
-                        <StudyTitle>User Study</StudyTitle>
-                        <Ul>
-                            {studyList.map((item)=>(
-                                <Li>
-                                    <Div onClick={async(e) => {
-                                    e.stopPropagation();
-                                    navigate(`/together/detail/${item.id}`);
-                                    }}>
-                                    <img src={item.itemImage} alt='스터디 대표 이미지'></img>
-                                    <StudyName>{item.itemName}</StudyName>
-                                    <StudyIntro>{item.link}</StudyIntro>
-                                    </Div>
-                                </Li>
-                            ))}
-                        </Ul>
-                    </StudyDiv>
-                )
-            :
-            (
-                <Alert>
-                    등록된 상품이 없습니다.
-                </Alert>
+            { studyList.length ? (
+                <StudyDiv>
+                    <StudyTitle>User Study</StudyTitle>
+                    <Ul>
+                        {studyList.map((item)=>(
+                            <Li>
+                                <Div onClick={async(e) => {
+                                e.stopPropagation();
+                                navigate(`/together/detail/${item.id}`);
+                                }}>
+                                <img src={item.itemImage} alt='스터디 대표 이미지'></img>
+                                <StudyName>{item.itemName}</StudyName>
+                                <StudyIntro>{item.link}</StudyIntro>
+                                </Div>
+                            </Li>
+                        ))}
+                    </Ul>
+                </StudyDiv>
+            ):(
+            <Alert>등록된 상품이 없습니다.</Alert>
             )}  
         </>
     )

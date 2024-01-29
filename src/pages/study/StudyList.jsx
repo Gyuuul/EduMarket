@@ -16,27 +16,16 @@ export default function StudyList() {
     const navigate= useNavigate();
     const [ref, inView]= useInView();
     const userToken = localStorage.getItem('Access Token');
-    // 내 이웃의 전체 스터디    
     const [togetherLists, setTogetherLists]= useState([]);
-    // 사용자에게 보여지는 스터디
     const [showList, setShowList]= useState([]); 
-    // 나의 팔로잉 목록 불러오기
     const [following, setFollowing]= useState([]);
     const [pages, setPages]= useState(0);
-
-    const placeArr= [
-        '1. 뚝섬역 모각코🖥️', 
-        '2. 회계사가 알려주는 회계직무 스터디🏦', 
-        '3. 제약/ 바이오 산업에 대한 스터디💊',
-        '4. UI/ UX 디자이너와 함께하는 스터디🎨',
-        '5. 해외영업 직무탐색 모임✈️',
-    ];
-
+    const placeArr= ['1. 뚝섬역 모각코🖥️', '2. 회계사가 알려주는 회계직무 스터디🏦', '3. 제약/ 바이오 산업에 대한 스터디💊','4. UI/ UX 디자이너와 함께하는 스터디🎨','5. 해외영업 직무탐색 모임✈️'];
+    
     const goTogetherUpload= ()=>{
         navigate('/together/upload');
     }
 
-    // 내가 팔로우한 사람들 리스트에 불러오기
     useEffect(()=>{
         async function fetchMyStudyList(){
             let list= await getStudyFollowingList();
@@ -62,15 +51,12 @@ export default function StudyList() {
                 setTogetherLists(list);
                 setShowList(list.slice(pages * 10, pages * 10 + 10));
                 setPages(pages + 1);
-                console.log(list)
-                console.log(pages)
         })
         .catch((error)=>{
             console.log(error);
         });
     }, [following]);
     
-        // 팔로잉 사람들의 상품 리스트 불러오기
         const togetherList = async () => {
             try {
                 const togetherFollowList = await Promise.all(
@@ -93,7 +79,6 @@ export default function StudyList() {
             }
         };
 
-        // 무한스크롤 함수
         const addShowStudy= ()=> {
             const addStudyList= togetherLists.slice(pages * 10, pages * 10 + 10);
             setShowList([...showList, ...addStudyList]);
@@ -130,9 +115,7 @@ export default function StudyList() {
                                 ? []
                             : placeArr.map((item)=>(
                                 <ul>
-                                    <li>
-                                        <span>{item}</span>
-                                    </li>
+                                    <li><span>{item}</span></li>
                                 </ul>
                             ))}
                         </StudyLists>
@@ -141,9 +124,7 @@ export default function StudyList() {
                     <WriteSection>
                         <WriteDiv>
                             <img src={myProfile} alt="나의 프로필 이미지" />
-                            <BoxDiv onClick={goStudyUpload}>
-                                <p> 만들고 싶은 스터디 및 모임이 있으신가요?</p>
-                            </BoxDiv>
+                            <BoxDiv onClick={goStudyUpload}><p> 만들고 싶은 스터디 및 모임이 있으신가요?</p></BoxDiv>
                         </WriteDiv>
                         <button onClick={goStudyUpload} aria-label="스터디 작성"> 작성하기 </button>
                     </WriteSection>
@@ -155,23 +136,18 @@ export default function StudyList() {
                                     ? []
                                     : showList.map((data)=> (
                                         <Li>
-                                            <ItemLi
-                                                data={data}
-                                            ></ItemLi>
+                                            <ItemLi data={data}/>
                                         </Li>
                                     ))}
                                     <div ref={ref}></div>
                                 </Ul>
-
                                 <button onClick={goTogetherUpload} aria-label="스터디 작성"></button>
                             </>
                         ) : (
                             <>
                                 <Alert> Loading . .</Alert>
                             </>
-                        )
-                        
-                        }
+                        )}
                 </Div>
         </Study>
     </StudyDiv>

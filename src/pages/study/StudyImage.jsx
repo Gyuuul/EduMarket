@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import axios from "axios";
 import styled from "styled-components";
-
 import { URL } from '../../lib/apis/constant/path'
 import album from '../../assets/icons/icon/Image-button.webp'
 
@@ -9,7 +8,6 @@ export const StudyImage= ({itemImage, setItemImage})=> {
     const imgStyle= {
         backgroundImage: `url(${itemImage})`,
     };
-
     const previewImage = useRef();
 
     function handle(e){
@@ -19,13 +17,11 @@ export const StudyImage= ({itemImage, setItemImage})=> {
         formData.append('image', loadImage[0]);
         onLoadImage(formData, loadImage);
     }
-
     async function onLoadImage(formData, loadImage){
         try{
             const response= await axios.post(`${URL}/image/uploadfile`, formData, {
                 'Content-Type': 'multipart/form-data',
             });
-
             if(response.data.filename){
                 setItemImage(`${URL}/${response.data.filename}`);
                 preview(loadImage);
@@ -38,7 +34,6 @@ export const StudyImage= ({itemImage, setItemImage})=> {
     }
         function preview(loadImage){
             const reader= new FileReader();
-
             reader.onload= ()=>{
                 previewImage.current.style.backgroundImage = `url(${reader.result})`;
                 previewImage.current.style.backgroundSize = 'cover';
@@ -46,7 +41,6 @@ export const StudyImage= ({itemImage, setItemImage})=> {
             };
             reader.readAsDataURL(loadImage[0]);
         }
-
     return(
         <>
             <Div ref={previewImage} style={imgStyle}>

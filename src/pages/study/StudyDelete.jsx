@@ -1,27 +1,16 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
 import styled from 'styled-components';
-
-import { URL } from '../../lib/apis/constant/path';
+import { getDelete } from './StudyAxios';
 
 export default function StudyDelete() {
     const {productId}= useParams();
     const navigate= useNavigate();
-    const userToken= localStorage.getItem('Access Token');
 
-    async function Delete(){
-        const res= await axios.delete(`${URL}/product/${productId}`, {
-            headers: {
-                "Authorization" : `Bearer ${userToken}`,
-                "Content-type" : "application/json"
-            }
-        })
-    }
     return (
         <div>
             <Button onClick={async ()=> {
-                await Delete();
+                await getDelete(productId);
                 navigate(`/myprofile`)
             }} aria-label="삭제">
                 <P>삭제</P>

@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import { URL } from '../../lib/apis/constant/path';
 import { inputTogether } from '../../store/slice/togetherSlice';
@@ -18,7 +17,6 @@ export default function StudyDetail() {
     const dispatch= useDispatch();
     const userToken = localStorage.getItem('Access Token');
     const myAccountName= useSelector((state)=> state.user.myInfo.accountname);
-    
     const [visible, setVisible]= useState(false);
     const [detail, setDetail]= useState('');
     const [userAccountName, setUserAccountName]= useState();
