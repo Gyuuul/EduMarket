@@ -3,21 +3,21 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Common from '../../components/common/Common';
-import Slick from '../../components/slick/Slick';
 import { getMyPostList, getMyStudyList } from './MyList';
+import PostStudy from './PostStudy';
 
 export default function MyProfile() {
     const user= useSelector((state)=> state.user?.myInfo);
     const navigate= useNavigate();
     const [postList, setPostList]= useState([]);
-    const [productList, setProductList]= useState([]);
+    const [studyList, setStudyList]= useState([]);
 
     useEffect(()=>{
         const myList= async()=> {
             const postData= await getMyPostList();
             setPostList([...postData]);
             const studyData= await getMyStudyList();
-            setProductList([...studyData]);
+            setStudyList([...studyData]);
         }
         myList();
     }, [])
@@ -37,58 +37,25 @@ export default function MyProfile() {
                         <ProfileDiv>
                             <Img src={user?.image} alt="나의 프로필 이미지" />
                             <Profiles>
-                                <NameDiv>
                                     <Name>{user?.username}</Name>
                                     <Id>@ {user?.accountname}</Id>
-                                </NameDiv>
                                 <FollowDiv>
-                                    <FollowLink to={`/profile/${user?.accountname}/follower`} aria-label="팔로우 페이지"><Follow>Follower <strong>{user?.followerCount}</strong></Follow></FollowLink>
-                                    <FollowLink to={`/profile/${user?.accountname}/following`} aria-label="팔로잉 페이지"><Follow>Following <strong>{user?.followingCount}</strong></Follow></FollowLink>
+                                    <Link to={`/profile/${user?.accountname}/follower`} aria-label="팔로우 페이지"><Follow>Follower <strong>{user?.followerCount}</strong></Follow></Link>
+                                    <Link to={`/profile/${user?.accountname}/following`} aria-label="팔로잉 페이지"><Follow>Following <strong>{user?.followingCount}</strong></Follow></Link>
                                 </FollowDiv>
                             </Profiles>
                             <Intro>{user?.intro}</Intro> 
-                    </ProfileDiv>
-                    { postList.length ? (
-                    <PostDiv>
-                        <SubTitle>My Post</SubTitle>
-                        <Ul>
-                            {postList.map((item)=>(
-                                <Li>
-                                    <Div onClick={async(e) => {
-                                        e.stopPropagation();
-                                        navigate(`/post/detail/${item.id}`);
-                                    }}>
-                                        {item?.image ? <Slick images={item?.image} /> : null}
-                                        <p>{item?.content}</p>
-                                    </Div>
-                                </Li>
-                            ))}
-                        </Ul>
-                    </PostDiv>
-                    ):(
-                        <Alert> 등록된 게시글이 없습니다.</Alert>
-                    )}
-                    { productList.length ? (
-                        <StudyDiv>
-                            <SubTitle>My Study</SubTitle>
-                            <Ul>
-                                {productList.map((item)=>(
-                                    <Li>
-                                        <Div onClick={async(e) => {
-                                            e.stopPropagation();
-                                            navigate(`/together/detail/${item.id}`);
-                                        }}>
-                                            <img src={item.itemImage} alt='스터디 대표 이미지'></img>
-                                            <StudyName>{item.itemName}</StudyName>
-                                            <StudyIntro>{item.link}</StudyIntro>
-                                        </Div>
-                                    </Li>
-                                ))}
-                            </Ul>
-                        </StudyDiv>
-                    ):(
-                        <Alert> 등록된 스터디가 없습니다.</Alert>
-                    )}
+                        </ProfileDiv>
+                        <PostStudy
+                            itemList={postList}
+                            itemClick={(id) => navigate(`/post/detail/${id}`)}
+                            itemRenderer="post"
+                        />
+                        <PostStudy
+                            itemList={studyList}
+                            itemClick={(id) => navigate(`/together/detail/${id}`)}
+                            itemRenderer="study"
+                        />
                     </Wrap>
                 </MyProfileDiv>
             </ProfileWrap>
@@ -155,7 +122,7 @@ const MypageMenu= styled.ul`
 const ProfileDiv= styled.div`
     display: flex;
     gap: 70px;
-    padding: 30px 0 60px 0; 
+    padding: 50px 0 60px 0; 
 `
 const Img= styled.img`
     width: 200px;
@@ -164,12 +131,7 @@ const Img= styled.img`
     border-radius: 50%;
 `
 const Profiles= styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-`
-const NameDiv= styled.div`
-    margin: 20px 0px;
+    margin-top: 25px;
 `
 const Name= styled.h2`
     font-family: "Frutiger-lt-pro-normal";
@@ -181,14 +143,13 @@ const Id= styled.h3`
     font-weight: 500;
     font-size: 18.85px;
     color: #777;
+    margin-bottom: 20px;
 `
 const FollowDiv= styled.div`
     display: flex;
     gap: 20px;
     justify-content: center;
-`
-const FollowLink = styled(Link)`
-    margin: 20px 0px;
+    margin: 40px 0;
 `
 const Follow= styled.p`
     font-family: "Frutiger-lt-pro-normal";
@@ -211,12 +172,11 @@ const Intro= styled.p`
     padding: 30px;
     margin-top: -10px;
 `
-const PostDiv= styled.div`
+export const PostStudyDiv= styled.div`
     padding: 30px 0; 
     border-top: 1px solid rgba(0,0,0,0.09);
-    border-bottom: 1px solid rgba(0,0,0,0.09);
 `
-const SubTitle= styled.p`
+export const SubTitle= styled.p`
     font-family: "Frutiger-lt-pro-600";
     font-size: 30px;
     font-weight: 600;
@@ -224,30 +184,27 @@ const SubTitle= styled.p`
     text-align: center;
     margin: 0 0 50px 0;
 `
-const Alert= styled.p`
+export const Alert= styled.p`
     font-family: "Noto_Sans_KR-600";
     font-size: 30px;
     text-align: center;
     color: #C63D2F;
     padding: 50px 0 30px;
 `
-const StudyDiv= styled.div`
-    padding: 30px 0;
-`
-const StudyName= styled.p`
+export const StudyName= styled.p`
     font-family: "Noto_Sans_KR-600";
     font-size: 20px;
     font-weight: 700;
     color: #3a3a3a;
 `
-const StudyIntro= styled.p`
+export const StudyIntro= styled.p`
     font-family: "Noto_Sans_KR-400";
     font-size: 17px;
     margin-top: 20px;
     color: #777;
     line-height: 25px;
 `
-const Ul= styled.ul`
+export const Ul= styled.ul`
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -255,18 +212,17 @@ const Ul= styled.ul`
     margin: 0 0;
     line-height: 0;
 `
-const Li= styled.li`
+export const Li= styled.li`
     flex: 0 0 33.33333%;
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
 `
-const Div= styled.div`
+export const Div= styled.div`
     width: 300px;
     height: 400px;
     margin: 0 auto;
     padding: 12px 20px;
-
     background-color: #f1f2f3;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
