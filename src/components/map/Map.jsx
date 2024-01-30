@@ -25,7 +25,6 @@ export default function MapTogether() {
             >
 
                 {positions.map((v, index)=>{
-                    console.log(v)
                     return(
                         <EventMarkerContainer
                         key={v.id}
