@@ -18,7 +18,6 @@ const FooterDiv= styled.div`
     padding: 60px 20px 80px;
     position: relative;
     box-sizing: border-box;
-
     bottom: 0;
     width: 100%;
     height: 120px;
