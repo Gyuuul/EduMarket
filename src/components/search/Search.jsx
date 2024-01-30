@@ -33,8 +33,6 @@ export default function Search() {
         })
         const data= res?.data;
         
-        console.log(data)
-
         setSearchData(data);
         setUserList(data.slice(pages * 20, pages * 20 + 20));
         setPages(pages + 1)

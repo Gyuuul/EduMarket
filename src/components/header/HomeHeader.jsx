@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
-
 import { setMyInfo } from '../../store/slice/userSlice';
 
 export default function HomeHeader() {

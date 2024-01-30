@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
-
 import { URL } from '../../lib/apis/constant/path'
 import getMyInfo from './getMyInfo'
 import { setMyInfo } from '../../store/slice/userSlice';
@@ -60,8 +59,6 @@ export default function Login() {
                                 setMessage('');
                                 localStorage.setItem('Access Token', res.data.user.token);
                                 localStorage.setItem('Account Name', res.data.user.accountname);
-                                console.log(localStorage);
-
                                 navigate('/home');
                                 } 
                             else {
@@ -121,6 +118,7 @@ export default function Login() {
                                 setPassword(e.target.value);
                             }}
                         />
+                        <p>{message}</p> 
                     </Div>
                 </InputDiv>
 
@@ -156,6 +154,12 @@ const H2= styled.h2`
 const Div= styled.div`
     width: 445px;
     margin: 0 auto;
+    & p{
+        font-family: "Noto_Sans_KR-400";
+        font-size: 14px;
+        color: #C63D2F;
+        margin-bottom: 30px;    
+    }
 `
 const InputDiv= styled.div`
     margin-top: 50px;
