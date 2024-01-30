@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import styled from 'styled-components';
 
+import instance from '../../lib/apis/interceptor';
+
 import Common from '../../components/common/Common';
 import { URL } from '../../lib/apis/constant/path'
 import handleFileUpload from '../signup/handleFileUpload';
@@ -30,20 +32,21 @@ export default function ProfileModify() {
     const putProfile= async(e)=> {
         e.preventDefault();
 
-        await axios.put(`${URL}/user`, {
-            user:{
-                    username: user.username,
-                    accountname: user.accountname,
-                    intro: user.intro,
-                    image: image,
-            }
-    }, {
-        headers: {
-            "Authorization" : `Bearer ${token}`,
-            "Content-type" : "application/json"
+    try {
+        const response = await instance.put(`/user`, {
+            user: {
+            username: user.username,
+            accountname: user.accountname,
+            intro: user.intro,
+            image: image,
         }
-    })
-    navigate(`/myprofile`);
+    });
+        console.log(response);
+        navigate(`/myprofile`);
+
+    } catch (error) {
+        console.log(error);
+    }
     }
 
     const back= ()=> {

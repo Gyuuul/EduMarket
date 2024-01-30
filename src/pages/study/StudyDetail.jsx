@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import styled from 'styled-components';
 import Common from '../../components/common/Common'
-import { URL } from '../../lib/apis/constant/path';
 import { inputTogether } from '../../store/slice/togetherSlice';
 import StudyDelete from './StudyDelete';
 import getUserProfile from '../profile/getUserProfile';
 import { setUserInfo } from '../../store/slice/userSlice';
 import MoreButton from '../../assets/icons/icon/icon-more.webp'
+import instance from '../../lib/apis/interceptor';
 
 export default function StudyDetail() {
     const {productId}= useParams();
@@ -22,18 +21,17 @@ export default function StudyDetail() {
     const [userAccountName, setUserAccountName]= useState();
 
     const Details= async ()=> {
-        const res= await axios.get( `${URL}/product/detail/${productId}`, {
-            headers:{
-                "Authorization" : `Bearer ${userToken}`,
-                "Content-type" : "application/json"
-            }
-        });
-        const data= res.data?.product;
-        setDetail(data);
-
-        const {itemImage, itemName, link, price}= detail;
-        dispatch(inputTogether({ itemImage, itemName, link, price }));
-        setUserAccountName(res.data?.product?.author?.accountname);
+        try {
+            const response = await instance.get(`/product/detail/${productId}`);
+            const data= response.data?.product;
+            setDetail(data);
+    
+            const {itemImage, itemName, link, price}= detail;
+            dispatch(inputTogether({ itemImage, itemName, link, price }));
+            setUserAccountName(response.data?.product?.author?.accountname);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {

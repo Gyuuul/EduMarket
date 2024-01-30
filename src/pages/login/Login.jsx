@@ -46,8 +46,7 @@ export default function Login() {
                     else{
                         // 토큰 검증
                         try {
-                            await axios
-                                .get(`${URL}/user/checktoken`, {
+                            await axios.get(`${URL}/user/checktoken`, {
                                 headers: {
                                     Authorization: `Bearer ${res.data.user.token}`,
                                     'Content-type': 'application/json',

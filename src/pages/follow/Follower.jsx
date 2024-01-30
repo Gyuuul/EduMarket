@@ -1,31 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-import axios from 'axios'
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
-import { URL } from '../../lib/apis/constant/path'
 import FollowList from '../../components/follow/FollowList';
+import instance from '../../lib/apis/interceptor';
 
 /** 나를 팔로우한 사용자 목록 */
 export default function Follower() {
-    const token= localStorage.getItem('Access Token');
     const accountname= useParams().accountname;
     const [ref, inView]= useInView();
-
     const [followerList, setFollowerList]= useState([]);
     const [showList, setShowList]= useState([]);
-
     const [pages, setPages]= useState(0);
 
     const FollowerList= async ()=> {
-        const res= await axios.get(`${URL}/profile/${accountname}/follower/?limit=0&skip=0`, {
-            headers:{
-                "Authorization" : `Bearer ${token}`,
-                "Content-type" : "application/json"
-            }
-        })
+        const res= await instance.get(`/profile/${accountname}/follower/?limit=0&skip=0`)
         const data= res.data;
         setFollowerList(data);
         setShowList(data.slice(pages * 10, pages * 10 + 10));

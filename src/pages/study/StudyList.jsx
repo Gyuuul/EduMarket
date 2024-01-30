@@ -2,20 +2,18 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
-import axios from 'axios';
 import styled from 'styled-components';
 import Common from '../../components/common/Common'
-import { URL } from '../../lib/apis/constant/path';
 import ItemLi from './ItemLi';
 import { getStudyFollowingList } from '../../components/follow/getFollowingList';
 import study from '../../assets/icons/illustration/Study.webp'
 import MapTogether from '../../components/map/Map'
+import instance from '../../lib/apis/interceptor';
 
 export default function StudyList() {
     const myProfile= useSelector((state)=> state.user.myInfo.image);
     const navigate= useNavigate();
     const [ref, inView]= useInView();
-    const userToken = localStorage.getItem('Access Token');
     const [togetherLists, setTogetherLists]= useState([]);
     const [showList, setShowList]= useState([]); 
     const [following, setFollowing]= useState([]);
@@ -61,14 +59,8 @@ export default function StudyList() {
             try {
                 const togetherFollowList = await Promise.all(
                     following.map(async (list) => {
-                        const res = await axios.get(
-                            `${URL}/product/${list.accountname}/?limit=0&skip=0`,
-                            {
-                                headers: {
-                                    "Authorization": `Bearer ${userToken}`,
-                                    "Content-type": "application/json",
-                                },
-                            }
+                        const res = await instance.get(
+                            `/product/${list.accountname}/?limit=0&skip=0`
                         );
                         return res.data?.product;
                     })

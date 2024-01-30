@@ -1,25 +1,18 @@
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
 import { URL } from '../../lib/apis/constant/path'
 import { Study } from './Study';
 import { StudyImage } from './StudyImage';
+import instance from '../../lib/apis/interceptor';
 
 export const StudyUpload=() => {
     const [userToken, setUserToken] = useState();
     const [itemName, setItemName] = useState('');
     const [link, setLink] = useState('');
     const [itemImage, setItemImage] = useState('');
-    
     const navigate= useNavigate();
-
-    const accountname = useSelector((state) => {
-        return state.user.myInfo.accountname;
-    });
 
     useEffect(()=>{
         setUserToken(localStorage.getItem('Access Token'));
@@ -27,22 +20,14 @@ export const StudyUpload=() => {
 
         const handleSubmit= async (e) =>{
             e.preventDefault();
-
             try{
-                const res= await axios
-                    .post(`${URL}/product`, 
+                await instance.post(`${URL}/product`, 
                     {
                         product: {
                             itemName: itemName,
                             price: 9999999,
                             link: link,
                             itemImage: itemImage,
-                        },
-                    },
-                    {
-                        headers: {
-                            Authorization: `Bearer ${userToken}`,
-                            'Content-type': 'application/json',
                         },
                     })
             navigate(`/together`);

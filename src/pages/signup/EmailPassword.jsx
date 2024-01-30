@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import styled from 'styled-components';
-
+import instance from '../../lib/apis/interceptor';
 import { REG_EXP_EMAIL } from '../../lib/apis/constant/regexp'
-import { URL } from '../../lib/apis/constant/path'
 import LoginHeader from '../../components/header/LoginHeader';
 
 export const EmailPassword= ()=> {
@@ -57,28 +55,32 @@ export const EmailPassword= ()=> {
     // 다음 버튼 클릭 시
     const toProfilename= async function(event){
         event.preventDefault();
-        const response= await axios.post(`${URL}/user/emailvalid`, {
-            user: {
-                email,
-            },
-        });
-        if(response.data.message === '사용 가능한 이메일 입니다.'){
-            setCheckValidatedEmail(true);
-            navigate('/signup/profile', {
-                state: {
+        try {
+            const response = await instance.post(`/user/emailvalid`,{
+                user: {
                     email,
-                    password,
                 },
             });
-        }else if(response.data.message === '이미 가입된 이메일 주소 입니다.'){
-            setCheckValidatedEmail(false);
-            setEmailMessage('이미 가입된 이메일 주소 입니다.')
-        }else {
-            setCheckValidatedEmail(false);
-            alert('잘못된 접근입니다.');
+            console.log(response);
+            if(response.data.message === '사용 가능한 이메일 입니다.'){
+                setCheckValidatedEmail(true);
+                navigate('/signup/profile', {
+                    state: {
+                        email,
+                        password,
+                    },
+                });
+            }else if(response.data.message === '이미 가입된 이메일 주소 입니다.'){
+                setCheckValidatedEmail(false);
+                setEmailMessage('이미 가입된 이메일 주소 입니다.')
+            }else {
+                setCheckValidatedEmail(false);
+                alert('잘못된 접근입니다.');
+            }
+        } catch (error) {
+            console.log(error);
         }
-    };
-
+}
     return (
         <>
             <LoginHeader/>

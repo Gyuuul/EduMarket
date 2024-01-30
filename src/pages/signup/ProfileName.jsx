@@ -7,6 +7,7 @@ import { URL } from '../../lib/apis/constant/path'
 import { REG_EXP_ID } from '../../lib/apis/constant/regexp'
 import handleFileUpload from './handleFileUpload';
 import LoginHeader from '../../components/header/LoginHeader';
+import instance from '../../lib/apis/interceptor';
 
 export const ProfileName= ()=> {
     const fileInput= useRef();
@@ -74,22 +75,26 @@ export const ProfileName= ()=> {
     const start= checkValidatedUserName && checkValidatedUserId;
 
     const join= async ()=> {
-        const res= await axios.post(`${URL}/user/accountnamevalid`,{
-            user: {
-                accountname: userId,
-            },
-        });
-
-        if(res.data.message === '사용 가능한 계정ID 입니다.'){
-            await axios.post(`${URL}/user`, userData, {
-                'Content-type': 'application/json',
-            })
-            .then((res)=> 
-            navigate('/login'));
-        }else if(res.data.message === '이미 가입된 계정ID 입니다.'){
-            alert('이미 가입된 계정 ID 입니다.');
-        }else{
-            alert('잘못된 접근입니다.');
+        try {
+            const response = await instance.post(`/user/accountnamevalid`,{
+                user: {
+                    accountname: userId,
+                },
+            });
+            console.log(response);
+            if(response.data.message === '사용 가능한 계정ID 입니다.'){
+                await axios.post(`${URL}/user`, userData, {
+                    'Content-type': 'application/json',
+                })
+                .then((response)=> 
+                navigate('/login'));
+            }else if(response.data.message === '이미 가입된 계정ID 입니다.'){
+                alert('이미 가입된 계정 ID 입니다.');
+            }else{
+                alert('잘못된 접근입니다.');
+            }
+        } catch (error) {
+            console.log(error);
         }
     };
 

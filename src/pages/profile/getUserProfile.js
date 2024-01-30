@@ -1,13 +1,11 @@
-import axios from 'axios';
-import { URL } from '../../lib/apis/constant/path';
+import instance from "../../lib/apis/interceptor";
 
 export default async function getUserProfile(accountname) {
-    const userToken= localStorage.getItem('Access Token');
-    const res= await axios.get(`${URL}/profile/${accountname}`,{
-        headers:{
-            "Authorization" : `Bearer ${userToken}`,
-            "Content-type" : "application/json"
-        }
-    })
-    return res.data.profile;
+    try {
+        const response = await instance.get(`/profile/${accountname}`);
+        console.log(response);
+        return response.data.profile;
+    } catch (error) {
+        console.log(error);
+    }
 }

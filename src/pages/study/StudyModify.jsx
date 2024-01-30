@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux';
-import axios from 'axios';
 import styled from 'styled-components';
-
 import Common from '../../components/common/Common'
-import { URL } from '../../lib/apis/constant/path'
 import { Study } from './Study';
 import { StudyImage } from './StudyImage';
+import instance from '../../lib/apis/interceptor';
 
 export default function StudyModify() {
     const {productId}= useParams();
     const navigate= useNavigate();
-    const accountname= useSelector((state)=> state.user.myInfo.accountname);
-    const userToken = localStorage.getItem('Access Token');
-
     const [itemName, setItemName]= useState('');
     const [itemImage, setItemImage]= useState('');
     const [link, setLink]= useState('');
@@ -25,12 +19,7 @@ export default function StudyModify() {
 
     async function getTogether(){
         try{
-            const res= await axios.get(`${URL}/product/detail/${productId}`, {
-                headers: {
-                    Authorization: `Bearer ${userToken}`,
-                    'Content-type': 'application/json',
-                },
-            })
+            const res= await instance.get(`/product/detail/${productId}`)
 
             setItemName(res.data.product.itemName);
             setLink(res.data.product.link);
@@ -46,18 +35,12 @@ export default function StudyModify() {
         e.preventDefault();
 
         try{
-            await axios.put(`${URL}/product/${productId}`, {
+            await instance.put(`/product/${productId}`, {
                 product: {
                     itemName: itemName,
                     price: 0,
                     link: link,
                     itemImage: itemImage,
-                },
-            },
-            {
-                headers: {
-                    Authorization: `Bearer ${userToken}`,
-                    'Content-type': 'application/json',
                 },
             })
             navigate(`/together/detail/${productId}`);

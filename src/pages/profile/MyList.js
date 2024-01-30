@@ -1,25 +1,23 @@
-import axios from 'axios';
-import { URL } from '../../lib/apis/constant/path';
+import instance from '../../lib/apis/interceptor';
 
-const token = localStorage.getItem('Access Token');
 const accountname = localStorage.getItem('Account Name');
 
 export const getMyStudyList= async()=>{
-    const res= await axios.get(`${URL}/product/${accountname}/?limit=10&skip=0`, {
-        headers: {
-            "Authorization" : `Bearer ${token}`,
-            "Content-type" : "application/json"
-        }
-    })
-    return res?.data?.product;
+    try {
+        const response = await instance.get(`/product/${accountname}/?limit=10&skip=0`);
+        console.log(response);
+        return response?.data?.product;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export const getMyPostList= async()=>{
-    const res= await axios.get(`${URL}/post/${accountname}/userpost/?limit=10&skip=0`, {
-        headers:{
-            "Authorization" : `Bearer ${token}`,
-            "Content-type" : "application/json"
-        }
-    })
-    return res?.data?.post;
+    try {
+        const response = await instance.get(`/post/${accountname}/userpost/?limit=10&skip=0`);
+        console.log(response);
+        return response.data?.post;
+    } catch (error) {
+        console.log(error);
+    }
 }
