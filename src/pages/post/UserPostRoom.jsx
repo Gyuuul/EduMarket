@@ -62,7 +62,6 @@ const Alert= styled.p`
     color: #C63D2F;
     padding: 50px 0 30px;
 `
-
 const Ul= styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -70,12 +69,28 @@ const Ul= styled.ul`
     padding: 0 0;
     margin: 0 0;
     line-height: 0;
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }   
 `
 const Li= styled.li`
     flex: 0 0 33.33333%;
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
+
+    @media screen and (max-width: 1200px) {
+        flex: 0 0 33.5%;
+    }
+
+    @media screen and (max-width: 1100px) {
+        flex:0 0 50%;
+    }
+    
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
 `
 const Div= styled.div`
     width: 300px;

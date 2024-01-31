@@ -281,11 +281,7 @@ const Li= styled.li`
     @media screen and (max-width: 1100px) {
         flex:0 0 50%;
     }
-    /* @media screen and (min-width: 800px) {
-        width: 100%;
-        flex:0 0 50%;
-
-    } */
+    
     @media screen and (max-width: 800px) {
         width: 100%;
     }

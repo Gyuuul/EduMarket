@@ -76,6 +76,16 @@ const ProfileWrap= styled.div`
 const UserProfileDiv= styled.div`
     max-width: 1400px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1200px) {
+        width: 1100px;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 1000px;
+    }
+    @media screen and (max-width: 800px) {
+        width: 700px;
+    }
 `
 const Title= styled.div`
     padding: 200px 0 90px 0;
@@ -96,11 +106,30 @@ const Wrap= styled.div`
     border-radius: 50px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+
+    @media screen and (max-width: 1200px) {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 900px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 800px) {
+        width: 500px;
+        margin: 0 auto;
+    }
 `
 const ProfileDiv= styled.div`
     display: flex;
     gap: 70px;
     padding: 30px 0 60px 0; 
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 `
 const Img= styled.img`
     width: 220px;
@@ -111,6 +140,9 @@ const Img= styled.img`
 const Profiles= styled.div`
     display: flex;
     flex-direction: column;
+    & div {
+        text-align: center;
+    }
 `
 const NameDiv= styled.div`
     margin: 20px 0px;
@@ -119,11 +151,19 @@ const Name= styled.h2`
     font-family: "Frutiger-lt-pro-normal";
     font-size: 30px;
     color: #2b2b2b;
+
+    @media screen and (max-width: 800px) {
+        text-align: center;
+    }
 `
 const Id= styled.h3`
     font-family: "Frutiger-lt-pro-normal";
     font-size: 18.85px;
     color: #777;
+
+    @media screen and (max-width: 800px) {
+        text-align: center;
+    }
 `
 const Intro= styled.p`
     font-family: "Noto_Sans_KR-400";

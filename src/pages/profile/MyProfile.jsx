@@ -74,6 +74,16 @@ const ProfileWrap= styled.div`
 const MyProfileDiv= styled.div`
     max-width: 1400px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1200px) {
+        width: 1100px;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 1000px;
+    }
+    @media screen and (max-width: 800px) {
+        width: 700px;
+    }
 `
 const Title= styled.div`
     padding: 200px 0 90px 0;
@@ -94,6 +104,19 @@ const Wrap= styled.div`
     border-radius: 50px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+
+    @media screen and (max-width: 1200px) {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 900px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 800px) {
+        width: 500px;
+        margin: 0 auto;
+    }
 `
 const MypageMenu= styled.ul`
     text-align: center;
@@ -123,6 +146,12 @@ const ProfileDiv= styled.div`
     display: flex;
     gap: 70px;
     padding: 50px 0 60px 0; 
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 `
 const Img= styled.img`
     width: 200px;
@@ -137,6 +166,10 @@ const Name= styled.h2`
     font-family: "Frutiger-lt-pro-normal";
     font-size: 30px;
     color: #2b2b2b;
+
+    @media screen and (max-width: 800px) {
+        text-align: center;
+    }
 `
 const Id= styled.h3`
     font-family: "Frutiger-lt-pro-normal";
@@ -144,6 +177,10 @@ const Id= styled.h3`
     font-size: 18.85px;
     color: #777;
     margin-bottom: 20px;
+
+    @media screen and (max-width: 800px) {
+        text-align: center;
+    }
 `
 const FollowDiv= styled.div`
     display: flex;
@@ -211,12 +248,28 @@ export const Ul= styled.ul`
     padding: 0 0;
     margin: 0 0;
     line-height: 0;
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }   
 `
 export const Li= styled.li`
     flex: 0 0 33.33333%;
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
+
+    @media screen and (max-width: 1200px) {
+        flex: 0 0 33.5%;
+    }
+
+    @media screen and (max-width: 1100px) {
+        flex:0 0 50%;
+    }
+    
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
 `
 export const Div= styled.div`
     width: 300px;
