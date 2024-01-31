@@ -14,7 +14,6 @@ export default function StudyDetail() {
     const {productId}= useParams();
     const navigate= useNavigate();
     const dispatch= useDispatch();
-    const userToken = localStorage.getItem('Access Token');
     const myAccountName= useSelector((state)=> state.user.myInfo.accountname);
     const [visible, setVisible]= useState(false);
     const [detail, setDetail]= useState('');
@@ -88,7 +87,7 @@ export default function StudyDetail() {
                         <Title>{detail?.itemName}</Title>
                         <Content>{detail?.link}</Content>
                         <Div>
-                            <img src={detail?.itemImage} alt='스터디 대표 이미지'/>
+                            <Img src={detail?.itemImage} alt='스터디 대표 이미지'/>
                         </Div>
                     </StudyDiv>
                 )}
@@ -109,6 +108,16 @@ const Detail= styled.div`
     width: 1280px;
     margin: 0 auto;
     padding: 120px 0 0 0;
+
+    @media screen and (max-width: 1200px) {
+        width: 1100px;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 1000px;
+    }
+    @media screen and (max-width: 800px) {
+        width: 700px;
+    }
 `
 const StudyDiv= styled.div`
     padding: 30px 40px;
@@ -116,6 +125,19 @@ const StudyDiv= styled.div`
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+
+    @media screen and (max-width: 1200px) {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 900px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 800px) {
+        width: 600px;
+        margin: 0 auto;
+    }
 `
 const DetailTop= styled.div`
     display: flex;
@@ -125,6 +147,10 @@ const AuthorDiv= styled.div`
     display: flex;
     gap: 15px;
     margin: 0 0 24px 100px;
+
+    @media screen and (max-width: 800px) {
+        margin: 0 0 24px 0;
+    }
 `
 const ProfileImg= styled.img`
     width: 50px;
@@ -144,6 +170,10 @@ const Title= styled.p`
     line-height: 40px;
     color: #3a3a3a; 
     margin: 0 0 24px 100px;
+
+    @media screen and (max-width: 800px) {
+        margin: 0 0 24px 0;
+    }
 `
 const Content= styled.p`
     font-family: "Noto_Sans_KR-400";
@@ -151,17 +181,35 @@ const Content= styled.p`
     line-height: 30px;
     color: #3a3a3a; 
     margin: 0 0 24px 100px;
+
+    @media screen and (max-width: 800px) {
+        margin: 0 0 24px 0;
+    }
 `
 const Div= styled.div`
     width: 1000px;
     height: 600px;
     margin: 0 auto;
 
-    & img {
-        width: 100%;
+    @media screen and (max-width: 1200px) {
+        width: 820px;
         height: 600px;
-        object-fit: cover;
     }
+
+    @media screen and (max-width: 1100px) {
+        width: 720px;
+        height: 600px;
+    }
+    
+    @media screen and (max-width: 800px) {
+        width: 520px;
+        height: 600px;
+    }
+`
+const Img= styled.img`
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
 `
 const P= styled.p`
     font-family: "Noto_Sans_KR-400";

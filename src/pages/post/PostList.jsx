@@ -63,20 +63,18 @@ export default function PostList() {
                     </WriteSection>  
                     {postList.length ? (
                         <>
-                            <ListDiv>
+                            <Ul>
                                 {postList &&
                                     showList.map((item)=> (
-                                        <Ul>
-                                            <li>
+                                            <Li>
                                                 <PostItemLi
                                                     key={item.id}
                                                     {...item}
                                                 ></PostItemLi>
-                                            </li>
-                                        </Ul>
+                                            </Li>
                                     ))}
                                 <div ref={ref}/>
-                            </ListDiv>
+                            </Ul>
                             <button onClick={goPostUpload} aria-label=" 게시글 작성"></button>
                         </>
                     ) : (
@@ -185,19 +183,35 @@ const BoxDiv= styled.div`
         color: #94A3B8;
     }
 `
-const ListDiv= styled.div`
+const Ul= styled.ul`
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
     padding: 0 0;
     margin: 0 0;
     line-height: 0;
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }   
 `
-const Ul= styled.ul`
+const Li= styled.li`
     flex: 0 0 33.33333%;
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
+    
+    @media screen and (max-width: 1200px) {
+        flex: 0 0 33.5%;
+    }
+
+    @media screen and (max-width: 1100px) {
+        flex:0 0 50%;
+    }
+    
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
 `
 const Alert= styled.p`
     font-family: "Noto_Sans_KR-600";

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import styled from 'styled-components';
 import Common from '../../components/common/Common'
-import { URL } from '../../lib/apis/constant/path'
 import PostDelete from './PostDelete';
 import Slick from '../../components/slick/Slick';
 import Comment from '../../components/comment/Comment';
@@ -14,6 +12,7 @@ import Heart from '../../components/heart/Heart';
 import comment from '../../assets/icons/icon/Comment.webp'
 import MoreButton from '../../assets/icons/icon/icon-more.webp'
 import { getDetail } from './Post';
+import instance from '../../lib/apis/interceptor';
 
 export default function PostDetail() {
     const [comments, setComments]= useState([]);
@@ -24,16 +23,10 @@ export default function PostDetail() {
     const { postId }= useParams();
     const navigate= useNavigate();
     const dispatch= useDispatch();
-    const userToken= localStorage.getItem('Access Token');
     const myAccountname= useSelector((state)=> state.user.myInfo.accountname);
 
     const getComment= async ()=> {
-        const res= await axios.get(`${URL}/post/${postId}/comments/?limit=10&skip=${pages * 10}`, {
-            headers: {
-                "Authorization" : `Bearer ${userToken}`,
-                "Content-type" : "application/json"
-            }
-        })
+        const res= await instance.get(`/post/${postId}/comments/?limit=10&skip=${pages * 10}`)
         const data= res.data?.comments;
         setComments(data);
     }
@@ -119,6 +112,16 @@ const PostsDetail= styled.div`
     width: 1280px;
     margin: 0 auto;
     padding: 120px 0 0 0;
+
+    @media screen and (max-width: 1200px) {
+        width: 1100px;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 1000px;
+    }
+    @media screen and (max-width: 800px) {
+        width: 700px;
+    }
 `
 const PostDiv= styled.div`
     padding: 30px 40px;
@@ -126,6 +129,19 @@ const PostDiv= styled.div`
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+
+    @media screen and (max-width: 1200px) {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 1100px) {
+        width: 900px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 800px) {
+        width: 600px;
+        margin: 0 auto;
+    }
 `
 const DetailTop= styled.div`
     display: flex;
@@ -140,6 +156,21 @@ const Div= styled.div`
         height: 600px;
         object-fit: cover;
     }
+
+    @media screen and (max-width: 1200px) {
+        width: 820px;
+        height: 600px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        width: 720px;
+        height: 600px;
+    }
+    
+    @media screen and (max-width: 800px) {
+        width: 520px;
+        height: 600px;
+    }
 `
 const ContentDiv= styled.div`
     font-size: 20px;
@@ -147,6 +178,10 @@ const ContentDiv= styled.div`
     line-height: 30px;
     margin: 24px 100px 24px 100px;
     font-family: "Noto_Sans_KR-400";
+
+    @media screen and (max-width: 1200px) {
+        margin: 24px 0;
+    }
 `
 const SideDiv= styled.div`
     display: flex;
@@ -173,6 +208,10 @@ const AuthorDiv= styled.div`
     gap: 15px;
     margin-left: 100px;
     margin-bottom: 24px;
+
+    @media screen and (max-width: 1200px) {
+        margin: 0 24px 24px 0;
+    }
 `
 const ProfileImg= styled.img`
     width: 50px;
