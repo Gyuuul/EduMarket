@@ -263,10 +263,30 @@ const Ul= styled.ul`
     padding: 0 0;
     margin: 0 0;
     line-height: 0;
+
+    @media screen and (max-width: 800px) {
+        flex-direction: column;
+    }
 `
 const Li= styled.li`
     flex: 0 0 33.33333%;
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
+    
+    @media screen and (max-width: 1200px) {
+        flex: 0 0 33.5%;
+    }
+
+    @media screen and (max-width: 1100px) {
+        flex:0 0 50%;
+    }
+    /* @media screen and (min-width: 800px) {
+        width: 100%;
+        flex:0 0 50%;
+
+    } */
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
 `
