@@ -54,6 +54,10 @@ const ItemDiv= styled.div`
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+
+    @media screen and (max-width: 800px) {
+        height: 400px;
+    }
 `
 const ContentDiv = styled.div`
     width: 350px;
