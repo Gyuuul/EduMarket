@@ -63,7 +63,7 @@ export default function InsideEduket() {
 
                     <SubTitle>THE ROLE OF EDUKET</SubTitle>
                     <SubDescription>
-                        <strong>1. 각 직군의 사람들끼리 경험을 공유합니다.</strong><br/>
+                        <strong>1. 각 직군의 사람들이 함께 경험을 공유합니다.</strong><br/>
                         EDUKET은 다양한 분야의 이야기를 공유함으로써 <br/>
                         취업준비생, 신입부터 경력자까지 현업에서의 이야기를 듣고 학습할 수 있습니다.<br/>
                     </SubDescription>
