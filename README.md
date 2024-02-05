@@ -175,7 +175,7 @@ EDUKET
     <th>HOME (로그인⭕)</th>
   </tr>
     <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0cd8e715-6648-42f0-b1c1-fcb94a24c74a"> </td>
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/48688601-0888-46ca-9dea-f3a86cc61082"> </td>
     </tr>
   <tr>
     <th>POST 목록</th>
