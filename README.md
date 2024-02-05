@@ -283,15 +283,30 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/81728b8f-a281-4a62-8368-425492881c58"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8016a196-04e8-4c63-b654-6d95b630e3b9"> </td>
     </tr>
-
 </table>
 
+## 트러블 슈팅
+#### 🚨 문제 배경
+- 유저 검색 페이지에서 Input에 “귤”이라는 글자를 입력 시, onChange 이벤트로 인해 “ㄱ”, “규”,”귤” 이런 형태로 글자가 작성될 때마다 api를 호출하게 되어 서버에 불필요한 쿼리를 보내기 때문에 심한 로드가 발생했습니다.
 
+#### ✨ 해결 방법
+- 연속적으로 이벤트가 호출되는 경우, 특정 시간이 지난 후 하나의 이벤트만 발생하도록 하여 중복 요청과 렌더를 막아 최적화 하는 debounce 기술을 알게 되었습니다.
 
+하지만 debounce 함수가 많이 사용되는 change event는 계속해서 dom에 변화를 주기 때문에 리렌더링이 일어나, 함수가 초기화 된다는 사실을 알게 되었습니다. 이를 방지하기 위해서 useCallback을 사용하여 함수를 메모이제이션 한 결과 불필요한 쿼리를 줄였습니다.
 
+#### 👐🏻 이전 코드와 비교
+  <tr align="center">
+      <th colspan="2">debounce 적용 전 - 전체 요청 62개, 완료까지  약 19.20초</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8be7a35c-1a6d-42c9-8d04-e6cf888fb54f"> </td>
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/43d64ac3-6580-4528-b116-9feb55c80b35"> </td>
+    </tr>
 
-
-
-## 트러블 슈팅🚨
-- 검색 debounce
-- 
+  <tr align="center">
+      <th colspan="2">debounce 적용 후 - 전체 요청 21개, 완료까지  약 5.5초</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/51601aa1-9b96-4b5f-b5a8-8c87e61f300a"> </td>
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/e2961d07-4cc5-43f8-9b2c-d8248df2a0ed"> </td>
+    </tr>
