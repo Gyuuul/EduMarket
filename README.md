@@ -166,7 +166,7 @@ EDUKET
 ## 기능 UI🎨
 <table>
   <tr align="center">
-      <th colspan="2">홈/메인 페이지</th>
+      <th colspan="2">🏫 홈/메인 페이지</th>
   </tr>
   <tr>
     <th>MAIN (로그인❌)</th>
@@ -178,7 +178,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">회원가입 페이지</th>
+      <th colspan="2">😺 회원가입 페이지</th>
   </tr>
   <tr>
     <th>Signup - 이메일, 패스워드</th>
@@ -190,7 +190,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">로그인/ Inside Eduket 페이지</th>
+      <th colspan="2">😺 로그인/ Inside Eduket 페이지</th>
   </tr>
   <tr>
     <th>LOGIN</th>
@@ -202,7 +202,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">게시글 페이지</th>
+      <th colspan="2">📝 게시글 페이지</th>
   </tr>
   <tr>
     <th>POST 목록</th>
@@ -231,7 +231,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">스터디 페이지</th>
+      <th colspan="2">📕 스터디 페이지</th>
   </tr>
   <tr>
     <th>STUDY 목록</th>
@@ -251,7 +251,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">나의 프로필 페이지</th>
+      <th colspan="2">👩🏻‍💻 나의 프로필 페이지</th>
   </tr>
   <tr>
     <th>My Profile</th>
@@ -263,7 +263,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">사용자 프로필 페이지</th>
+      <th colspan="2">👩🏻‍💻 사용자 프로필 페이지</th>
   </tr>
   <tr>
     <th>User Profile</th>
@@ -273,7 +273,7 @@ EDUKET
     </tr>
 
   <tr align="center">
-      <th colspan="2">팔로워/ 팔로잉 페이지</th>
+      <th colspan="2">✨ 팔로워/ 팔로잉 페이지</th>
   </tr>
   <tr>
     <th>Follower</th>
