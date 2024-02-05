@@ -27,13 +27,16 @@
 ## 개발기간 및 일정⏰
 프로젝트 기획기간 <br />
 2023.11.01 - 2023.11.30
+![11월 일정](https://github.com/Gyuuul/eduket/assets/126536442/30d5c0ab-6b81-433f-ac36-00e2943cbd8a)
 
 프로젝트 개발기간 <br />
 2023.12.01 - 2024.01.20
+![12월 일정](https://github.com/Gyuuul/eduket/assets/126536442/5bd357b9-2bac-4279-b217-5c786457b1e7)
+![1월 일정](https://github.com/Gyuuul/eduket/assets/126536442/6d2bf50c-3e0e-4a26-8d58-3d4b1d900762)
 
 리팩토링 개발기간 <br />
 2024.01.20 - 2024.02-10
-
+![1-2월 일정](https://github.com/Gyuuul/eduket/assets/126536442/703cf90b-7095-4d57-af4f-e0c5ba048869)
 <br/>
 
 ## 프로젝트 목표✨
