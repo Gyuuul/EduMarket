@@ -165,6 +165,9 @@ EDUKET
 
 ## 기능 UI🎨
 <table>
+  <tr align="center">
+      <th colspan="2">홈/메인 페이지</th>
+  </tr>
   <tr>
     <th>MAIN (로그인❌)</th>
     <th>HOME (로그인⭕)</th>
@@ -173,6 +176,10 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0cd8e715-6648-42f0-b1c1-fcb94a24c74a"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8a7ae814-e600-43a7-9af9-87a1d46baab1"> </td>
     </tr>
+
+  <tr align="center">
+      <th colspan="2">회원가입 페이지</th>
+  </tr>
   <tr>
     <th>Signup - 이메일, 패스워드</th>
     <th>Signup - 프로필, 이름, 자기소개</th> 
@@ -181,7 +188,10 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/d0add28b-9e59-48b3-9c2e-3c2206be74bc"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8e407897-13cf-4eaf-a22c-97a9ffca8e7b"> </td>
     </tr>
-    
+
+  <tr align="center">
+      <th colspan="2">로그인/ Inside Eduket 페이지</th>
+  </tr>
   <tr>
     <th>LOGIN</th>
     <th>Inside Eduket - 소개 페이지</th>
@@ -190,6 +200,10 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/18eb471a-68ac-477d-ae98-73712f35d2d2"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/a1ab3c31-735a-4c1a-af6d-1ed787a50cde"> </td>
     </tr>
+
+  <tr align="center">
+      <th colspan="2">게시글 페이지</th>
+  </tr>
   <tr>
     <th>POST 목록</th>
     <th>POST 업로드</th>
@@ -215,6 +229,10 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/da973b60-1fce-413d-8f05-da575a5cef94"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/579fefa4-c4a9-4fa7-be46-2725fa1f6956"> </td>
     </tr>
+
+  <tr align="center">
+      <th colspan="2">스터디 페이지</th>
+  </tr>
   <tr>
     <th>STUDY 목록</th>
     <th>STUDY 업로드</th>
@@ -231,6 +249,10 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/47af8e51-5723-49e9-8e5e-577cfdbe594a"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/e86fafb5-9d77-4360-b05c-65fe41b1614e"> </td>
     </tr>
+
+  <tr align="center">
+      <th colspan="2">나의 프로필 페이지</th>
+  </tr>
   <tr>
     <th>My Profile</th>
     <th>My Profile 수정</th>
@@ -239,12 +261,20 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/721a5684-479b-46b4-8229-6f81b3726b3b"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/4440cfe3-b36c-4ae1-9201-2f9733b8bada"> </td>
     </tr>
+
+  <tr align="center">
+      <th colspan="2">사용자 프로필 페이지</th>
+  </tr>
   <tr>
     <th>User Profile</th>
   </tr>
     <tr align="center">
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8432a7d7-d389-4b54-b421-22b31c4b1050"> </td>
     </tr>
+
+  <tr align="center">
+      <th colspan="2">팔로워/ 팔로잉 페이지</th>
+  </tr>
   <tr>
     <th>Follower</th>
     <th>Following</th> 
