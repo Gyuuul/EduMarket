@@ -171,7 +171,36 @@ EDUKET
     <tr align="center">
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0cd8e715-6648-42f0-b1c1-fcb94a24c74a"> </td>
     </tr>
-
+  <tr>
+    <th>HOME (로그인⭕)</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0cd8e715-6648-42f0-b1c1-fcb94a24c74a"> </td>
+    </tr>
+  <tr>
+    <th>POST 목록</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/030ac33f-1a7c-455b-9da8-45c36c3eab36"> </td>
+    </tr>
+      <tr>
+    <th>POST 업로드</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/81efaac1-bee4-49fc-8789-c8a826d84e48"> </td>
+    </tr>
+      <tr>
+    <th>POST 수정</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/60f2e0a3-fc2a-4b2d-b7e4-ce6b3e528473"> </td>
+    </tr>
+      <tr>
+    <th>POST 삭제</th>
+  </tr>
+    <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/f1d3d753-b2a9-4bf9-9b54-b8d85a5a248e"> </td>
+    </tr>
 </table>
 
 
