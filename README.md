@@ -174,49 +174,39 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8a7ae814-e600-43a7-9af9-87a1d46baab1"> </td>
     </tr>
   <tr>
-    <td>Signup - 이메일, 패스워드</td>
-    <td>Signup - 프로필, 이름, 자기소개</td> 
+    <th>Signup - 이메일, 패스워드</th>
+    <th>Signup - 프로필, 이름, 자기소개</th> 
   </tr>
     <tr align="center">
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/d0add28b-9e59-48b3-9c2e-3c2206be74bc"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8e407897-13cf-4eaf-a22c-97a9ffca8e7b"> </td>
     </tr>
+    
   <tr>
     <th>LOGIN</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/18eb471a-68ac-477d-ae98-73712f35d2d2"> </td>
-    </tr>
-  <tr>
     <th>Inside Eduket - 소개 페이지</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/18eb471a-68ac-477d-ae98-73712f35d2d2"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/a1ab3c31-735a-4c1a-af6d-1ed787a50cde"> </td>
     </tr>
   <tr>
     <th>POST 목록</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/030ac33f-1a7c-455b-9da8-45c36c3eab36"> </td>
-    </tr>
-  <tr>
     <th>POST 업로드</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/030ac33f-1a7c-455b-9da8-45c36c3eab36"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/81efaac1-bee4-49fc-8789-c8a826d84e48"> </td>
     </tr>
   <tr>
     <th>POST 수정</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/60f2e0a3-fc2a-4b2d-b7e4-ce6b3e528473"> </td>
-    </tr>
-  <tr>
     <th>POST 삭제</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/60f2e0a3-fc2a-4b2d-b7e4-ce6b3e528473"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/f1d3d753-b2a9-4bf9-9b54-b8d85a5a248e"> </td>
     </tr>
+
   <tr>
     <th>POST 댓글 및 좋아요 등록/삭제</th>
   </tr>
@@ -272,8 +262,8 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8432a7d7-d389-4b54-b421-22b31c4b1050"> </td>
     </tr>
   <tr>
-    <td>Follower</td>
-    <td>Following</td> 
+    <th>Follower</th>
+    <th>Following</th> 
   </tr>
     <tr align="center">
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/81728b8f-a281-4a62-8368-425492881c58"> </td>
