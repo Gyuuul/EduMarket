@@ -167,14 +167,10 @@ EDUKET
 <table>
   <tr>
     <th>MAIN (로그인❌)</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0cd8e715-6648-42f0-b1c1-fcb94a24c74a"> </td>
-    </tr>
-  <tr>
     <th>HOME (로그인⭕)</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0cd8e715-6648-42f0-b1c1-fcb94a24c74a"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/8a7ae814-e600-43a7-9af9-87a1d46baab1"> </td>
     </tr>
   <tr>
