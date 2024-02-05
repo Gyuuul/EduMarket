@@ -117,7 +117,6 @@ import postImg2 from './../../assets/testImg/post2.png';
 EDUKET
  ┣ 📂node_modules
  ┣ 📂public
- ┃ ┗ 📜index.html
  ┣ 📂src
  ┃ ┣ 📂assets
  ┃ ┃ ┣ 📂fonts
@@ -125,8 +124,6 @@ EDUKET
  ┃ ┣ 📂components
  ┃ ┃ ┣ 📂body
  ┃ ┃ ┣ 📂comment
- ┃ ┃ ┃ ┣ 📂commentInput
- ┃ ┃ ┃ ┣ 📂commentList
  ┃ ┃ ┣ 📂common
  ┃ ┃ ┣ 📂follow
  ┃ ┃ ┣ 📂footer
@@ -136,10 +133,8 @@ EDUKET
  ┃ ┃ ┣ 📂post
  ┃ ┃ ┣ 📂search
  ┃ ┃ ┣ 📂slick
- ┃ ┃ ┣ 📂toggle
+ ┃ ┃ ┗📂toggle
  ┃ ┣ 📂lib
- ┃ ┃ ┗📂apis
- ┃ ┃   ┗📂constant
  ┃ ┣ 📂pages
  ┃ ┃ ┣ 📂follow
  ┃ ┃ ┣ 📂home
@@ -148,17 +143,16 @@ EDUKET
  ┃ ┃ ┣ 📂post
  ┃ ┃ ┣ 📂profile
  ┃ ┃ ┣ 📂signup
- ┃ ┃ ┣ 📂study
+ ┃ ┃ ┗ 📂study
  ┃ ┣ 📂route
  ┃ ┣ 📂store
- ┃ ┃ ┗📂slice
  ┃ ┣ 📜App.js
  ┃ ┣ 📜index.js
  ┃ ┗ 📜reset.css
  ┣ 📜.gitignore
  ┣ 📜.prettierrc.json
  ┣ 📜package-lock.json
- ┣ 📜package.json
+ ┗ 📜package.json
  ```
 
 ## 기능 및 기능 시현
