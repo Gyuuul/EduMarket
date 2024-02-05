@@ -6,6 +6,8 @@
 > 😺 ID : eduket@naver.com<br/>
 > 🔓 PW : qw332211<br/>
 
+![썸네일](https://github.com/Gyuuul/eduket/assets/126536442/63310a90-43b6-4399-8211-ccc2e44afc02)
+
 ## EDUKET 서비스 소개💭 
 **EDUKET**은 다양한 직군의 취업준비생 또는 신입부터 경력자까지 모두 모여 진로 개발과 취업, 자기계발에 필요한 핵심 정보와 지식을 공유하며 소통하는 플랫폼입니다.
 <br/>
@@ -294,7 +296,7 @@ EDUKET
 
 ### 👐🏻 이전 코드와 비교
 <table>
-  <tr align="center">
+  <tr align="left">
       <th colspan="2">debounce 적용 전 - 전체 요청 62개, 완료까지  약 19.20초</th>
   </tr>
     <tr align="center">
@@ -302,7 +304,7 @@ EDUKET
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/43d64ac3-6580-4528-b116-9feb55c80b35"> </td>
     </tr>
 
-  <tr align="center">
+  <tr align="left">
       <th colspan="2">debounce 적용 후 - 전체 요청 21개, 완료까지  약 5.5초</th>
   </tr>
     <tr align="center">
