@@ -96,16 +96,20 @@ font
 - import 순서 규칙
 
 ```jsx
-// 1. hook
+/* 1. hook */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-// 2. styled-component
+
+/* 2. styled-component*/
 import styled from 'styled-components';
-// 3. Common 파일
+
+/* 3. Common 파일*/
 import Common from '../common/Common.jsx';
-// 4. import로 가져오는 컴포넌트 파일
+
+/* 4. import로 가져오는 컴포넌트 파일*/
 import Post from './Post.jsx';
-// 5. 이미지 파일
+
+/* 5. 이미지 파일*/
 import postImg1 from './../../assets/testImg/post1.png';
 import postImg2 from './../../assets/testImg/post2.png';
 ```
