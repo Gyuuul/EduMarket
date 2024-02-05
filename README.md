@@ -209,50 +209,34 @@ EDUKET
 
   <tr>
     <th>POST 댓글 및 좋아요 등록/삭제</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/da973b60-1fce-413d-8f05-da575a5cef94"> </td>
-    </tr>
-  <tr>
     <th>POST 댓글 신고</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/da973b60-1fce-413d-8f05-da575a5cef94"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/579fefa4-c4a9-4fa7-be46-2725fa1f6956"> </td>
     </tr>
   <tr>
     <th>STUDY 목록</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0896ecb4-4f74-462e-ad7c-e5c4cda7ce94"> </td>
-    </tr>
-  <tr>
     <th>STUDY 업로드</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/0896ecb4-4f74-462e-ad7c-e5c4cda7ce94"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/75e964aa-9b3e-4dda-ae6c-9a90d936a5fb"> </td>
     </tr>
   <tr>
     <th>STUDY 수정</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/47af8e51-5723-49e9-8e5e-577cfdbe594a"> </td>
-    </tr>
-  <tr>
     <th>STUDY 삭제</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/47af8e51-5723-49e9-8e5e-577cfdbe594a"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/e86fafb5-9d77-4360-b05c-65fe41b1614e"> </td>
     </tr>
   <tr>
     <th>My Profile</th>
-  </tr>
-    <tr align="center">
-      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/721a5684-479b-46b4-8229-6f81b3726b3b"> </td>
-    </tr>
-  <tr>
     <th>My Profile 수정</th>
   </tr>
     <tr align="center">
+      <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/721a5684-479b-46b4-8229-6f81b3726b3b"> </td>
       <td><img src="https://github.com/Gyuuul/eduket/assets/126536442/4440cfe3-b36c-4ae1-9201-2f9733b8bada"> </td>
     </tr>
   <tr>
