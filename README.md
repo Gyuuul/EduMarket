@@ -2,11 +2,9 @@
 
 ## [🔗 EDUKET 바로가기](https://fe5-team6-project.github.io/hobby_together/#/)
 
-**[EDUKET 테스트 계정]**
-
+**[EDUKET 테스트 계정]**<br/>
 😺 계정 ID : `eduket@naver.com`<br/>
 🔓 계정 PW : `qw332211`<br/>
-<br/>
 
 ## 🏫 EDUKET 서비스 소개
 **EDUKET**은 다양한 직군의 취업준비생 또는 신입부터 경력자까지 모두 모여 진로 개발과 취업, 자기계발에 필요한 핵심 정보와 지식을 공유하며 소통하는 플랫폼입니다.
@@ -65,12 +63,12 @@
 ## 주요기능
 |🔐 계정 |😺 홈 |💬 게시물 |📕 스터디 | 👩🏻‍💻 프로필 |🔎 검색 | 🏫 페이지 |
 |--|--|--|--|--|--|--|
-| - 로그인/로그아웃<br />- 회원가입<br />- 프로필 설정<br />- 유효성 검증 | - 게시글 목록<br />- 스터디 목록<br />- 추천 팔로우 목록 | - 게시물 작성 / 수정 / 삭제<br />- 유저 게시글 목록<br />- 댓글 작성/수정/삭제/신고<br /> - 이미지 업로드 / 수정<br />- 좋아요/좋아요 취소<br />- 무한스크롤 | - 스터디 작성 / 수정 / 삭제<br />- 유저 스터디 목록<br /> - 추천 스터디 장소<br />- 무한스크롤 |- 프로필 수정<br />- 나의 게시글 목록<br />- 나의 스터디 목록<br /> - 팔로잉/언팔로우/팔로워|- 유저 검색<br />- 유저 검색 결과 목록| - EDUKET 소개 |
+| - 로그인/로그아웃<br />- 회원가입<br />- 프로필 설정<br />- 유효성 검증 | - 게시글 목록<br />- 스터디 목록<br />- 추천 팔로우 목록 | - 게시물 작성/수정/삭제<br />- 게시글 목록<br />- 댓글 작성/수정/삭제/신고<br /> - 이미지 업로드 / 수정<br />- 좋아요/좋아요 취소<br />- 무한스크롤 | - 스터디 작성/수정/삭제<br />- 스터디 목록<br /> - 추천 스터디 장소<br />- 무한스크롤 |- 프로필 수정<br />- 나의 게시글 목록<br />- 나의 스터디 목록<br /> - 팔로잉/언팔로우/팔로워|- 유저 검색<br />- 유저 검색 결과 목록| - EDUKET 소개 |
 
-## 코드 컨벤션
--   프리티어 설정
+## code 컨벤션
+-   Prettier 설정
 
-```
+```js
 {
   "tabWidth": 4,
   "singleQuote": true,
@@ -82,7 +80,7 @@
 
 -   css 컨벤션
 
-```
+```js
 position
 display
 width
@@ -94,9 +92,74 @@ background
 font
 기타
 ```
+
+- import 순서 규칙
+
+```jsx
+// 1. hook
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+// 2. styled-component
+import styled from 'styled-components';
+// 3. Common 파일
+import Common from '../common/Common.jsx';
+// 4. import로 가져오는 컴포넌트 파일
+import Post from './Post.jsx';
+// 5. 이미지 파일
+import postImg1 from './../../assets/testImg/post1.png';
+import postImg2 from './../../assets/testImg/post2.png';
+```
 <br/>
 
 ## 폴더 구조
+
+```
+EDUKET
+ ┣ 📂node_modules
+ ┣ 📂public
+ ┃ ┗ 📜index.html
+ ┣ 📂src
+ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📂fonts
+ ┃ ┃ ┗ 📂icons
+ ┃ ┣ 📂components
+ ┃ ┃ ┣ 📂body
+ ┃ ┃ ┣ 📂comment
+ ┃ ┃ ┃ ┣ 📂commentInput
+ ┃ ┃ ┃ ┣ 📂commentList
+ ┃ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📂follow
+ ┃ ┃ ┣ 📂footer
+ ┃ ┃ ┣ 📂header
+ ┃ ┃ ┣ 📂heart
+ ┃ ┃ ┣ 📂map
+ ┃ ┃ ┣ 📂post
+ ┃ ┃ ┣ 📂search
+ ┃ ┃ ┣ 📂slick
+ ┃ ┃ ┣ 📂toggle
+ ┃ ┣ 📂lib
+ ┃ ┃ ┗📂apis
+ ┃ ┃   ┗📂constant
+ ┃ ┣ 📂pages
+ ┃ ┃ ┣ 📂follow
+ ┃ ┃ ┣ 📂home
+ ┃ ┃ ┣ 📂inside
+ ┃ ┃ ┣ 📂login
+ ┃ ┃ ┣ 📂post
+ ┃ ┃ ┣ 📂profile
+ ┃ ┃ ┣ 📂signup
+ ┃ ┃ ┣ 📂study
+ ┃ ┣ 📂route
+ ┃ ┣ 📂store
+ ┃ ┃ ┗📂slice
+ ┃ ┣ 📜App.js
+ ┃ ┣ 📜index.js
+ ┃ ┗ 📜reset.css
+ ┣ 📜.gitignore
+ ┣ 📜.prettierrc.json
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ```
 
 ## 기능 및 기능 시현
 
