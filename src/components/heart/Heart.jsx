@@ -61,9 +61,9 @@ const Img= styled.img`
     margin-left: -20px;
 `
 const LikeMent= styled.p`
+    margin-top: 28px;
+    margin-left: -16px;
     font-size: 14px;
     line-height: 10px;
     color: #777;
-    margin-top: 28px;
-    margin-left: -16px;
 `
