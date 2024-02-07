@@ -36,7 +36,6 @@ export default function CommentDelete({commentId, postId}) {
 const Img = styled.img`
     cursor: pointer;
 `
-
 const DeleteTitle = styled.div`
     cursor: pointer;
 `
@@ -48,9 +47,9 @@ const ToggleWrapper = styled.section`
     width: 100px;
     right: 50px;
     padding: 5px 0;
-    background-color: white;
     border-radius: 10px;
     border-top-right-radius: 0;
+    background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 3;

@@ -105,8 +105,8 @@ const ProfileImg= styled.img`
 `
 const Div= styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 `
 const AuthorDiv= styled.div`
     margin: 3px 0 0 10px;
@@ -116,13 +116,13 @@ const AuthorDiv= styled.div`
     }
 `
 const Author= styled.strong`
+    margin-top: 15px;
     font-family: "Frutiger-lt-pro-normal";
     font-size: 15px;
-    margin-top: 15px;
 `
 const ToggleDiv= styled.div`
-    padding: 10px;
     position: relative;
+    padding: 10px;
 `
 const CommentDiv= styled.div`
     margin: 15px 10px;

@@ -77,8 +77,8 @@ export const CommentInput=({getComment, postId})=> {
 }
 const Div= styled.div`
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
     padding: 30px 20px;
     border-top: 1px solid rgba(0,0,0,0.09);
     border-bottom: 1px solid rgba(0,0,0,0.09);
@@ -98,22 +98,22 @@ const ProfileImg= styled.img`
     cursor: pointer;
 `
 const TextArea= styled.textarea`
-    font-family: "Noto_Sans_KR-400";
-    font-size: 18px;
     width: 100%;
     height: 26px;
-    resize: none;
     border: 1px solid transparent;
+    font-family: "Noto_Sans_KR-400";
+    font-size: 18px;
+    resize: none;
     outline-color: transparent;
-    
     &::placeholder{
         font-size: 20px;
     }
 `
 const Button= styled.button`
-    font-family: "Noto_Sans_KR-400";
-    margin-left: auto;
     width: 40px;
     height: 30px;
     margin-right: 10px;
+    margin-left: auto;
+    font-family: "Noto_Sans_KR-400";
+
 `
