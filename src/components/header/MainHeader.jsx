@@ -39,45 +39,45 @@ const HeaderStyle= styled.div`
     left: 0;
     width: 100%;
     height: 120px;
-    z-index: 10;
     background: #fff;
+    z-index: 10;
 `
 const Nav1= styled.div`
-    background: #ffffff;
     width: 100%;
-    padding: 0 20px;
     margin: 0 auto;
+    padding: 0 20px;
+    background: #ffffff;
 `
 const LogHaeder= styled.div`
-    height: 60px;
-    padding: 0 0;
-    margin: 0 auto;
     max-width: 1700px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 0;
 `
 const Logo= styled(Link)`
-    color: #A73121;
-    letter-spacing: -1.5px;
-    width: 200px;
     float: left;
+    width: 200px;
     padding: 15px 0 0 0;
     font-family: "Pretendard-600";
     font-size: 25px;
+    color: #A73121;
+    letter-spacing: -1.5px;
 `
 const Ul1= styled.ul`
     display: flex;
     float: right;
-    font-size: 14px;
-    padding: 20px 30px 0 0;
-    margin: 0;
     gap: 10px;
+    margin: 0;
+    padding: 20px 30px 0 0;
+    font-size: 14px;
 `
 const Li1= styled.li`
     padding: 0 10px 0;
 `
 const Nav2= styled.div`
-    background: #A73121;
     width: 100%;
     padding: 0 20px;
+    background: #A73121;
 `
 const NavHeader= styled.div`
     max-width: 1700px;
@@ -85,9 +85,9 @@ const NavHeader= styled.div`
     margin: 0 auto;
 `
 const Link1 = styled(Link)`
+    font-family: "Pretendard-normal";
     color: #A73121;
     text-decoration: none;
-    font-family: "Pretendard-normal";
 `
 
 

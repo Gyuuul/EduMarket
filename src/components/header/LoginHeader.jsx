@@ -20,12 +20,12 @@ const LoginDiv= styled.div`
 const LogoLink= styled(Link)`
 
     & h1 {
-        font-family: "Pretendard-600";
-        letter-spacing: -1.5px;
         width: 100%;
         height: 80px;
-        line-height: 55px;
         border-bottom: 1px solid #efefef;
+        font-family: "Pretendard-600";
+        letter-spacing: -1.5px;
+        line-height: 55px;
         text-align: center;
         color: #A73121;
     }
