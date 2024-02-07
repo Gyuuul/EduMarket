@@ -65,9 +65,9 @@ export default function MainBody() {
     )
 }
 const MainDiv= styled.div`
+    padding: 30px 0;
     background-image: url(${block});
     background-repeat: repeat;
-    padding: 30px 0;
 `
 const Main= styled.div`
     max-width: 1400px;
@@ -78,7 +78,6 @@ const SwiperDiv= styled.div`
 `
 const FullImage= styled.div`
     position: relative;
-
     & img {
         display: block;
         width: 82%;
@@ -91,42 +90,40 @@ const MainSwiper= styled.div`
     width: 100%;
     left: 0;
     top: -5%;
-
     & img {
         width: 90%;
     }
 `
 const Div= styled.div`
     display: flex;
+    padding: 50px 30px 30px;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 30px 30px;
 `
 const Title= styled.p`
+    margin: 0 40px;
     font-family: "Pretendard-600";
     font-size: 30px;
     font-weight: 600;
-    letter-spacing: -1.5px;
-    text-align: center;
-    margin: 0 40px;
     color: #101010;
+    text-align: center;
+    letter-spacing: -1.5px;
 `
 const Description= styled.p`
     flex-grow: 1;
+    margin: 0 40px;
     font-family: "Noto_Sans_KR-400";
     font-size: 18px;
+    color: #3a3a3a;
     text-align: center;
     line-height: 40px;
-    margin: 0 40px;
-    color: #3a3a3a;
 `
 const CommonSection= styled.section`
-    padding: 30px 30px;
     max-width: 1400px;
+    margin: 40px 0;
+    padding: 30px 30px;
     border-radius: 20px;
     background-color: #f1f2f3;
-    margin: 40px 0;
-
     & img {
         width: 100%;
     }

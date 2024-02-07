@@ -172,10 +172,10 @@ export default function HomeBody() {
     )
 }
 const HomeDiv= styled.div`
+    padding: 50px 0;
     background-image: url(${block});
     background-repeat: repeat;
     background-color: #f1f2f3;
-    padding: 50px 0;
 `
 const Home= styled.div`
     max-width: 1400px;
@@ -208,62 +208,61 @@ const SideFullImage= styled.div`
     }
 `
 const CommonSection= styled.section`
-    padding: 30px 30px;
     max-width: 1400px;
+    margin: 40px 0;
+    padding: 30px 30px;
     border-radius: 20px;
     background-color: #f1f2f3;
-    margin: 40px 0;
 `
 const Title= styled.p`
+    margin: 0 20px;
     font-family: "Pretendard-600";
     font-size: 30px;
     font-weight: 600;
-    letter-spacing: -1.5px;
-    text-align: center;
-    margin: 0 20px;
     color: #101010;
+    text-align: center;
+    letter-spacing: -1.5px;
 `
 const Description= styled.p`
+    margin: 0 20px;
     font-family: "Noto_Sans_KR-400";
     font-size: 18px;
+    color: #3a3a3a;
     text-align: center;
     line-height: 40px;
-    margin: 0 20px;
-    color: #3a3a3a;
 `
 const Tag= styled.div`
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-family: "Noto_Sans_KR-600";
     margin-top: 10px;
+    gap: 10px;
+    justify-content: center;
+    font-family: "Noto_Sans_KR-600";
     & li {
-        list-style: none;
         display: inline-block;
-        line-height: 35px;
-        padding: 0 15px;
-        font-size: 17px;
         margin: 0 4px 4px 0;
+        padding: 0 15px;
         border-radius: 10px;
-        color: #101010;
         background: #f1be8b;
         box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        font-size: 17px;
+        color: #101010;
+        line-height: 35px;
+        list-style: none;
     }
 `
 const MoreButton= styled.a`
-    font-family: "Noto_Sans_KR-400";
-    float: right;
-    font-size: 14px;
     margin: -33px 15px;
+    font-family: "Noto_Sans_KR-400";
+    font-size: 14px;
+    float: right;
 `
 const Ul= styled.ul`
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    padding: 0 0;
     margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
     line-height: 0;
-
     @media screen and (max-width: 800px) {
         flex-direction: column;
     }
@@ -273,15 +272,12 @@ const Li= styled.li`
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
-    
     @media screen and (max-width: 1200px) {
         flex: 0 0 33.5%;
     }
-
     @media screen and (max-width: 1100px) {
         flex:0 0 50%;
     }
-    
     @media screen and (max-width: 800px) {
         width: 100%;
     }
