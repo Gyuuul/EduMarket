@@ -90,13 +90,13 @@ return search && userList?.map((item) => {
 });
 }
 const ListSection= styled.div`
-    height: 100%;
     width: 100%;
+    height: 100%;
 `
 const Div= styled.div`
     display: flex;
-    justify-content: space-between;
     gap: 35px;
+    justify-content: space-between;
     padding: 30px 20px;
 `
 const Li= styled.li`
@@ -112,9 +112,9 @@ const Img= styled.img`
     border-radius: 50%;
 `
 const Name= styled.p`
+    margin-bottom: 5px;
     font-family: "Frutiger-lt-pro-normal";
     color: #2b2b2b;
-    margin-bottom: 5px;
 `
 const Accountname= styled.p`
     font-family: "Frutiger-lt-pro-normal";

@@ -97,10 +97,9 @@ export default function Search() {
 }
 const SearchDiv= styled.div`
     width: 100%;
-    /* max-width: 1400px; */
     margin: 100px auto 0;
-    box-sizing: border-box;
     background: #f1f2f3;
+    box-sizing: border-box;
 `
 const SearchSection= styled.section`
     position: relative;
@@ -115,19 +114,18 @@ const Div= styled.div`
 `
 const Input= styled.input`
     position: absolute;
-    font-family: "Noto_Sans_KR-400";
     top: 0;
     left: 50%;
     width: calc(100% - 60px);
     height: 60px;
     margin: 130px auto;
     padding: 10px;
-    font-size: 20px;
     border: none;
-    transform: translateX(-50%);
-
     border-bottom: 2px solid #A73121;
     background-color: #f1f2f3;
+    font-family: "Noto_Sans_KR-400";
+    font-size: 20px;
+    transform: translateX(-50%);
 `
 const List = styled.div`
     padding: 50px 0 20px;
