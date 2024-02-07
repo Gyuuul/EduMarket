@@ -8,9 +8,9 @@ export const MapSection = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
+    transform: translate(-50%, -50%);
 
     .wrap {
         //모달 띄우는 위치
@@ -20,38 +20,38 @@ export const MapSection = styled.div`
         width: 300px;
         height: 155px;
         margin-left: -144px;
+        border-radius: 20px;
+        font-size: 12px;
         text-align: left;
         overflow: hidden;
-        font-size: 12px;
         line-height: 1.5;
-        border-radius: 20px;
         outline: 500px solid #a5a5a5ac;
         z-index: 5;
     }
     .wrap * {
-        padding: 0;
         margin: 0;
+        padding: 0;
     }
     .wrap .info {
         position: relative;
         width: 100%;
         height: 155px;
-        background: #fff;
         border-radius: 20px;
+        background: #fff;
     }
     .wrap .info:nth-child(1) {
         border: 0;
         box-shadow: 0px 1px 2px #888;
     }
     .info .title {
-        padding: 10px 0 0px 15px;
         height: 30px;
-        background: #A73121;
         margin-bottom: 5px;
-        font-size: 14px;
-        font-weight: bold;
+        padding: 10px 0 0px 15px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
+        background: #A73121;
+        font-size: 14px;
+        font-weight: bold;
         color: #fff;
     }
     .info .close {
