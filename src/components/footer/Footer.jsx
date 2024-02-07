@@ -13,14 +13,14 @@ export default function Footer() {
     )
 }
 const FooterDiv= styled.div`
-    color: #ffffff;
-    background: #A73121;
-    padding: 60px 20px 80px;
     position: relative;
-    box-sizing: border-box;
-    bottom: 0;
     width: 100%;
     height: 120px;
+    bottom: 0;
+    padding: 60px 20px 80px;
+    background: #A73121;
+    color: #ffffff;
+    box-sizing: border-box;
 `
 const Tail= styled.div`
     position: relative;
