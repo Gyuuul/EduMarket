@@ -139,25 +139,25 @@ const Form= styled.form`
 `
 const Title= styled.div`
     margin: 0 0 40px 0;
+    padding-bottom: 0;
+    border: none;
     font-size: 15px;
     text-align: center;
     color: #2b2b2b;
-    border: none;
-    padding-bottom: 0;
 `
 const H2= styled.h2`
-    font-family: "Noto_Sans_KR-600";
     display: inline-block;
+    font-family: "Noto_Sans_KR-600";
     color: #2b2b2b;
 `
 const Div= styled.div`
     width: 445px;
     margin: 0 auto;
     & p{
+        margin-bottom: 30px;    
         font-family: "Noto_Sans_KR-400";
         font-size: 14px;
         color: #C63D2F;
-        margin-bottom: 30px;    
     }
 `
 const InputDiv= styled.div`
@@ -171,31 +171,31 @@ const Label= styled.label`
     color: #101010;
 `
 const Input= styled.input`
-    font-family: "Noto_Sans_KR-400";
+    width: calc(100% - 10px);
     height: 38px;
-    line-height: 38px;
-    background-color: transparent;
+    margin: 5px 0 15px 0;
+    padding: 5px 5px;
     border: 1px solid #A73121;
     border-left: none;
     border-right: none;
     border-top: none;
-    margin: 5px 0 15px 0;
-    padding: 5px 5px;
-    width: calc(100% - 10px);
+    background-color: transparent;
+    font-family: "Noto_Sans_KR-400";
+    line-height: 38px;
     outline: none;
 `
 const Button= styled.button`
-    font-family: "Noto_Sans_KR-400";
     width: 445px;
-    margin-bottom: 20px;
     height: 60px;
-    line-height: 60px;
-    background: #C63D2F;
+    margin-bottom: 20px;
     border: 1px solid #C63D2F;
     border-radius: 5px;
-    color: #fff;
+    background: #C63D2F;
+    font-family: "Noto_Sans_KR-400";
     font-size: 15px;
     font-weight: 400;
+    line-height: 60px;
+    color: #fff;
 `
 const SignupDiv= styled.div`
     display: flex;
@@ -209,7 +209,7 @@ const SignupDiv= styled.div`
 `
 const SignupLink = styled(Link)`
     font-family: "Noto_Sans_KR-400";
-    color: #101010;
     font-size: 15px;
     font-weight: 600;
+    color: #101010;
 `
