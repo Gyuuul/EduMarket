@@ -70,13 +70,12 @@ export default function UserProfile() {
     );
 }
 const ProfileWrap= styled.div`
-    background-color: #f1f2f3;
     padding: 30px 0;
+    background-color: #f1f2f3;
 `
 const UserProfileDiv= styled.div`
     max-width: 1400px;
     margin: 0 auto;
-
     @media screen and (max-width: 1200px) {
         width: 1100px;
     }
@@ -89,14 +88,14 @@ const UserProfileDiv= styled.div`
 `
 const Title= styled.div`
     padding: 200px 0 90px 0;
+    border: none;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;
-    border: none;
 
     &h2{
-        font-family: "Frutiger-lt-pro-600";
         display: inline-block;
+        font-family: "Frutiger-lt-pro-600";
         color: #2b2b2b;
     }
 `
@@ -104,9 +103,8 @@ const Wrap= styled.div`
     padding: 40px 80px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 50px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
-
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     @media screen and (max-width: 1200px) {
         width: 1000px;
         margin: 0 auto;
@@ -124,7 +122,6 @@ const ProfileDiv= styled.div`
     display: flex;
     gap: 70px;
     padding: 30px 0 60px 0; 
-
     @media screen and (max-width: 800px) {
         flex-direction: column;
         align-items: center;
@@ -151,7 +148,6 @@ const Name= styled.h2`
     font-family: "Frutiger-lt-pro-normal";
     font-size: 30px;
     color: #2b2b2b;
-
     @media screen and (max-width: 800px) {
         text-align: center;
     }
@@ -160,22 +156,20 @@ const Id= styled.h3`
     font-family: "Frutiger-lt-pro-normal";
     font-size: 18.85px;
     color: #777;
-
     @media screen and (max-width: 800px) {
         text-align: center;
     }
 `
 const Intro= styled.p`
+    flex-grow: 1;
+    margin-top: -10px;
+    padding: 30px;
     font-family: "Noto_Sans_KR-400";
     color: #2b2b2b;
     font-size: 18px;
     border-radius: 50px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
-
-    flex-grow: 1;
-    padding: 30px;
-    margin-top: -10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const FollowDiv= styled.div`
     display: flex;
@@ -189,7 +183,6 @@ const Follow= styled.p`
     font-weight: 400;
     font-size: 18.85px;
     color: #777;
-
     & strong{
         color: #2b2b2b;
     }

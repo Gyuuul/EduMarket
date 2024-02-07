@@ -124,8 +124,8 @@ export default function ProfileModify() {
     );
 }
 const ModifyWrap= styled.div`
-    background-color: #f1f2f3;
     padding: 30px 0;
+    background-color: #f1f2f3;
 `
 const ModifyDiv= styled.div`
     position: relative;
@@ -138,12 +138,11 @@ const Wrap= styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     padding: 40px 80px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const ImageDiv= styled.div`
     position: relative;
@@ -152,7 +151,6 @@ const ImageDiv= styled.div`
     margin-bottom: 30px;
     border-radius: 50%;
     overflow: hidden;
-
     & img {
         width: 180px;
         height: 180px;
@@ -200,8 +198,8 @@ const IntroArea= styled.textarea`
 `
 const ButtonDiv= styled.div`
     display: flex;
-    align-items: center;
     gap: 15px;
+    align-items: center;
     margin-top: 20px;
 `
 const Button= styled.button`
