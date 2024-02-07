@@ -94,10 +94,10 @@ export default function PostList() {
     )
 }
 const PostDiv= styled.div`
-    background-color: #f1f2f3;
-    padding: 30px 0;
     width: 100%;
     height: 100%;
+    padding: 30px 0;
+    background-color: #f1f2f3;
 `
 const Post= styled.div`
     position: relative;
@@ -105,8 +105,8 @@ const Post= styled.div`
     margin: 0 auto;
 `
 const Div= styled.div`
-    border-radius: 10px;
     margin-top: -10px;
+    border-radius: 10px;
 `
 const PostPicture= styled.div`
     & img {
@@ -120,53 +120,53 @@ const PostPicture= styled.div`
 const PostTitle= styled.p`
     position: absolute;
     width: fit-content;
+    left: 50%;
+    padding: 10px 20px 20px;
     font-family: "Frutiger-lt-pro-600";
     font-size: 35px;
     font-weight: 600;
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
-    left: 50%;
     transform: translate(-50%, -50%);
-    padding: 10px 20px 20px;
 `
 const PostDescription= styled.p`
+    margin: 10px 15px 0 15px;
     font-family: "Noto_Sans_KR-400";
     font-size: 20px;
     line-height: 80px;
     text-align: center;
     color: #777;
-    margin: 10px 15px 0 15px;
 `
 const WriteSection= styled.div`
     display: flex;
     & button {
         width: 280px;
         margin: 0 15px; 
+        border: 1px solid rgba(0,0,0,0.09);
+        border-radius: 10px;
+        background-color: #ffff;
         font-family: "Noto_Sans_KR-400";
         font-size: 20px;
         color: #3a3a3a;
-        border: 1px solid rgba(0,0,0,0.09);
-        border-radius: 10px;
         box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-        background-color: #ffff;
     }
 `
 const WriteDiv= styled.div`
     display: flex;
-    align-items: center;
     gap: 10px;
+    align-items: center;
     width: 96%;
-    padding: 10px;
     margin: 0 15px;
+    padding: 10px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     & img {
         width: 60px;
         height: 60px;
-        border-radius: 50%;
         padding: 12px;
+        border-radius: 50%;
     }
 `
 const BoxDiv= styled.div`
@@ -174,8 +174,8 @@ const BoxDiv= styled.div`
     padding: 15px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     cursor: pointer;
     & p {
         font-family: "Noto_Sans_KR-400";
@@ -186,11 +186,10 @@ const BoxDiv= styled.div`
 const Ul= styled.ul`
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    padding: 0 0;
     margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
     line-height: 0;
-
     @media screen and (max-width: 800px) {
         flex-direction: column;
     }   
@@ -200,23 +199,20 @@ const Li= styled.li`
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
-    
     @media screen and (max-width: 1200px) {
         flex: 0 0 33.5%;
     }
-
     @media screen and (max-width: 1100px) {
         flex:0 0 50%;
     }
-    
     @media screen and (max-width: 800px) {
         width: 100%;
     }
 `
 const Alert= styled.p`
+    padding: 50px 0 30px;
     font-family: "Noto_Sans_KR-600";
     font-size: 35px;
     text-align: center;
     color: #C63D2F;
-    padding: 50px 0 30px;
 `

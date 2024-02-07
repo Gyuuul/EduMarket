@@ -65,8 +65,8 @@ const ItemDiv= styled.div`
     margin: 0 15px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const AuthorDiv= styled.div`
     display: flex;
@@ -76,13 +76,13 @@ const AuthorDiv= styled.div`
 const ProfileImg= styled.img`
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     margin-left: 20px;
+    border-radius: 50%;
 `
 const Author= styled.strong`
+    padding: 25px 0px;
     font-family: "Frutiger-lt-pro-normal";
     font-size: 18px;
-    padding: 25px 0px;
     color: #3a3a3a; 
 `
 const Div= styled.div`
@@ -91,11 +91,11 @@ const Div= styled.div`
     padding: 12px 20px;
 `
 const ItemContent= styled.p`
-    font-size: 14px;
     margin: 30px 0 0 0px;
+    font-family: "Noto_Sans_KR-400";
+    font-size: 14px;
     color: #3a3a3a;
     line-height: 25px;
-    font-family: "Noto_Sans_KR-400";
 `
 const SideDiv= styled.div`
     display: flex;
@@ -110,9 +110,9 @@ const Img= styled.img`
     height: 70px;
 `
 const CommentMent= styled.p`
+    margin-top: 30px;
+    margin-left: -16px;
     font-size: 13px;
     line-height: 10px;
     color: #777;
-    margin-top: 30px;
-    margin-left: -16px;
 `

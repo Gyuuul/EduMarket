@@ -105,14 +105,13 @@ export default function PostDetail() {
     )
 }
 const PostWrap= styled.div`
-    background-color: #f1f2f3;
     padding: 30px 0;
+    background-color: #f1f2f3;
 `
 const PostsDetail= styled.div`
     width: 1280px;
     margin: 0 auto;
     padding: 120px 0 0 0;
-
     @media screen and (max-width: 1200px) {
         width: 1100px;
     }
@@ -127,9 +126,8 @@ const PostDiv= styled.div`
     padding: 30px 40px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
-
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     @media screen and (max-width: 1200px) {
         width: 1000px;
         margin: 0 auto;
@@ -173,12 +171,11 @@ const Div= styled.div`
     }
 `
 const ContentDiv= styled.div`
+    margin: 24px 100px 24px 100px;
+    font-family: "Noto_Sans_KR-400";
     font-size: 20px;
     color: #3a3a3a; 
     line-height: 30px;
-    margin: 24px 100px 24px 100px;
-    font-family: "Noto_Sans_KR-400";
-
     @media screen and (max-width: 1200px) {
         margin: 24px 0;
     }
@@ -197,18 +194,17 @@ const Img= styled.img`
     height: 70px;
 `
 const CommentMent= styled.p`
+    margin-top: 26px;
+    margin-left: -16px;
     font-family: "Noto_Sans_KR-400";
     font-size: 13px;
     color: #777;
-    margin-top: 26px;
-    margin-left: -16px;
 `
 const AuthorDiv= styled.div`
     display: flex;
     gap: 15px;
     margin-left: 100px;
     margin-bottom: 24px;
-
     @media screen and (max-width: 1200px) {
         margin: 0 24px 24px 0;
     }
@@ -219,14 +215,14 @@ const ProfileImg= styled.img`
     border-radius: 50%;
 `
 const Author= styled.strong`
-    font-size: 20px;
     padding: 8px 0px;
+    font-size: 20px;
     color: #3a3a3a; 
 `
 const P= styled.p`
+    margin-bottom: 5px;
     font-family: "Noto_Sans_KR-400";
     font-size: 14px;
-    margin-bottom: 5px;
 `
 const ToggleDiv= styled.div`
     position: relative;
@@ -235,11 +231,11 @@ const ToggleWrapper = styled.section`
     position: absolute;
     width: 100px;
     right: 120px;
-    padding: 10px 0;
     margin: -45px 25px 0 0;
-    background-color: white;
+    padding: 10px 0;
     border-radius: 10px;
     border-top-right-radius: 0;
+    background-color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     z-index: 3;

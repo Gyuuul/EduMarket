@@ -185,8 +185,8 @@ export default function PostUpload() {
     )
 }
 const UploadWrap= styled.div`
-    background-color: #dae1e6;
     padding: 200px 0;
+    background-color: #dae1e6;
 `
 const UploadDiv= styled.div`
     max-width: 1400px;
@@ -196,26 +196,25 @@ const Wrap= styled.div`
     padding: 40px 80px 90px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const Title= styled.div`
-    padding: 50px 0 40px;
+    padding: 50px 0 0px;
+    border: none;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;
-    border: none;
-    padding-bottom: 0;
     &h2{
         display: inline-block;
         color: #2b2b2b;
     }
 `
 const Description= styled.h3`
+    margin-bottom: 30px;
     font-size: 20px;
     text-align: center;
     color: #868686;
-    margin-bottom: 30px;
 `
 const Div= styled.div`
     display: flex;
@@ -224,11 +223,11 @@ const Div= styled.div`
     justify-content: center;
 `
 const Alert= styled.p`
-    font-size: 14px;
-    color: #C63D2F;
     margin-top: 20px;
     margin-bottom: -10px;
     margin-left: -60px;
+    font-size: 14px;
+    color: #C63D2F;
 `
 const ImageDiv= styled.div`
     display: flex;
@@ -246,13 +245,13 @@ const Input= styled.input`
     display: none;
 `
 const TextArea= styled.textarea`
-    font-family: "Noto_Sans_KR-400";
-    font-size: 20px;
-    resize: none;
     width: 70%;
     height: 500px;
     margin: 0 auto;
     padding: 16px;
+    font-family: "Noto_Sans_KR-400";
+    font-size: 20px;
+    resize: none;
 `
 const Ul= styled.ul`
     display: flex;
@@ -274,22 +273,22 @@ const DeleteButton= styled.button`
         position: absolute;
         width: 32px;
         height: 32px;
-        border-radius: 50px;
-        background-color: #475569;
         margin-top: -190px;
         margin-left: -20px;
+        border-radius: 50px;
+        background-color: #475569;
         cursor: pointer;
     }
 `
 const Button= styled.button`
     width: 400px;
     height: 60px;
-    line-height: 60px;
-    background: #C63D2F;
     border: 1px solid #C63D2F;
     border-radius: 5px;
-    color: #fff;
+    background: #C63D2F;
     font-size: 15px;
     font-weight: 400;
+    color: #fff;
+    line-height: 60px;
     cursor: pointer;
 `
