@@ -122,57 +122,54 @@ const InsidePicture= styled.div`
 const Title= styled.p`
     position: absolute;
     width: fit-content;
-
+    left: 50%;
+    padding: 10px 20px 20px;
     font-family: "Frutiger-lt-pro-600";
     font-size: 35px;
     font-weight: 600;
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
-
-    left: 50%;
     transform: translate(-50%, -50%);
-    padding: 10px 20px 20px;
 `
 const Description= styled.p`
+    margin: 50px 15px 0 15px;
     font-family: "Noto_Sans_KR-400";
     font-size: 27px;
     line-height: 50px;
     text-align: center;
     color: #777;
-    margin: 50px 15px 0 15px;
 `
 const SubTitle= styled.p`
+    margin-top: 80px;
     font-family: "Noto_Sans_KR-400";
     font-size: 32px;
     font-weight: 600;
     text-align: center;
     color: #3a3a3a;
     text-shadow: 2px 2px 0px #90979f;
-    margin-top: 80px;
 `
 const SubDescription= styled.p`
+    margin-top: 40px;
     font-family: "Noto_Sans_KR-400";
     font-size: 17px;
     line-height: 40px;
     text-align: center;
     color: #777;
-    margin-top: 40px;
-
     & strong {
     font-size: 20px;
     line-height: 60px;
     }
 `
 const Div= styled.div`
-    border-radius: 10px;
     margin-top: -10px;
+    border-radius: 10px;
 `
 const Ul= styled.ul`
     display: inline-flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    padding: 0 0;
     margin: 50px 0;
+    padding: 0 0;
+    box-sizing: border-box;
     line-height: 0;
 `
 const Li= styled.li`
@@ -185,40 +182,36 @@ const ItemDiv= styled.div`
     height: 700px;
     margin: 0 15px;
     border: 1px solid rgba(0,0,0,0.09);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const Img= styled.img`
     width: 100%;
 `
 const Name= styled.p`
+    margin: 30px 0 15px;
+    padding: 10px 20px;
     font-family: "Frutiger-lt-pro-600";
     font-size: 25px;
     font-weight: 600;
     color: #3a3a3a;
-
-    margin: 30px 0 15px;
-    padding: 10px 20px;
 `
 const Tag= styled.div`
+    display: inline-block;
+    margin: 0 15px 10px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: #dae1e6;
     font-family: "Frutiger-lt-pro-600";
     font-size: 12px;
-    margin: 0 15px 10px;
-    border-radius: 10px;
-    color: #101010;
-
-    display: inline-block;
-    background: #dae1e6;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
-
     line-height: 30px;
-    padding: 0 10px;
+    color: #101010;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
 `
 const Intro= styled.p`
+    padding: 0 20px;
     font-family: "Noto_Sans_KR-400";
     font-size: 18px;
     line-height: 30px;
     color: #777;
-
-    padding: 0 20px;
 `
