@@ -45,18 +45,17 @@ export default function RecFollowList({ accountname, isfollow, image }) {
 
 const FollowSection = styled.section`
     display: flex;
+    gap: 25px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px 30px;
     margin: 0 10px;
+    padding: 20px 30px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const ProfileImage = styled.img`
     width: 150px;

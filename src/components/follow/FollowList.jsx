@@ -49,20 +49,18 @@ export default function FollowList({ accountname, isfollow, image }) {
 const FollowSection = styled.section`
     display: flex;
     justify-content: space-between;
-
     max-width: 1400px;
     margin: 0 auto;
     padding: 30px 220px;
-
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const Wrap= styled.div`
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 35px;
+    align-items: center;
+    justify-content: center;
 `
 const FollowButtonDiv = styled.div`
     margin-top: 55px;
