@@ -46,36 +46,35 @@ const StudyDiv= styled.div`
     padding: 30px 0;
 `
 const StudyTitle= styled.p`
+    margin: 0 0 50px 0;
     font-family: "Frutiger-lt-pro-600";
     font-size: 30px;
     font-weight: 600;
     line-height: 1.1;
     text-align: center;
-    margin: 0 0 50px 0;
 `
 const StudyName= styled.p`
+    margin-bottom: 30px;
     font-family: "Noto_Sans_KR-600";
     font-size: 20px;
     font-weight: 700;
-    margin-bottom: 30px;
     color: #3a3a3a;
 `
 const StudyIntro= styled.p`
+    margin-top: 20px;
     font-family: "Noto_Sans_KR-400";
     font-size: 17px;
     font-weight: 500;
-    margin-top: 20px;
     color: #777;
     line-height: 25px;
 `
 const Ul= styled.ul`
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    padding: 0 0;
     margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
     line-height: 0;
-
     @media screen and (max-width: 800px) {
         flex-direction: column;
     }   
@@ -85,15 +84,12 @@ const Li= styled.li`
     margin: 0 0 50px 0;
     padding: 0 0 0;
     vertical-align: top;
-
     @media screen and (max-width: 1200px) {
         flex: 0 0 33.5%;
     }
-
     @media screen and (max-width: 1100px) {
         flex:0 0 50%;
     }
-    
     @media screen and (max-width: 800px) {
         width: 100%;
     }
@@ -103,12 +99,10 @@ const Div= styled.div`
     height: 400px;
     margin: 0 auto;
     padding: 12px 20px;
-
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #f1f2f3;
-
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     & img {
         width: 100%;
         height: 200px;
@@ -117,9 +111,9 @@ const Div= styled.div`
     }
 `
 const Alert= styled.p`
+    padding: 50px 0 30px;
     font-family: "Noto_Sans_KR-600";
     font-size: 35px;
     text-align: center;
     color: #C63D2F;
-    padding: 50px 0 30px;
 `

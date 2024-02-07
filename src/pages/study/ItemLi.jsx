@@ -18,12 +18,12 @@ export default function ItemLi({ data }) {
             <ul>
                 <ItemList>
                     <ItemDiv>
-                        <AuthorDiv onClick={async ()=>{
+                        <div onClick={async ()=>{
                             await setUser(data?.author?.accountname);
                             navigate(`/profile/${data?.author?.accountname}`);
                         }}>
                             <Author>@ {data?.author?.accountname}</Author>
-                        </AuthorDiv>
+                        </div>
                         <ContentDiv
                             onClick={() => {
                                 navigate(`/together/detail/${data.id}`);
@@ -52,9 +52,8 @@ const ItemDiv= styled.div`
     margin: 0 15px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
-
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     @media screen and (max-width: 800px) {
         height: 400px;
     }
@@ -62,31 +61,28 @@ const ItemDiv= styled.div`
 const ContentDiv = styled.div`
     width: 350px;
     margin: 0 auto;
-
     & img {
         width: 100%;
         height: 200px;
-        object-fit: cover;
         margin-top: 20px;
+        object-fit: cover;
     }
 `
 const Div= styled.div`
     margin: 30px 20px 0 0;
 `
 const ItemName= styled.p`
+    margin-bottom: 30px;
     font-family: "Noto_Sans_KR-600";
     font-size: 20px;
-    margin-bottom: 30px;
     color: #3a3a3a;
 `
 const ItemDetail= styled.p`
+    margin-top: 20px;
     font-family: "Noto_Sans_KR-400";
     font-size: 17px;
-    margin-top: 20px;
     color: #777;
     line-height: 25px;
-`
-const AuthorDiv = styled.div`
 `
 const Author = styled.p`
     font-family: "Frutiger-lt-pro-normal";

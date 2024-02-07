@@ -85,24 +85,23 @@ const Label= styled.label`
     color: #101010;
 `
 const Input= styled.input`
-    font-family: "Noto_Sans_KR-400";
-    font-size: 20px;
+    width: calc(100% - 10px);
     height: 38px;
-    line-height: 38px;
-    background-color: transparent;
+    margin: 15px 0 15px 0;
+    padding: 5px 5px;
     border: 1px solid #A73121;
     border-left: none;
     border-right: none;
     border-top: none;
-    margin: 15px 0 15px 0;
-    padding: 5px 5px;
-    width: 90%;
-    width: calc(100% - 10px);
+    background-color: transparent;
+    font-family: "Noto_Sans_KR-400";
+    font-size: 20px;
+    line-height: 38px;
     outline: none;
 `
 const Alert= styled.p`
+    margin-bottom: 30px;
     font-family: "Noto_Sans_KR-400";
     font-size: 14px;
     color: #C63D2F;
-    margin-bottom: 30px;
 `

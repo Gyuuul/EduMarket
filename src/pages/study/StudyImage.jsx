@@ -58,12 +58,12 @@ export const StudyImage= ({itemImage, setItemImage})=> {
 }
 
 const Div= styled.div`
+    position: relative;
     width: 400px;
     height: 300px;
-    background: #dbdbdb;
-    border-radius: 10px;
-    position: relative;
     margin-bottom: 70px;
+    border-radius: 10px;
+    background: #dbdbdb;
     background-size: cover;
 `
 const Label= styled.label`

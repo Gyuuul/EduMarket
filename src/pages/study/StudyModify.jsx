@@ -82,8 +82,8 @@ export default function StudyModify() {
     );
 }
 const UploadWrap= styled.div`
-    background-color: #f1f2f3;
     padding: 200px 0;
+    background-color: #f1f2f3;
 `
 const UploadDiv= styled.div`
     max-width: 1400px;
@@ -93,27 +93,27 @@ const Wrap= styled.div`
     padding: 40px 80px 90px;
     border: 1px solid rgba(0,0,0,0.09);
     border-radius: 15px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     background-color: #ffff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 `
 const Title= styled.div`
     padding: 50px 0 20px;
+    border: none;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;
-    border: none;
 `
 const H2= styled.h2`
-    font-family: "Noto_Sans_KR-600";
     display: inline-block;
+    font-family: "Noto_Sans_KR-600";
     color: #2b2b2b;
 `
 const Description= styled.h3`
+    margin-bottom: 30px;
     font-family: "Noto_Sans_KR-400";
     font-size: 20px;
     text-align: center;
     color: #868686;
-    margin-bottom: 30px;
 `
 const Div= styled.div`
     display: flex;
@@ -122,15 +122,15 @@ const Div= styled.div`
     align-items: center;
 `
 const Button= styled.button`
-    font-family: "Noto_Sans_KR-400";
     width: 400px;
     height: 60px;
-    line-height: 60px;
-    background: #C63D2F;
     border: 1px solid #C63D2F;
     border-radius: 5px;
-    color: #fff;
+    background: #C63D2F;
+    font-family: "Noto_Sans_KR-400";
     font-size: 15px;
     font-weight: 400;
+    line-height: 60px;
+    color: #fff;
     cursor: pointer;
 `

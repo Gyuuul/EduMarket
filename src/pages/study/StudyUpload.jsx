@@ -67,8 +67,8 @@ export const StudyUpload=() => {
     );
 }
 const UploadWrap= styled.div`
-    background-color: #dae1e6;
     padding: 200px 0;
+    background-color: #dae1e6;
 `
 const UploadDiv= styled.div`
     max-width: 1400px;
@@ -83,21 +83,20 @@ const Wrap= styled.div`
 `
 const Title= styled.div`
     padding: 50px 0 20px;
+    border: none;
     font-size: 40px;
     text-align: center;
     color: #2b2b2b;
-    border: none;
-
     &h2{
         display: inline-block;
         color: #2b2b2b;
     }
 `
 const Description= styled.h3`
+    margin-bottom: 30px;
     font-size: 20px;
     text-align: center;
     color: #868686;
-    margin-bottom: 30px;
 `
 const Div= styled.div`
     display: flex;
@@ -108,12 +107,12 @@ const Div= styled.div`
 const Button= styled.button`
     width: 400px;
     height: 60px;
-    line-height: 60px;
-    background: #C63D2F;
     border: 1px solid #C63D2F;
     border-radius: 5px;
-    color: #fff;
+    background: #C63D2F;
     font-size: 15px;
     font-weight: 400;
+    line-height: 60px;
+    color: #fff;
     cursor: pointer;
 `
