@@ -48,7 +48,10 @@ export default function PostList() {
     const page= (
         <PostDiv>
             <Post>
-                <PostPicture><img src={post} srcSet={postResize}  alt="포스트 페이지 대표 이미지" /></PostPicture>
+                <PostPicture>
+                    <img src={post} srcSet={postResize}  
+                    alt="포스트 페이지 대표 이미지" />
+                </PostPicture>
                 <PostTitle>EDUKET POST</PostTitle>
                 <Div>
                     <PostDescription>각 분야에서 반응이 좋았던 게시물을 만나보세요.</PostDescription>

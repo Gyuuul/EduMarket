@@ -81,10 +81,12 @@ export default function FollowRecommend() {
         }
         fetchMyFollowList();
     }, [])
+
     const Rec= async()=> {
         const duplicatedFollowSet= [];
         for(const item of myFollowList) {
         let list= await getFollowingList(item.accountname);
+        
         list.forEach((item)=> {
             let flag= true;
             for(let i = 0; i < [...myFollowList].length; i++){
