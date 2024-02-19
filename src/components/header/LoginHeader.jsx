@@ -16,6 +16,7 @@ export default function LoginHeader() {
 const LoginDiv= styled.div`
     width: 600px;
     margin: 0 auto;
+    padding-top: 30px;
 `
 const LogoLink= styled(Link)`
 
