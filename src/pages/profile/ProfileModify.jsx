@@ -1,18 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
 import styled from 'styled-components';
-
 import instance from '../../lib/apis/interceptor';
-
 import Common from '../../components/common/Common';
-import { URL } from '../../lib/apis/constant/path'
 import handleFileUpload from '../signup/handleFileUpload';
 import { onChangeIntro, onChangeUserName } from '../../store/slice/userSlice'
 
 export default function ProfileModify() {
-    const token= localStorage.getItem('Access Token');
     const user= useSelector((state)=> state.user.myInfo);
     const [image, setImage]= useState(user?.image);
     const navigate= useNavigate();
@@ -33,7 +28,7 @@ export default function ProfileModify() {
         e.preventDefault();
 
     try {
-        const response = await instance.put(`/user`, {
+        await instance.put(`/user`, {
             user: {
             username: user.username,
             accountname: user.accountname,
@@ -41,7 +36,6 @@ export default function ProfileModify() {
             image: image,
         }
     });
-        console.log(response);
         navigate(`/myprofile`);
 
     } catch (error) {
