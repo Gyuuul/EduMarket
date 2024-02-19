@@ -58,7 +58,7 @@ export default function InsideEduket() {
                 <Div>
                     <Description>
                         <strong>EDUKET</strong>은 다양한 직군의 취업준비생 또는 신입부터 경력자까지 모두 모여<br/>
-                        진로 개발과 취업, 자기계발에 필요한 핵심 정보와 지식을 제공하는 플랫폼입니다.
+                        스터디와 멘토링 학습, 커뮤니티를 통하여 자기계발에 필요한 핵심 정보와 지식을 제공하는 플랫폼입니다.
                     </Description>
 
                     <SubTitle>THE ROLE OF EDUKET</SubTitle>
