@@ -119,7 +119,7 @@ const Ul1= styled.ul`
     gap: 10px;
     margin: 0;
     padding: 20px 30px 0 0;
-    font-size: 14px;
+    font-size: 18px;
 `
 const Li1= styled.li`
     padding: 0 10px 0;
@@ -148,7 +148,7 @@ const Li2= styled.li`
     padding: 0 0;
 `
 const Link1 = styled(Link)`
-    font-family: "Pretendard-normal";
+    font-family: "Pretendard-600";
     color: #A73121;
     text-decoration: none;
 `
