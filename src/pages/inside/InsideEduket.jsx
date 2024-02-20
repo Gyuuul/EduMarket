@@ -1,6 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-
+import styled, { keyframes } from 'styled-components'
 import Common from '../../components/common/Common'
 import inside from '../../assets/icons/illustration/Inside.webp'
 import chalse from '../../assets/icons/character/chalse.webp'
@@ -57,7 +56,7 @@ export default function InsideEduket() {
                 <Title>INSIDE EDUKET</Title>
                 <Div>
                     <Description>
-                        <strong>EDUKET</strong>은 다양한 직군의 취업준비생 또는 신입부터 경력자까지 모두 모여<br/>
+                        EDUKET은 다양한 직군의 취업준비생 또는 신입부터 경력자까지 모두 모여<br/>
                         스터디와 멘토링 학습, 커뮤니티를 통하여 자기계발에 필요한 핵심 정보와 지식을 제공하는 플랫폼입니다.
                     </Description>
 
@@ -104,6 +103,7 @@ export default function InsideEduket() {
         </>
     )
 }
+
 const Inside= styled.div`
     background-color: #dae1e6;
 `
@@ -115,6 +115,7 @@ const InsideDiv= styled.div`
 const InsidePicture= styled.div`
         & img {
         width: 100%;
+        height: 700px;
         margin: 0 auto;
         border-radius: 10px;
     }
@@ -124,7 +125,7 @@ const Title= styled.p`
     width: fit-content;
     left: 50%;
     padding: 10px 20px 20px;
-    font-family: "Frutiger-lt-pro-600";
+    font-family: "Pretendard-600";
     font-size: 35px;
     font-weight: 600;
     color: #3a3a3a;
@@ -141,7 +142,7 @@ const Description= styled.p`
 `
 const SubTitle= styled.p`
     margin-top: 80px;
-    font-family: "Noto_Sans_KR-400";
+    font-family: "Pretendard-600";
     font-size: 32px;
     font-weight: 600;
     text-align: center;
@@ -152,7 +153,7 @@ const SubDescription= styled.p`
     margin-top: 40px;
     font-family: "Noto_Sans_KR-400";
     font-size: 17px;
-    line-height: 40px;
+    line-height: 35px;
     text-align: center;
     color: #777;
     & strong {
