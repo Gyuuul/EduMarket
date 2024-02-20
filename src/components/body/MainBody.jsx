@@ -1,8 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-
-import swiper from '../../assets/icons/illustration/Swiper.webp'
-import frame from '../../assets/icons/illustration/frame.webp'
 import block from '../../assets/icons/illustration/block.webp'
 import post from '../../assets/icons/illustration/Post.webp'
 import study from '../../assets/icons/illustration/Study.webp'
@@ -14,14 +11,14 @@ export default function MainBody() {
         <>
             <MainDiv>
                 <Main>            
-                    <SwiperDiv>
+                    {/* <SwiperDiv>
                         <FullImage>
                             <img src={swiper} alt="메인 페이지 대표 이미지" />
                             <MainSwiper>
                                 <img src={frame} alt="메인 페이지 대표 이미지" />
                             </MainSwiper>
                         </FullImage>
-                    </SwiperDiv>
+                    </SwiperDiv> */}
 
                     <CommonSection>
                         <img src={post} alt="게시글 페이지 대표 이미지" />
@@ -52,9 +49,9 @@ export default function MainBody() {
                         <Div>
                             <Title>EDUKET MENTORING</Title>
                             <Description>
-                                EDUKET MENTORING은 멘토들이 자신의 분야에서 필요한 기초적인 스킬을 가르치고<br/> 
+                                EDUKET MENTORING은 멘토들이 자신의 분야에서 필요한 기초적인 스킬을 공유하고<br/> 
                                 멘티들은 실전 경험을 통해 성장하는 소중한 공간입니다.<br/> 
-                                <strong>멘토링학습</strong>을 통해 함께 배우고 공유하며 성공을 향해 함께 나아가요!
+                                <strong>멘토링학습</strong>을 통해 함께 배우고 공유하며 함께 나아가요!
 
                             </Description>
                         </Div>
@@ -68,31 +65,11 @@ const MainDiv= styled.div`
     padding: 30px 0;
     background-image: url(${block});
     background-repeat: repeat;
+    margin-top: 100px;
 `
 const Main= styled.div`
     max-width: 1400px;
     margin: 0 auto;
-`
-const SwiperDiv= styled.div`
-    margin-bottom: -15px;
-`
-const FullImage= styled.div`
-    position: relative;
-    & img {
-        display: block;
-        width: 82%;
-        margin: 0 auto;
-        padding: 120px 0 0 0;
-}
-`
-const MainSwiper= styled.div`
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: -5%;
-    & img {
-        width: 90%;
-    }
 `
 const Div= styled.div`
     display: flex;
@@ -112,7 +89,7 @@ const Title= styled.p`
 const Description= styled.p`
     flex-grow: 1;
     margin: 0 40px;
-    font-family: "Noto_Sans_KR-400";
+    font-family: "Noto_Sans_KR-600";
     font-size: 18px;
     color: #3a3a3a;
     text-align: center;
@@ -120,7 +97,7 @@ const Description= styled.p`
 `
 const CommonSection= styled.section`
     max-width: 1400px;
-    margin: 40px 0;
+    margin: 100px 0;
     padding: 30px 30px;
     border-radius: 20px;
     background-color: #f1f2f3;
