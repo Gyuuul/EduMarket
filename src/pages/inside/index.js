@@ -15,12 +15,12 @@ export const contentItem= [
         핵심정보와 지식을 제공하는 <span style={{color:'#A73121'}}>EDUKET</span>💡<br/>
     </>,
     <>
-        EDUKET의 커뮤니티에서 <br/>
-        <span style={{color:'#A73121'}}>다양한 직무의 이야기</span>를 공유할 수 있습니다.💬<br/>
+        다양한 직무의 실무 꿀팁을 공유할 수 있는<br/>
+        <span style={{color:'#A73121'}}>EDUKET의 커뮤니티</span>🙋🏻‍♀️<br/>
     </>,
     <>
-        원하는 <span style={{color:'#A73121'}}>멘토링 수업과 스터디</span>에 참여하여<br/>
-        함께 성장할 수 있어요!📖<br/>
+        이야기를 나누며 함께 성장할 수 있는<br/>
+        <span style={{color:'#A73121'}}>멘토링 수업과 스터디</span>📖<br/>
     </>,
     <>
         <span style={{color:'#A73121'}}>팔로우</span>기능으로 여러 사람들과<br/>
@@ -50,7 +50,7 @@ const Section=()=>{
     export default Section;
 
 const Layout= styled.div`
-    height: 50rem;
+    height: 53rem;
     display: flex;
     align-items: center;
     justify-content: center;
