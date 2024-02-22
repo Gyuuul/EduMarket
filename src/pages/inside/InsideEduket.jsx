@@ -7,8 +7,8 @@ import miya from '../../assets/icons/character/miya.webp'
 import coco from '../../assets/icons/character/coco.webp'
 import toby from '../../assets/icons/character/toby.webp'
 import runa from '../../assets/icons/character/runa.webp'
-
 import Section from ".";
+
 export default function InsideEduket() {
     const character=[
         {
