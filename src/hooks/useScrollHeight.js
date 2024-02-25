@@ -19,11 +19,11 @@ const useScrollHeight = (ref) => {
     // 이벤트리스너 한 번 실행하면 삭제
     useEffect(() => {
         if (!ref.current) return;
-        ref.current.addEventListener('scroll', handleScroll, { passive: true });
+        ref?.current?.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => {
             if (!ref.current) return;
-            ref.current.removeEventListener('scroll', handleScroll);
+            ref?.current?.removeEventListener('scroll', handleScroll);
         };
     }, [ref]);
 
