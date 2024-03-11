@@ -1,0 +1,84 @@
+/* 메인 */
+#main{
+  width: 100%;
+  height: 100%;
+  background-color: #f1f2f3;
+}
+.main_div {
+  max-width: 1400px;
+  height: 800px;
+  margin: 0 auto;
+  padding: 100px 50px;
+}
+
+  /* 채팅 영역 */
+#chat {
+    height: 90%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+  /* 접속 알림 */
+.connect {
+    width: 100%;
+    margin: auto;
+    padding: 15px 0px;
+    background-color: #fff;
+    font-family: "Noto_Sans_KR-400";
+    text-align: center;
+    margin-top: 10px;
+}
+
+  /* 접속 종료 알림 */
+.disconnect {
+    width: 100%;
+    margin: auto;
+    padding: 15px 0px;
+    background-color: rgba(205, 92, 92, 0.769);
+    font-family: "Noto_Sans_KR-400";
+    text-align: center;
+    margin-top: 10px;
+}
+
+  /* 내가 보낸 메시지 */
+  /* 오른쪽 정렬 */
+.me {
+    width: 150px;
+    margin-left: auto;
+    margin-top: 10px;
+    padding: 18px 15px;
+    background-color: lemonchiffon;
+    font-family: "Noto_Sans_KR-400";
+    border-radius: 5px;
+}
+
+  /* 상대방이 보낸 메시지 */
+  /* 왼쪽 정렬 */
+.other {
+    width: 150px;
+    margin-right: auto;
+    margin-top: 10px;
+    padding: 18px 15px;
+    background-color: #aabad8;
+    border-radius: 5px;
+    font-family: "Noto_Sans_KR-400";
+}
+
+.text_div{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+
+#test{
+  width: 500px;
+  padding: 20px;
+  font-family: "Noto_Sans_KR-400";
+}
+
+.btn{
+  padding: 20px 30px;
+  font-size: 20px;
+  font-family: "Noto_Sans_KR-400";
+}
