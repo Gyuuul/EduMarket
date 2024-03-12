@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
     "build":"babel server -d build",
-    "heroku-postbuild": "npm run build && npm run compress"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
