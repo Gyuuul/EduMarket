@@ -5,7 +5,7 @@
   background-color: #f1f2f3;
 }
 .main_div {
-  max-width: 1400px;
+  max-width: 1000px;
   height: 800px;
   margin: 0 auto;
   padding: 100px 50px;
@@ -43,7 +43,7 @@
   /* 내가 보낸 메시지 */
   /* 오른쪽 정렬 */
 .me {
-    width: 150px;
+    width: 250px;
     margin-left: auto;
     margin-top: 10px;
     padding: 18px 15px;
@@ -55,7 +55,7 @@
   /* 상대방이 보낸 메시지 */
   /* 왼쪽 정렬 */
 .other {
-    width: 150px;
+    width: 250px;
     margin-right: auto;
     margin-top: 10px;
     padding: 18px 15px;
