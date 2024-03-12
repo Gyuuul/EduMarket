@@ -1,14 +1,10 @@
 {
-  "homepage": "https://gyuuul.github.io/eduket/",
   "name": "eduket",
   "version": "1.0.0",
   "description": "> EDUKET 테스트 계정 <br/>\r > 😺 ID : eduket@naver.com<br/>\r > 🔓 PW : qw332211<br/>\r <br/>",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
-    "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build",
     "backend": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
