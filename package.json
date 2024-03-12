@@ -5,7 +5,7 @@
   "description": "> EDUKET 테스트 계정 <br/>\r > 😺 ID : eduket@naver.com<br/>\r > 🔓 PW : qw332211<br/>\r <br/>",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server/index.js",
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build",
