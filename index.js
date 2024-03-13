@@ -13,6 +13,9 @@ const io = require('socket.io')(server, {
 });
 const port = process.env.PORT || 3000;
 app.use('/chat', express.static('./client/src/chat'));
+app.get('/', function (req, res) {
+  res.send('Hello World');
+});
 io.sockets.on('connection', function (socket) {
   // 새로운 유저가 접속했을 경우 다른 소켓에게도 알려줌
   socket.on('newUser', function (name) {
