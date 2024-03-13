@@ -1,4 +1,5 @@
 {
+  "homepage": "https://gyuuul.github.io/eduket/",
   "name": "eduket",
   "version": "1.0.0",
   "description": "> EDUKET 테스트 계정 <br/>\r > 😺 ID : eduket@naver.com<br/>\r > 🔓 PW : qw332211<br/>\r <br/>",
@@ -9,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
     "build":"babel server -d build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,6 @@
   "bugs": {
     "url": "https://github.com/Gyuuul/eduket/issues"
   },
-  "homepage": "https://github.com/Gyuuul/eduket#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
     "concurrently": "^8.2.2",

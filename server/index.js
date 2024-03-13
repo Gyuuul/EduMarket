@@ -43,5 +43,5 @@ io.sockets.on('connection', function(socket){
 
 // 서버를 8080 포트로 listen
 server.listen(port, ()=>{
-    console.log('서버 실행 중 . . .')
+    console.log(`${port} 서버 실행 중 . . .`)
 })
