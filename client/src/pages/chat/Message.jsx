@@ -5,7 +5,7 @@ import './style.css'
 import Common from '../../components/common/Common';
 
 export default function Message() {
-    const socket = io('localhost:3000/#/');
+    const socket = io('https://eduket1-project1008.koyeb.app/');
     var name= useSelector((state)=> state.user?.myInfo.username);
 
     /* 접속 되었을 때 실행 */
