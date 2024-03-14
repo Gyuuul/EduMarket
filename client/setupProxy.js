@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.use(
         '/',
         createProxyMiddleware({
-        target: 'https://eduket1-project1008.koyeb.app/',
+        target: 'http://localhost:3000',
         changeOrigin: true,
         ws: false,
         })
