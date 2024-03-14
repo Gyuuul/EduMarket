@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/eduket/static/css/main.a831d6c2.css",
-    "main.js": "/eduket/static/js/main.351737fb.js",
+    "main.js": "/eduket/static/js/main.3466af66.js",
     "static/css/709.92e0cfaa.chunk.css": "/eduket/static/css/709.92e0cfaa.chunk.css",
     "static/js/709.b9a81d5e.chunk.js": "/eduket/static/js/709.b9a81d5e.chunk.js",
     "static/js/568.3e4809b9.chunk.js": "/eduket/static/js/568.3e4809b9.chunk.js",
@@ -78,7 +78,7 @@
     "static/media/Heart.webp": "/eduket/static/media/Heart.997c9351d2c0e211ec74.webp",
     "static/media/icon-more.webp": "/eduket/static/media/icon-more.a3dcecd28bed52eac658.webp",
     "main.a831d6c2.css.map": "/eduket/static/css/main.a831d6c2.css.map",
-    "main.351737fb.js.map": "/eduket/static/js/main.351737fb.js.map",
+    "main.3466af66.js.map": "/eduket/static/js/main.3466af66.js.map",
     "709.92e0cfaa.chunk.css.map": "/eduket/static/css/709.92e0cfaa.chunk.css.map",
     "709.b9a81d5e.chunk.js.map": "/eduket/static/js/709.b9a81d5e.chunk.js.map",
     "568.3e4809b9.chunk.js.map": "/eduket/static/js/568.3e4809b9.chunk.js.map",
@@ -113,6 +113,6 @@
   },
   "entrypoints": [
     "static/css/main.a831d6c2.css",
-    "static/js/main.351737fb.js"
+    "static/js/main.3466af66.js"
   ]
 }
